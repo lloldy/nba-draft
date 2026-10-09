@@ -1,0 +1,4 @@
+node_modules/
+dist/
+data-pipeline/raw/
+data-pipeline/__pycache__/
