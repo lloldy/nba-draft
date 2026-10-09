@@ -10,9 +10,12 @@ import { indexPlayers } from './data.js';
 import { effectiveRating } from './positions.js';
 
 // constraints: { decades?: number[], excludeFranchises?: string[], allowPlayer?: (p) => boolean }
-export function createDraft({ seed, players, skips = DEFAULT_SKIPS, constraints = {} }) {
+// locked: { slot, playerId } = a legend that is already on the team (not offered again).
+export function createDraft({ seed, players, skips = DEFAULT_SKIPS, constraints = {}, locked = null }) {
   const idx = indexPlayers(players);
+  const lockedName = locked ? idx.byId.get(locked.playerId).name : null;
   const ok = (p) =>
+    p.name !== lockedName &&
     (!constraints.decades || constraints.decades.includes(p.decade)) &&
     !(constraints.excludeFranchises ?? []).includes(p.franchise) &&
     (!constraints.allowPlayer || constraints.allowPlayer(p));
@@ -39,6 +42,7 @@ export function createDraft({ seed, players, skips = DEFAULT_SKIPS, constraints 
     _pool: pool,
     _byId: idx.byId,
   };
+  if (locked) state.slots[locked.slot] = locked.playerId;
   return spin(state);
 }
 
@@ -84,6 +88,10 @@ export function pick(state, playerId, slot) {
   if (state.slots[slot]) throw new Error(`Slot ${slot} is taken`);
   if (!state.current.players.some((p) => p.id === playerId)) throw new Error('Player not on current board');
   if (Object.values(state.slots).includes(playerId)) throw new Error('Player already drafted');
+  const name = state._byId.get(playerId).name;
+  if (Object.values(state.slots).some((id) => id && state._byId.get(id).name === name)) {
+    throw new Error(`${name} steht schon in deinem Team (anderer Zeitraum)`);
+  }
   const next = {
     ...state,
     slots: { ...state.slots, [slot]: playerId },

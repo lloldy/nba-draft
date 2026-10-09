@@ -1,85 +1,16 @@
 import { h, reducedMotion } from './dom.js';
+import { app, go, render, register, team, fName } from './state.js';
 import { playerCard, emptySlot } from './cards.js';
+import { goSummary } from './summary.js';
 import { POSITIONS, DECADES, SIM, CHEM, PLAYOFFS } from '../core/config.js';
-import { createDraft, pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete } from '../core/draft.js';
+import { pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete } from '../core/draft.js';
 import { effectiveRating } from '../core/positions.js';
 import { simulateSeason } from '../core/sim.js';
 import { COACHES } from '../core/coaches.js';
 import { buildTeam } from '../core/team.js';
 import { qualifies, opponentFor, simulateSeries } from '../core/playoffs.js';
 
-// All mutable UI state lives here. The core modules stay pure.
-export const app = {
-  data: null, // { players, byId, meta }
-  franchises: {},
-  screen: 'start',
-  seed: 0,
-  decade: null, // era mode: only this decade
-  draft: null,
-  selCard: null, // player id picked from the board
-  selSlot: null, // slot picked for swapping
-  spinning: false,
-  msg: '',
-  season: null,
-  coach: COACHES.at(-1), // chosen before the season
-  po: null, // playoff state { round, results[], live, over }
-  lineupBack: 'season', // where the lineup editor returns to
-  timer: null,
-};
-
-const root = () => document.getElementById('app');
-const fName = (code) => app.franchises[code]?.name ?? code;
 let wheelTimer = null;
-
-export function render() {
-  clearInterval(app.timer);
-  const screens = { start: startScreen, draft: draftScreen, lineup: lineupScreen, sim: simScreen, result: resultScreen, playoffs: playoffsScreen };
-  root().replaceChildren(screens[app.screen]());
-}
-
-function go(screen) {
-  app.screen = screen;
-  app.msg = '';
-  render();
-}
-
-const team = () => buildTeam({ slots: app.draft.slots, byId: app.data.byId, coach: app.coach });
-const shareLink = () => `${location.origin}${location.pathname}#seed=${app.seed}${app.decade ? `&era=${app.decade}` : ''}`;
-
-// ---------- start ----------
-function startScreen() {
-  const seedInput = h('input', { type: 'number', value: app.seed, id: 'seed', inputmode: 'numeric' });
-  const era = h('select', { id: 'era' },
-    h('option', { value: '' }, 'Alle Dekaden'),
-    DECADES.map((d) => h('option', { value: d, selected: app.decade === d }, `Nur ${d}er`)));
-  return h('main', { class: 'screen start' },
-    h('h1', { class: 'logo' }, 'NBA ', h('span', {}, 'DRAFT')),
-    h('p', { class: 'lead' }, 'Dreh das Rad, drafte fünf Spieler und simuliere 82 Spiele.'),
-    app.data.meta.source.includes('SYNTHETIC') && h('p', { class: 'notice' }, 'Beispieldaten (erfundene Spieler) – echte Daten siehe DATA_SOURCES.md'),
-    h('label', {}, 'Seed (gleicher Seed = gleiche Boards für alle)', seedInput),
-    h('label', {}, 'Ära-Modus', era),
-    h('div', { class: 'row' },
-      h('button', { class: 'btn ghost', onclick: () => { seedInput.value = Math.floor(Math.random() * 1e9); } }, 'Zufälliger Seed'),
-      h('button', { class: 'btn primary', onclick: () => {
-        app.seed = Number(seedInput.value) || 1;
-        app.decade = era.value ? Number(era.value) : null;
-        startDraft();
-      } }, 'Draft starten')),
-  );
-}
-
-export function startDraft() {
-  app.draft = createDraft({
-    seed: app.seed,
-    players: app.data.players,
-    constraints: app.decade ? { decades: [app.decade] } : {},
-  });
-  app.selCard = app.selSlot = null;
-  app.po = null;
-  app.lineupBack = 'season';
-  go('draft');
-  spinAnimation();
-}
 
 // ---------- draft ----------
 function wheelText() {
@@ -88,7 +19,7 @@ function wheelText() {
 }
 
 // Cycle random teams for a moment, then land on the real board.
-function spinAnimation() {
+export function spinAnimation() {
   clearInterval(wheelTimer);
   const fr = Object.keys(app.franchises);
   const finish = () => { app.spinning = false; render(); };
@@ -144,11 +75,20 @@ function draftScreen() {
       h('button', { class: 'btn small', disabled: d.skips.era <= 0 || app.decade || app.spinning, onclick: () => attempt(skipEra) }, `Ära-Skip (${d.skips.era})`),
       h('button', { class: 'btn small', disabled: d.undosLeft <= 0 || !d.picks.length || app.spinning, onclick: () => attempt(undoLastPick) }, `Undo (${d.undosLeft})`),
     ),
+    ruleBanner(),
     app.msg && h('p', { class: 'notice' }, app.msg),
     board,
     h('p', { class: 'hint' }, sel ? `${sel.name} gewählt – tippe einen freien Slot.` : 'Tippe einen Spieler, dann einen Slot. Gesetzte Spieler tauschst du per Tipp auf zwei Slots.'),
     slotsView({ onPickSlot: (slot) => attempt((s) => pick(s, app.selCard, slot)) }),
   );
+}
+
+function ruleBanner() {
+  const r = app.rule;
+  if (!r) return null;
+  const fans = POSITIONS.reduce((s, slot) => s + (app.draft.slots[slot] ? app.data.byId.get(app.draft.slots[slot]).fans ?? 0 : 0), 0);
+  return h('div', { class: 'rule-banner' }, h('b', {}, r.label), ` – ${r.desc}`,
+    r.id === 'fans300' && h('span', { class: `fans${fans >= 300 ? ' over' : ''}` }, `Fans ${fans}/300`));
 }
 
 function teamRatingChip() {
@@ -236,6 +176,7 @@ function lineupScreen() {
 function startSeason() {
   app.season = simulateSeason({ seed: app.seed, rating: team().strength });
   app.seasonTeam = team();
+  app.run = null;
   app.shown = 0;
   go('sim');
 }
@@ -268,10 +209,6 @@ function simScreen() {
 function resultScreen() {
   const s = app.season;
   const perfect = s.losses === 0;
-  const copy = async (btn) => {
-    try { await navigator.clipboard.writeText(shareLink()); btn.textContent = 'Link kopiert!'; } catch { btn.textContent = shareLink(); }
-  };
-  const shareBtn = h('button', { class: 'btn', onclick: () => copy(shareBtn) }, 'Seed-Link kopieren');
   return h('main', { class: 'screen result' },
     perfect && h('div', { class: 'perfect' }, '82–0 · PERFEKTE SAISON'),
     h('div', { class: 'record big' }, `${s.wins}–${s.losses}`),
@@ -282,12 +219,11 @@ function resultScreen() {
     })),
     h('details', {}, h('summary', {}, 'Spiel-Log'),
       h('ol', { class: 'log' }, s.games.map((g) => h('li', { class: g.win ? 'win' : 'loss' }, `${g.win ? 'W' : 'L'} · Gegner ${g.opp.toFixed(0)} · ${g.wins}–${g.losses}`)))),
+    qualifies(s.wins) ? null : h('p', { class: 'notice' }, `Playoffs verpasst (mind. ${PLAYOFFS.minWins} Siege nötig).`),
     h('div', { class: 'row' },
-      shareBtn,
       qualifies(s.wins)
         ? h('button', { class: 'btn primary', onclick: startPlayoffs }, 'Playoffs')
-        : h('p', { class: 'notice' }, `Playoffs verpasst (mind. ${PLAYOFFS.minWins} Siege nötig).`),
-      h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); go('start'); } }, 'Neuer Run')),
+        : h('button', { class: 'btn primary', onclick: goSummary }, 'Zusammenfassung')),
   );
 }
 
@@ -350,10 +286,16 @@ function playoffsScreen() {
     h('div', { class: 'row' },
       po.over
         ? [h('button', { class: 'btn ghost', onclick: () => go('result') }, 'Zur Saison'),
-           h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); go('start'); } }, 'Neuer Run')]
+           h('button', { class: 'btn primary', onclick: goSummary }, 'Zusammenfassung')]
         : live
           ? h('button', { class: 'btn ghost', onclick: () => { clearTimeout(app.timer); live.shown = live.series.games.length; render(); } }, 'Überspringen')
           : [h('button', { class: 'btn', onclick: () => go('lineup') }, 'Lineup anpassen'),
              h('button', { class: 'btn primary', onclick: playRound }, `${PLAYOFFS.rounds[po.round]} spielen`)]),
   );
 }
+
+register('draft', draftScreen);
+register('lineup', lineupScreen);
+register('sim', simScreen);
+register('result', resultScreen);
+register('playoffs', playoffsScreen);

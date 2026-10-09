@@ -141,3 +141,28 @@ h3 { font-family: var(--display); letter-spacing: .04em; text-transform: upperca
 .round.next, .round.live { border-color: var(--accent); }
 .round.won { border-color: var(--win); } .round.lost { border-color: var(--loss); } .round.pending { opacity: .55; }
 .out { text-align: center; font-family: var(--display); font-size: 1.4rem; color: var(--loss); border: 2px solid var(--loss); border-radius: 12px; padding: 10px; }
+
+/* Phase 4: panels, rules, summary, stats, browse */
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.panel h3 { margin: 0; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; }
+.panel-head .chip.accent { margin-left: 0; }
+.panel.daily { border-color: var(--accent); }
+.panel.challenge { border-color: #5aa9ff; }
+.rule-line { margin: 0; }
+.rule-banner { background: #1c2a1c; border: 1px solid #3a6a3a; color: #bff0bf; padding: 8px 12px; border-radius: 8px; font-size: .9rem; }
+.rule-banner .fans { float: right; font-weight: 800; }
+.rule-banner .fans.over { color: var(--loss); }
+.links .btn { flex: 1; }
+.share-card { width: 100%; max-width: 480px; align-self: center; border-radius: 12px; border: 1px solid var(--line); }
+.board-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.board-list li { display: grid; grid-template-columns: 2.6em 1fr; gap: 0 10px; background: var(--panel); border-radius: 8px; padding: 8px 12px; align-items: baseline; }
+.board-list li b { font-family: var(--display); font-size: 1.3rem; color: var(--accent); grid-row: 1 / 3; }
+.board-list li em { color: var(--dim); font-style: normal; font-size: .8rem; }
+.stats .board-list li span { color: var(--dim); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.tile { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--text); text-decoration: none; font-weight: 600; font-size: .9rem; }
+.tile:hover { border-color: var(--accent); }
+.tile-bar { display: block; height: 6px; border-radius: 3px; margin-bottom: 8px; }
+.browse h3 a { color: inherit; text-decoration: none; }
+.browse h3 a:hover { color: var(--accent); }

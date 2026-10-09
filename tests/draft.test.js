@@ -8,7 +8,7 @@ const players = [];
 for (const f of ['AAA', 'BBB', 'CCC', 'DDD']) {
   for (const d of [1980, 1990, 2000]) {
     for (let i = 0; i < 2; i++) {
-      players.push({ id: `${f}${d}${i}`, name: 'x', franchise: f, decade: d, pos: [POSITIONS[(i + d / 10) % 5]], altPos: [], rating: 70 + i * 10 });
+      players.push({ id: `${f}${d}${i}`, name: `${f}${d}${i}`, franchise: f, decade: d, pos: [POSITIONS[(i + d / 10) % 5]], altPos: [], rating: 70 + i * 10 });
     }
   }
 }
