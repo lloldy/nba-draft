@@ -121,6 +121,7 @@ def main():
         if r.rpg >= 9: t.append("rebounder")
         if r.ppg >= 22: t.append("scorer")
         if r.spg >= 1.5: t.append("defender")
+        if r.ppg >= 16 and r.main in ("PG", "SG", "SF"): t.append("shooter")
         return t
     stints["tags"] = stints.apply(tags, axis=1)
 

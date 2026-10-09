@@ -1,9 +1,12 @@
 import { h, reducedMotion } from './dom.js';
 import { playerCard, emptySlot } from './cards.js';
-import { POSITIONS, DECADES, SIM } from '../core/config.js';
-import { createDraft, pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete, teamRating } from '../core/draft.js';
+import { POSITIONS, DECADES, SIM, CHEM, PLAYOFFS } from '../core/config.js';
+import { createDraft, pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete } from '../core/draft.js';
 import { effectiveRating } from '../core/positions.js';
 import { simulateSeason } from '../core/sim.js';
+import { COACHES } from '../core/coaches.js';
+import { buildTeam } from '../core/team.js';
+import { qualifies, opponentFor, simulateSeries } from '../core/playoffs.js';
 
 // All mutable UI state lives here. The core modules stay pure.
 export const app = {
@@ -18,6 +21,9 @@ export const app = {
   spinning: false,
   msg: '',
   season: null,
+  coach: COACHES.at(-1), // chosen before the season
+  po: null, // playoff state { round, results[], live, over }
+  lineupBack: 'season', // where the lineup editor returns to
   timer: null,
 };
 
@@ -27,7 +33,7 @@ let wheelTimer = null;
 
 export function render() {
   clearInterval(app.timer);
-  const screens = { start: startScreen, draft: draftScreen, lineup: lineupScreen, sim: simScreen, result: resultScreen };
+  const screens = { start: startScreen, draft: draftScreen, lineup: lineupScreen, sim: simScreen, result: resultScreen, playoffs: playoffsScreen };
   root().replaceChildren(screens[app.screen]());
 }
 
@@ -37,6 +43,7 @@ function go(screen) {
   render();
 }
 
+const team = () => buildTeam({ slots: app.draft.slots, byId: app.data.byId, coach: app.coach });
 const shareLink = () => `${location.origin}${location.pathname}#seed=${app.seed}${app.decade ? `&era=${app.decade}` : ''}`;
 
 // ---------- start ----------
@@ -68,6 +75,8 @@ export function startDraft() {
     constraints: app.decade ? { decades: [app.decade] } : {},
   });
   app.selCard = app.selSlot = null;
+  app.po = null;
+  app.lineupBack = 'season';
   go('draft');
   spinAnimation();
 }
@@ -143,7 +152,8 @@ function draftScreen() {
 }
 
 function teamRatingChip() {
-  return h('span', { class: 'chip accent' }, `Team ${teamRating(app.draft).average.toFixed(1)}`);
+  const t = team();
+  return h('span', { class: 'chip accent' }, `Team ${t.rating.toFixed(1)} · ${t.chem.name}`);
 }
 
 // Shared by the draft and lineup screens.
@@ -171,22 +181,61 @@ function slotsView({ onPickSlot }) {
 }
 
 // ---------- lineup editor ----------
+function chemPanel(t) {
+  const roleNames = { rim_protector: 'Rim-Protector', shooter: 'Shooter', playmaker: 'Playmaker', rebounder: 'Rebounder', defender: 'Verteidiger' };
+  return h('section', { class: `chem${t.chem.perfect ? ' perfect-chem' : ''}` },
+    h('div', { class: 'chem-head' }, h('b', {}, t.chem.name), h('span', {}, `+${t.chem.bonus} Chemie`)),
+    h('div', { class: 'chem-bar' }, CHEM.roles.map((r, i) => h('i', { class: i < t.chem.count ? 'on' : '' }))),
+    h('ul', { class: 'roles' }, CHEM.roles.map((r) => {
+      const slot = t.chem.roles[r];
+      const p = slot && t.lineup.find((l) => l.slot === slot).player;
+      return h('li', { class: slot ? 'ok' : 'no' }, h('span', {}, slot ? '✓' : '✗'), roleNames[r], h('em', {}, p ? `${p.name} (${slot})` : 'nicht besetzt'));
+    })));
+}
+
+function coachPicker(editable) {
+  const slots = app.draft.slots, byId = app.data.byId;
+  if (!editable) {
+    return h('p', { class: 'hint' }, `Coach: ${app.coach.name} (${app.coach.style}) · +${team().coachBonus}`);
+  }
+  return h('section', { class: 'coaches' }, COACHES.map((c) => {
+    const bonus = buildTeam({ slots, byId, coach: c }).coachBonus;
+    return h('button', { class: `coach${app.coach.id === c.id ? ' on' : ''}`, type: 'button', onclick: () => { app.coach = c; render(); } },
+      h('b', {}, c.name), h('span', {}, c.style), h('em', {}, `+${bonus}`));
+  }));
+}
+
+function strengthLine(t) {
+  return h('div', { class: 'strength' },
+    h('div', {}, h('small', {}, 'Rating'), h('b', {}, t.rating.toFixed(1))),
+    h('div', {}, h('small', {}, 'Chemie'), h('b', {}, `+${t.chem.bonus}`)),
+    h('div', {}, h('small', {}, 'Coach'), h('b', {}, `+${t.coachBonus}`)),
+    h('div', { class: 'total' }, h('small', {}, 'Stärke'), h('b', {}, t.strength.toFixed(1))));
+}
+
 function lineupScreen() {
-  const t = teamRating(app.draft);
+  const t = team();
+  const inPlayoffs = app.lineupBack === 'playoffs';
   return h('main', { class: 'screen lineup' },
-    h('h2', {}, 'Lineup-Editor'),
-    h('p', { class: 'lead' }, 'Tausche Spieler zwischen den Slots. Hauptposition 100 %, Nebenposition −3 %, falsche Position −8 %.'),
-    h('div', { class: 'big-rating' }, h('span', {}, t.average.toFixed(1)), ' Team-Rating'),
+    h('h2', {}, inPlayoffs ? 'Lineup anpassen' : 'Lineup-Editor'),
+    h('p', { class: 'lead' }, 'Tausche Spieler zwischen den Slots. Hauptposition 100 %, Nebenposition −3 %, falsche Position −8 % (und keine Chemie-Rolle).'),
+    strengthLine(t),
     slotsView({}),
+    chemPanel(t),
+    h('h3', {}, inPlayoffs ? 'Coach' : 'Coach wählen'),
+    coachPicker(!inPlayoffs),
     h('div', { class: 'row' },
-      h('button', { class: 'btn ghost', onclick: () => go('start') }, 'Abbrechen'),
-      h('button', { class: 'btn primary', onclick: startSeason }, 'Saison starten')),
+      inPlayoffs
+        ? h('button', { class: 'btn primary', onclick: () => go('playoffs') }, 'Zurück zu den Playoffs')
+        : [h('button', { class: 'btn ghost', onclick: () => go('start') }, 'Abbrechen'),
+           h('button', { class: 'btn primary', onclick: startSeason }, 'Saison starten')]),
   );
 }
 
 // ---------- season ----------
 function startSeason() {
-  app.season = simulateSeason({ seed: app.seed, rating: teamRating(app.draft).average });
+  app.season = simulateSeason({ seed: app.seed, rating: team().strength });
+  app.seasonTeam = team();
   app.shown = 0;
   go('sim');
 }
@@ -226,7 +275,7 @@ function resultScreen() {
   return h('main', { class: 'screen result' },
     perfect && h('div', { class: 'perfect' }, '82–0 · PERFEKTE SAISON'),
     h('div', { class: 'record big' }, `${s.wins}–${s.losses}`),
-    h('p', { class: 'lead' }, `Längste Siegesserie: ${s.streak} · Team ${teamRating(app.draft).average.toFixed(1)}`),
+    h('p', { class: 'lead' }, `Längste Siegesserie: ${s.streak} · Stärke ${app.seasonTeam.strength.toFixed(1)} (${app.seasonTeam.chem.name})`),
     h('section', { class: 'mini-lineup' }, POSITIONS.map((slot) => {
       const p = app.data.byId.get(app.draft.slots[slot]);
       return h('div', {}, h('b', {}, slot), ` ${p.name} `, h('em', {}, effectiveRating(p, slot).toFixed(0)));
@@ -234,8 +283,77 @@ function resultScreen() {
     h('details', {}, h('summary', {}, 'Spiel-Log'),
       h('ol', { class: 'log' }, s.games.map((g) => h('li', { class: g.win ? 'win' : 'loss' }, `${g.win ? 'W' : 'L'} · Gegner ${g.opp.toFixed(0)} · ${g.wins}–${g.losses}`)))),
     h('div', { class: 'row' },
-      h('button', { class: 'btn ghost', onclick: () => go('lineup') }, 'Lineup ändern'),
       shareBtn,
+      qualifies(s.wins)
+        ? h('button', { class: 'btn primary', onclick: startPlayoffs }, 'Playoffs')
+        : h('p', { class: 'notice' }, `Playoffs verpasst (mind. ${PLAYOFFS.minWins} Siege nötig).`),
       h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); go('start'); } }, 'Neuer Run')),
+  );
+}
+
+// ---------- playoffs ----------
+function startPlayoffs() {
+  app.po = { round: 0, results: [], live: null, over: null };
+  app.lineupBack = 'playoffs';
+  go('playoffs');
+}
+
+const codes = () => Object.keys(app.franchises);
+
+function playRound() {
+  const round = app.po.round;
+  const opponent = opponentFor({ seed: app.seed, round, franchiseCodes: codes() });
+  const series = simulateSeries({ seed: app.seed, round, strength: team().strength, opponent });
+  app.po.live = { round, opponent, series, shown: 0 };
+  render();
+}
+
+function finishRound() {
+  const { round, opponent, series } = app.po.live;
+  app.po.results.push({ round, opponent, series });
+  app.po.live = null;
+  if (!series.won) app.po.over = 'out';
+  else if (round === PLAYOFFS.rounds.length - 1) app.po.over = 'champion';
+  else app.po.round++;
+  render();
+}
+
+function playoffsScreen() {
+  const po = app.po, t = team();
+  const live = po.live;
+  if (live) {
+    const total = live.series.games.length;
+    if (reducedMotion()) live.shown = total;
+    if (live.shown >= total) app.timer = setTimeout(finishRound, live.shown === total && !reducedMotion() ? 900 : 0);
+    else app.timer = setTimeout(() => { live.shown++; render(); }, 650);
+  }
+  const rounds = PLAYOFFS.rounds.map((name, i) => {
+    const res = po.results.find((r) => r.round === i);
+    const isLive = live && live.round === i;
+    const opp = res?.opponent ?? (isLive ? live.opponent : opponentFor({ seed: app.seed, round: i, franchiseCodes: codes() }));
+    const shownGames = isLive ? live.series.games.slice(0, live.shown) : res?.series.games ?? [];
+    const score = shownGames.length ? `${shownGames.at(-1).team}–${shownGames.at(-1).opp}` : '';
+    const state = res ? (res.series.won ? 'won' : 'lost') : isLive ? 'live' : i === po.round && !po.over ? 'next' : 'pending';
+    return h('li', { class: `round ${state}` },
+      h('div', { class: 'round-name' }, name),
+      h('div', { class: 'round-opp' }, `${app.franchises[opp.franchise]?.name ?? opp.franchise} · ${opp.rating}`),
+      h('div', { class: 'round-games' }, shownGames.map((g) => h('i', { class: g.win ? 'w' : 'l' }, g.win ? 'W' : 'L'))),
+      h('div', { class: 'round-score' }, score));
+  });
+  return h('main', { class: 'screen playoffs' },
+    h('h2', {}, 'Playoffs'),
+    po.over === 'champion' && h('div', { class: 'perfect' }, 'CHAMPION'),
+    po.over === 'out' && h('div', { class: 'out' }, `Ausgeschieden: ${PLAYOFFS.rounds[po.results.at(-1).round]}`),
+    h('p', { class: 'lead' }, `Dein Team: Stärke ${t.strength.toFixed(1)} (${t.chem.name})`),
+    h('ol', { class: 'rounds' }, rounds),
+    !po.over && !live && h('p', { class: 'hint' }, 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
+    h('div', { class: 'row' },
+      po.over
+        ? [h('button', { class: 'btn ghost', onclick: () => go('result') }, 'Zur Saison'),
+           h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); go('start'); } }, 'Neuer Run')]
+        : live
+          ? h('button', { class: 'btn ghost', onclick: () => { clearTimeout(app.timer); live.shown = live.series.games.length; render(); } }, 'Überspringen')
+          : [h('button', { class: 'btn', onclick: () => go('lineup') }, 'Lineup anpassen'),
+             h('button', { class: 'btn primary', onclick: playRound }, `${PLAYOFFS.rounds[po.round]} spielen`)]),
   );
 }

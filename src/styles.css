@@ -104,3 +104,40 @@ details { background: var(--panel); border-radius: 12px; padding: 10px 14px; }
 summary { cursor: pointer; font-weight: 700; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Chemistry, coaches, strength */
+h3 { font-family: var(--display); letter-spacing: .04em; text-transform: uppercase; margin: 6px 0 0; color: var(--dim); }
+.strength { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.strength > div { background: var(--panel); border-radius: 10px; padding: 8px 10px; display: flex; flex-direction: column; }
+.strength small { color: var(--dim); font-size: .7rem; text-transform: uppercase; }
+.strength b { font-family: var(--display); font-size: 1.6rem; }
+.strength .total { border: 1px solid var(--accent); } .strength .total b { color: var(--accent); }
+.chem { background: var(--panel); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.chem-head { display: flex; justify-content: space-between; align-items: baseline; }
+.chem-head span { color: var(--accent); font-weight: 700; }
+.chem-bar { display: flex; gap: 4px; }
+.chem-bar i { flex: 1; height: 8px; border-radius: 4px; background: var(--line); }
+.chem-bar i.on { background: var(--accent); }
+.perfect-chem { border: 1px solid var(--accent); box-shadow: 0 0 22px #ffb02033; }
+.roles { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.roles li { display: flex; gap: 8px; font-size: .9rem; }
+.roles li span { width: 1.2em; font-weight: 800; }
+.roles li.ok span { color: var(--win); } .roles li.no { color: var(--dim); } .roles li.no span { color: var(--loss); }
+.roles em { margin-left: auto; font-style: normal; color: var(--dim); font-size: .8rem; }
+.coaches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.coach { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; text-align: left; font: inherit; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 0 8px; }
+.coach span { color: var(--dim); font-size: .75rem; } .coach em { grid-row: 1 / 3; grid-column: 2; align-self: center; font-style: normal; font-weight: 800; color: var(--accent); }
+.coach.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+
+/* Playoffs */
+.rounds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.round { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; background: var(--panel); border-left: 4px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.round-name { font-family: var(--display); text-transform: uppercase; letter-spacing: .04em; }
+.round-opp { color: var(--dim); font-size: .8rem; grid-column: 1; }
+.round-games { grid-column: 1; display: flex; gap: 4px; min-height: 22px; }
+.round-games i { font-style: normal; font-size: .7rem; font-weight: 800; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 4px; }
+.round-games i.w { background: #3ddc8433; color: var(--win); } .round-games i.l { background: #ff5d5d33; color: var(--loss); }
+.round-score { grid-column: 2; grid-row: 1 / 4; align-self: center; font-family: var(--display); font-size: 2rem; }
+.round.next, .round.live { border-color: var(--accent); }
+.round.won { border-color: var(--win); } .round.lost { border-color: var(--loss); } .round.pending { opacity: .55; }
+.out { text-align: center; font-family: var(--display); font-size: 1.4rem; color: var(--loss); border: 2px solid var(--loss); border-radius: 12px; padding: 10px; }

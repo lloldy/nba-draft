@@ -20,3 +20,29 @@ export const SIM = {
   oppSpread: 6, // opponents range roughly oppMean +/- oppSpread
   scale: 5, // smaller = stronger teams win more reliably (steeper curve)
 };
+
+// Chemistry: five roles must each be covered by a DIFFERENT player who plays
+// in a position that suits him (not an off-position slot).
+export const CHEM = {
+  roles: ['rim_protector', 'shooter', 'playmaker', 'rebounder', 'defender'],
+  // index = number of covered roles
+  levels: [
+    { name: 'Keine Chemie', bonus: 0 },
+    { name: 'Schwach', bonus: 0 },
+    { name: 'Basis', bonus: 1 },
+    { name: 'Gut', bonus: 2.5 },
+    { name: 'Stark', bonus: 4 },
+    { name: 'Perfect Team Chemistry', bonus: 6 },
+  ],
+  // thresholds used to derive archetype tags from stats (the data pipeline uses the same)
+  tagRules: { rim_protector: 1.5, playmaker: 6, rebounder: 9, scorer: 22, defender: 1.5, shooter: 16 },
+};
+
+// Playoffs: 4 rounds, best of 7.
+export const PLAYOFFS = {
+  winsNeeded: 4,
+  minWins: 41, // fewer regular-season wins = playoffs missed
+  rounds: ['Runde 1', 'Conference Semis', 'Conference Finals', 'Finals'],
+  oppBase: [74, 78, 82, 86], // opponent rating per round
+  oppNoise: 3,
+};
