@@ -10,9 +10,10 @@
   <p id="status">Loading data…</p>
   <script type="module">
     import { loadPlayers } from './src/core/data.js';
-    const d = await loadPlayers();
-    document.getElementById('status').textContent =
-      `${d.players.length} players loaded (${d.meta.source})`;
+    loadPlayers().then((d) => {
+      document.getElementById('status').textContent =
+        `${d.players.length} players loaded (${d.meta.source})`;
+    });
   </script>
 </body>
 </html>

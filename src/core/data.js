@@ -17,7 +17,7 @@ export function indexPlayers(players) {
 export async function loadPlayers(url = './data/players.json') {
   let json;
   if (typeof window === 'undefined') {
-    const fs = await import('node:fs/promises');
+    const fs = await import(/* @vite-ignore */ 'node:fs/promises');
     json = JSON.parse(await fs.readFile(url, 'utf8'));
   } else {
     json = await (await fetch(url)).json();
