@@ -1,11 +1,12 @@
 // Friend challenge: seed + rule + your record live in the URL hash, no backend needed.
 import { runScore } from './stats.js';
 
-export function encodeChallenge({ seed, era, rule, by, wins, po }) {
+export function encodeChallenge({ seed, era, rule, by, wins, po, iq }) {
   const p = new URLSearchParams({ seed: String(seed) });
   if (era) p.set('era', era);
   if (rule) p.set('rule', rule);
   if (by) p.set('by', by.slice(0, 20));
+  if (iq) p.set('iq', '1');
   if (wins != null) { p.set('rw', wins); p.set('rp', po ?? 0); }
   return p.toString();
 }
@@ -20,6 +21,7 @@ export function parseChallenge(hash) {
     era: Number(p.get('era')) || null,
     rule: p.get('rule') || null,
     by: p.get('by') || null,
+    iq: p.get('iq') === '1',
     record: p.has('rw') ? { wins: Number(p.get('rw')), po: Number(p.get('rp')) || 0 } : null,
   };
 }

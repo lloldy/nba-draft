@@ -9,6 +9,7 @@ export function shareText(run, link) {
     `${run.wins}–${run.losses} · ${PO_LABELS[run.po]}`,
     ...lines,
     `Chemie: ${run.chem} · Stärke ${run.strength}`,
+    run.iq ? `HoopIQ: ${run.iq.pct} % (${run.iq.title})` : null,
     run.ruleLabel ? `Regel: ${run.ruleLabel} ${run.passed ? '✓' : '✗'}` : null,
     `Schlag meinen Rekord: ${link}`,
   ].filter(Boolean).join('\n');
@@ -54,7 +55,7 @@ export function renderShareCard(run, franchises) {
   g.fillStyle = '#eef1f7'; g.font = `40px ${FONT}`;
   g.fillText(`${run.chem.toUpperCase()}  ·  STÄRKE ${run.strength}`, 70, 1250);
   g.fillStyle = '#8b93a7'; g.font = `30px system-ui, sans-serif`;
-  const rule = run.ruleLabel ? `${run.ruleLabel} ${run.passed ? '✓' : '✗'}  ·  ` : '';
+  const rule = (run.ruleLabel ? `${run.ruleLabel} ${run.passed ? '✓' : '✗'}  ·  ` : '') + (run.iq ? `HoopIQ ${run.iq.pct} %  ·  ` : '');
   g.fillText(`${rule}Seed ${run.seed}  ·  Schlag meinen Rekord!`, 70, 1300);
   return c;
 }

@@ -8,6 +8,7 @@ export const app = {
   screen: 'start',
   view: null, // browse pages: { kind: 'franchises' | 'franchise' | 'era', id }
   mode: 'free', // 'free' | 'daily' | 'challenge'
+  hoopiq: false, // HoopIQ: stats hidden during the draft
   seed: 0,
   decade: null, // era mode: only this decade
   rule: null, // daily / challenge rule

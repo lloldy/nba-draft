@@ -117,7 +117,8 @@ describe('stats', () => {
 describe('challenge link', () => {
   it('round-trips and ignores non-challenge hashes', () => {
     const enc = encodeChallenge({ seed: 123, era: 1990, rule: 'only90s', by: 'Noah', wins: 63, po: 5 });
-    expect(parseChallenge('#' + enc)).toEqual({ seed: 123, era: 1990, rule: 'only90s', by: 'Noah', record: { wins: 63, po: 5 } });
+    expect(parseChallenge('#' + enc)).toEqual({ seed: 123, era: 1990, rule: 'only90s', by: 'Noah', iq: false, record: { wins: 63, po: 5 } });
+    expect(parseChallenge('#' + encodeChallenge({ seed: 5, iq: true })).iq).toBe(true);
     expect(parseChallenge('#/franchise/LAL')).toBeNull();
     expect(parseChallenge('')).toBeNull();
     expect(parseChallenge('#seed=9').record).toBeNull();

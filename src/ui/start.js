@@ -30,13 +30,13 @@ function startDaily() {
   const today = utcDate();
   const info = dailyInfo(today);
   save(KEYS.daily, startAttempt(load(KEYS.daily, emptyDaily()), today)); // one attempt per day, used up now
-  Object.assign(app, { mode: 'daily', seed: info.seed, rule: info.rule, decade: null, dailyDate: today });
+  Object.assign(app, { mode: 'daily', seed: info.seed, rule: info.rule, decade: null, dailyDate: today, hoopiq: false });
   startDraft();
 }
 
 function acceptChallenge() {
   const c = app.challenge;
-  Object.assign(app, { mode: 'challenge', seed: c.seed, decade: c.era, rule: ruleById(c.rule) });
+  Object.assign(app, { mode: 'challenge', seed: c.seed, decade: c.era, rule: ruleById(c.rule), hoopiq: c.iq });
   startDraft();
 }
 
@@ -63,6 +63,7 @@ function startScreen() {
     h('option', { value: '' }, 'Alle Dekaden'),
     DECADES.map((d) => h('option', { value: d, selected: app.decade === d }, `Nur ${d}er`)));
   const name = h('input', { type: 'text', value: app.name, maxlength: 20, placeholder: 'Dein Name (für Challenge-Links)', oninput: () => { app.name = name.value; save(KEYS.name, app.name); } });
+  const iqBox = h('input', { type: 'checkbox', id: 'iq', checked: app.hoopiq });
   const ch = app.challenge;
   return h('main', { class: 'screen start' },
     h('h1', { class: 'logo' }, 'NBA ', h('span', {}, 'DRAFT')),
@@ -71,17 +72,18 @@ function startScreen() {
     ch && h('section', { class: 'panel challenge' },
       h('h3', {}, `${ch.by ?? 'Ein Freund'} fordert dich heraus`),
       h('p', { class: 'rule-line' }, ch.record ? `Rekord: ${ch.record.wins} Siege · ${PO_LABELS[ch.record.po]}` : 'Gleiche Boards, gleicher Seed.',
-        ch.rule && ruleById(ch.rule) ? ` · Regel: ${ruleById(ch.rule).label}` : '', ch.era ? ` · Nur ${ch.era}er` : ''),
+        ch.rule && ruleById(ch.rule) ? ` · Regel: ${ruleById(ch.rule).label}` : '', ch.era ? ` · Nur ${ch.era}er` : '', ch.iq ? ' · HoopIQ' : ''),
       h('button', { class: 'btn primary', onclick: acceptChallenge }, 'Challenge annehmen')),
     dailyCard(),
     h('section', { class: 'panel' },
       h('h3', {}, 'Freies Spiel'),
       h('label', {}, 'Seed (gleicher Seed = gleiche Boards)', seedInput),
       h('label', {}, 'Ära-Modus', era),
+      h('label', { class: 'check' }, iqBox, 'HoopIQ-Modus: Stats und Ratings sind beim Draft versteckt'),
       h('div', { class: 'row' },
         h('button', { class: 'btn ghost', onclick: () => { seedInput.value = Math.floor(Math.random() * 1e9); } }, 'Zufälliger Seed'),
         h('button', { class: 'btn primary', onclick: () => {
-          Object.assign(app, { mode: 'free', rule: null, seed: Number(seedInput.value) || 1, decade: era.value ? Number(era.value) : null });
+          Object.assign(app, { mode: 'free', rule: null, seed: Number(seedInput.value) || 1, decade: era.value ? Number(era.value) : null, hoopiq: iqBox.checked });
           startDraft();
         } }, 'Draft starten'))),
     h('label', {}, 'Dein Name', name),

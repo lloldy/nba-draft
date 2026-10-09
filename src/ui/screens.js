@@ -55,7 +55,12 @@ function attempt(fn, popSlot = null) {
     app.msg = '';
     app.pop = popSlot; // slot card pops in on the next render only
     navigator.vibrate?.(15);
-    if (isComplete(app.draft)) { go('lineup'); app.pop = null; return; }
+    if (isComplete(app.draft)) {
+      app.deal = app.hoopiq; // reveal: the cards deal in with all stats visible
+      go('lineup');
+      app.deal = false; app.pop = null;
+      return;
+    }
     spinAnimation();
     app.pop = null;
   } catch (e) {
@@ -73,6 +78,7 @@ function draftScreen() {
     : h('div', { class: 'board' }, d.current.players.map((p, i) =>
         playerCard(p, app.franchises, {
           deal: app.deal ? i : null,
+          hidden: app.hoopiq,
           selected: app.selCard === p.id,
           onClick: () => { app.selCard = app.selCard === p.id ? null : p.id; app.selSlot = null; render(); },
         })));
@@ -95,7 +101,7 @@ function draftScreen() {
     ruleBanner(),
     app.msg && h('p', { class: 'notice' }, app.msg),
     board,
-    h('p', { class: 'hint' }, sel ? `${sel.name} gewählt – tippe einen freien Slot.` : 'Tippe einen Spieler, dann einen Slot. Gesetzte Spieler tauschst du per Tipp auf zwei Slots.'),
+    h('p', { class: 'hint' }, sel ? `${sel.name} gewählt – tippe einen freien Slot.` : app.hoopiq ? 'HoopIQ: Stats sind versteckt. Vertrau deinem Wissen! Gesetzte Spieler tauschst du per Tipp auf zwei Slots.' : 'Tippe einen Spieler, dann einen Slot. Gesetzte Spieler tauschst du per Tipp auf zwei Slots.'),
     slotsView({ onPickSlot: (slot) => attempt((s) => pick(s, app.selCard, slot), slot) }),
   );
 }
@@ -105,10 +111,11 @@ function ruleBanner() {
   if (!r) return null;
   const fans = POSITIONS.reduce((s, slot) => s + (app.draft.slots[slot] ? app.data.byId.get(app.draft.slots[slot]).fans ?? 0 : 0), 0);
   return h('div', { class: 'rule-banner' }, h('b', {}, r.label), ` – ${r.desc}`,
-    r.id === 'fans300' && h('span', { class: `fans${fans >= 300 ? ' over' : ''}` }, `Fans ${fans}/300`));
+    r.id === 'fans300' && !app.hoopiq && h('span', { class: `fans${fans >= 300 ? ' over' : ''}` }, `Fans ${fans}/300`));
 }
 
 function teamRatingChip() {
+  if (app.hoopiq) return h('span', { class: 'chip accent' }, 'HoopIQ-Modus');
   const t = team();
   return h('span', { class: 'chip accent' }, `Team ${t.rating.toFixed(1)} · ${t.chem.name}`);
 }
@@ -117,6 +124,7 @@ function teamRatingChip() {
 function slotsView({ onPickSlot }) {
   const d = app.draft;
   const selPlayer = app.selCard && app.data.byId.get(app.selCard);
+  const concealed = app.hoopiq && app.screen === 'draft';
   return h('section', { class: 'slots' }, POSITIONS.map((slot) => {
     const id = d.slots[slot];
     const onTap = () => {
@@ -131,8 +139,8 @@ function slotsView({ onPickSlot }) {
     };
     const wrap = h('div', { class: 'slot' }, h('div', { class: 'slot-label' }, slot));
     wrap.append(id
-      ? playerCard(app.data.byId.get(id), app.franchises, { slot, pop: app.pop === slot, selected: app.selSlot === slot, onClick: onTap })
-      : emptySlot(slot, { onClick: onTap, active: !!selPlayer, preview: selPlayer ? effectiveRating(selPlayer, slot) : null }));
+      ? playerCard(app.data.byId.get(id), app.franchises, { slot, hidden: concealed, deal: app.deal ? POSITIONS.indexOf(slot) : null, pop: app.pop === slot, selected: app.selSlot === slot, onClick: onTap })
+      : emptySlot(slot, { onClick: onTap, active: !!selPlayer, preview: selPlayer && !concealed ? effectiveRating(selPlayer, slot) : null }));
     return wrap;
   }));
 }

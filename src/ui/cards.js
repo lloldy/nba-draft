@@ -7,24 +7,24 @@ export const initials = (name) =>
 const fmt = (v) => (v == null ? '–' : v.toFixed(1));
 
 // Collectible-style player card. `slot` (optional) shows the rating the player has in that slot.
-export function playerCard(p, franchises, { slot, selected, onClick, hint, deal = null, pop = false } = {}) {
+export function playerCard(p, franchises, { slot, selected, onClick, hint, deal = null, pop = false, hidden = false } = {}) {
   const f = franchises[p.franchise] ?? { primary: '#444', secondary: '#888' };
   const eff = slot ? effectiveRating(p, slot) : p.rating;
   const kind = slot ? fitKind(p, slot) : null;
   return h('button', {
-    class: `card tier-${p.rating >= 90 ? 'gold' : p.rating >= 80 ? 'elite' : 'base'}${selected ? ' selected' : ''}${kind ? ` fit-${kind}` : ''}${deal != null ? ' deal' : ''}${pop ? ' pop' : ''}`,
+    class: `card tier-${hidden ? 'base' : p.rating >= 90 ? 'gold' : p.rating >= 80 ? 'elite' : 'base'}${hidden ? ' hidden-stats' : ''}${selected ? ' selected' : ''}${kind ? ` fit-${kind}` : ''}${deal != null ? ' deal' : ''}${pop ? ' pop' : ''}`,
     style: { '--c1': f.primary, '--c2': f.secondary, '--i': deal ?? 0 },
     onclick: onClick,
     type: 'button',
   },
     h('div', { class: 'card-top' },
-      h('span', { class: 'card-rating' }, Math.round(eff)),
+      h('span', { class: 'card-rating' }, hidden ? '?' : Math.round(eff)),
       h('span', { class: 'card-pos' }, [p.pos[0], ...(p.altPos ?? [])].join('/')),
     ),
     h('div', { class: 'card-initials' }, initials(p.name)),
     h('div', { class: 'card-name' }, p.name),
     h('div', { class: 'card-team' }, p.bench ? 'Bank' : `${p.franchise} · ${p.decade}er`),
-    h('div', { class: 'card-stats' },
+    hidden ? h('div', { class: 'card-stats' }, 'Stats versteckt') : h('div', { class: 'card-stats' },
       h('span', {}, h('b', {}, fmt(p.ppg)), ' PTS'),
       h('span', {}, h('b', {}, fmt(p.rpg)), ' REB'),
       h('span', {}, h('b', {}, fmt(p.apg)), ' AST'),

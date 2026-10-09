@@ -83,6 +83,9 @@ export const skipTeam = (state) =>
 export const skipEra = (state) =>
   skipTo(state, (f, d) => f === state.current.franchise && d !== state.current.decade, 'era');
 
+const bestOnBoard = (players) => players.reduce((a, b) => (b.rating > a.rating ? b : a));
+const worstOnBoard = (players) => players.reduce((a, b) => (b.rating < a.rating ? b : a));
+
 export function pick(state, playerId, slot) {
   if (!POSITIONS.includes(slot)) throw new Error(`Unknown slot ${slot}`);
   if (state.slots[slot]) throw new Error(`Slot ${slot} is taken`);
@@ -95,7 +98,8 @@ export function pick(state, playerId, slot) {
   const next = {
     ...state,
     slots: { ...state.slots, [slot]: playerId },
-    picks: [...state.picks, { playerId, slot, cursor: state.cursor }],
+    // bestId / worstId = best and worst rated player on this board (HoopIQ scoring)
+    picks: [...state.picks, { playerId, slot, cursor: state.cursor, bestId: bestOnBoard(state.current.players).id, worstId: worstOnBoard(state.current.players).id }],
   };
   return isComplete(next) ? next : spin(next);
 }

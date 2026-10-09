@@ -8,6 +8,7 @@ import { PO_LABELS, playoffScore, addRun, leaderboard, summarize } from '../core
 import { checkRule } from '../core/rules.js';
 import { emptyDaily, finishAttempt, currentStreak, utcDate } from '../core/daily.js';
 import { encodeChallenge, compareToRecord } from '../core/challenge.js';
+import { iqScore } from '../core/hoopiq.js';
 
 // Called when a run is over (season missed playoffs, or playoffs ended).
 export function goSummary() {
@@ -23,6 +24,7 @@ function finalize() {
   const passed = checkRule(app.rule, { wins: s.wins, streak: s.streak, lineup: st.lineup, chem: st.chem });
   const run = {
     at: Date.now(), date: utcDate(), mode: app.mode, seed: app.seed, era: app.decade,
+    hoopiq: app.hoopiq, iq: app.hoopiq ? iqScore(app.draft.picks, app.data.byId) : null,
     rule: app.rule?.id ?? null, ruleLabel: app.rule?.label ?? null, passed,
     wins: s.wins, losses: s.losses, streak: s.streak, po,
     strength: now.strength, chem: now.chem.name,
@@ -37,7 +39,7 @@ function finalize() {
 
 const baseUrl = () => `${location.origin}${location.pathname}`;
 const challengeLink = (run) =>
-  `${baseUrl()}#${encodeChallenge({ seed: run.seed, era: run.era, rule: run.rule, by: app.name, wins: run.wins, po: run.po })}`;
+  `${baseUrl()}#${encodeChallenge({ seed: run.seed, era: run.era, rule: run.rule, by: app.name, wins: run.wins, po: run.po, iq: run.hoopiq })}`;
 
 function summaryScreen() {
   const run = app.run;
@@ -59,6 +61,7 @@ function summaryScreen() {
         : cmp === 'tie' ? 'Gleichstand mit dem Rekord.' : `Rekord von ${app.challenge.by ?? 'deinem Freund'} nicht geknackt (${app.challenge.record.wins} Siege · ${PO_LABELS[app.challenge.record.po]}).`),
     run.ruleLabel && h('div', { class: run.passed ? 'perfect' : 'out' }, `${run.ruleLabel}: ${run.passed ? 'erfüllt ✓' : 'nicht erfüllt ✗'}`),
     run.mode === 'daily' && h('p', { class: 'lead' }, `Daily-Streak: ${currentStreak(daily, utcDate())} Tage (Bestwert ${daily.best})`),
+    run.iq && iqPanel(run.iq),
     canvas,
     h('div', { class: 'row' },
       h('button', { class: 'btn', onclick: () => downloadCanvas(canvas, `nba-draft-${run.wins}-${run.losses}.png`) }, 'Bild speichern'),
@@ -67,6 +70,14 @@ function summaryScreen() {
       h('button', { class: 'btn ghost', onclick: () => go('stats') }, 'Statistik'),
       h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); app.challenge = null; go('start'); } }, 'Neuer Run')),
   );
+}
+
+function iqPanel(iq) {
+  return h('section', { class: 'panel iq' },
+    h('div', { class: 'panel-head' }, h('h3', {}, 'HoopIQ'), h('span', { class: 'chip accent' }, `${iq.pct} % · ${iq.title}`)),
+    h('p', { class: 'hint' }, `${iq.perfect} von ${iq.rows.length} Picks waren der beste Spieler auf dem Board.`),
+    h('ul', { class: 'iq-rows' }, iq.rows.map((r) => h('li', { class: r.rating === r.best ? 'ok' : '' },
+      h('b', {}, r.name), h('span', {}, r.rating), h('em', {}, r.rating === r.best ? 'Bester auf dem Board' : `Besser: ${r.bestName} (${r.best})`)))));
 }
 
 function statsScreen() {
