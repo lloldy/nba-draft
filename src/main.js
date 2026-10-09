@@ -1,5 +1,6 @@
 import '@fontsource/bebas-neue/400.css';
 import { loadPlayers } from './core/data.js';
+import { BENCH } from './core/injuries.js';
 import { parseChallenge } from './core/challenge.js';
 import { app, render } from './ui/state.js';
 import { load, KEYS } from './ui/storage.js';
@@ -27,6 +28,7 @@ async function boot() {
     fetch('./data/franchises.json').then((r) => r.json()),
   ]);
   await document.fonts.load('40px "Bebas Neue"').catch(() => {}); // so the share card canvas has the font
+  data.byId.set(BENCH.id, BENCH); // replacement player for injuries (never part of draft pools)
   app.data = data;
   app.franchises = franchises;
   app.name = load(KEYS.name, '');

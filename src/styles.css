@@ -225,3 +225,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; }
 }
+
+/* injuries */
+.injury-note { padding: 10px 14px; border-radius: 10px; font-size: .95rem; border: 1px solid; }
+.injury-note.hurt { background: #3a1414; border-color: #a33; color: #ffc9c9; animation: shake .5s; }
+.injury-note.back { background: #12301f; border-color: #2e7d4f; color: #bff0d0; }
+@keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+.btn.attention { border-color: var(--accent); box-shadow: 0 0 0 0 #ffb020aa; animation: ping 1.4s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 10px #ffb02000; } }

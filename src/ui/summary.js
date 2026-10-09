@@ -1,5 +1,6 @@
 import { h } from './dom.js';
 import { app, go, register, team } from './state.js';
+import { healAll } from './screens.js';
 import { load, save, KEYS } from './storage.js';
 import { renderShareCard, shareText, downloadCanvas } from './share.js';
 import { qualifies } from '../core/playoffs.js';
@@ -15,6 +16,7 @@ export function goSummary() {
 }
 
 function finalize() {
+  healAll();
   const s = app.season, st = app.seasonTeam, now = team();
   const qualified = qualifies(s.wins);
   const po = playoffScore({ qualified, po: app.po });

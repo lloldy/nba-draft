@@ -23,7 +23,7 @@ export function playerCard(p, franchises, { slot, selected, onClick, hint, deal 
     ),
     h('div', { class: 'card-initials' }, initials(p.name)),
     h('div', { class: 'card-name' }, p.name),
-    h('div', { class: 'card-team' }, `${p.franchise} · ${p.decade}er`),
+    h('div', { class: 'card-team' }, p.bench ? 'Bank' : `${p.franchise} · ${p.decade}er`),
     h('div', { class: 'card-stats' },
       h('span', {}, h('b', {}, fmt(p.ppg)), ' PTS'),
       h('span', {}, h('b', {}, fmt(p.rpg)), ' REB'),

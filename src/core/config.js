@@ -46,3 +46,10 @@ export const PLAYOFFS = {
   oppBase: [74, 78, 82, 86], // opponent rating per round
   oppNoise: 3,
 };
+
+// Playoff injuries: before a round a random player may get hurt and sits out.
+export const INJURY = {
+  chance: [0.15, 0.3, 0.35, 0.35], // probability per round (Runde 1 ... Finals)
+  durations: [1, 1, 2], // rounds missed; one is picked at random (so 1 is more likely)
+  benchRating: 58, // the replacement player who fills the empty slot
+};

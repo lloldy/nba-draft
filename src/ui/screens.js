@@ -9,6 +9,7 @@ import { simulateSeason } from '../core/sim.js';
 import { COACHES } from '../core/coaches.js';
 import { buildTeam } from '../core/team.js';
 import { confetti } from './confetti.js';
+import { rollInjury, applyInjury, tickInjury, recoverPlayer } from '../core/injuries.js';
 import { qualifies, opponentFor, simulateSeries } from '../core/playoffs.js';
 
 let wheelTimer = null;
@@ -178,6 +179,7 @@ function lineupScreen() {
     strengthLine(t),
     slotsView({}),
     chemPanel(t),
+    inPlayoffs && app.po?.injured && h('div', { class: 'injury-note hurt' }, `🚑 ${playerName(app.po.injured.playerId)} fehlt noch ${app.po.injured.roundsLeft === 1 ? '1 Runde' : `${app.po.injured.roundsLeft} Runden`}.`),
     h('h3', {}, inPlayoffs ? 'Coach' : 'Coach wählen'),
     coachPicker(!inPlayoffs),
     h('div', { class: 'row' },
@@ -246,9 +248,46 @@ function resultScreen() {
 
 // ---------- playoffs ----------
 function startPlayoffs() {
-  app.po = { round: 0, results: [], live: null, over: null };
+  app.po = { round: 0, results: [], live: null, over: null, injured: null, notes: [] };
   app.lineupBack = 'playoffs';
+  checkInjury();
   go('playoffs');
+}
+
+const playerName = (id) => app.data.byId.get(id).name;
+
+// Before a round: maybe somebody gets hurt. The replacement takes his slot automatically.
+function checkInjury() {
+  const po = app.po;
+  if (po.injured) return;
+  const inj = rollInjury({ seed: app.seed, round: po.round, slots: app.draft.slots });
+  if (!inj) return;
+  const { slots, slot } = applyInjury(app.draft.slots, inj.playerId);
+  app.draft = { ...app.draft, slots };
+  po.injured = { ...inj, slot };
+  po.notes.push({ kind: 'hurt', text: `${playerName(inj.playerId)} (${slot}) verletzt sich und fällt ${inj.roundsLeft === 1 ? 'für 1 Runde' : `für ${inj.roundsLeft} Runden`} aus. Ein Ersatzspieler ist eingesprungen: stell dein Lineup um!` });
+}
+
+// Between rounds: count the injury down, bring the player back, maybe a new injury.
+function advanceInjuries() {
+  const po = app.po;
+  po.notes = [];
+  const was = po.injured;
+  const { injured, recovered } = tickInjury(po.injured);
+  po.injured = injured;
+  if (recovered) {
+    app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, was.playerId) };
+    po.notes.push({ kind: 'back', text: `${playerName(was.playerId)} ist zurück und hat den Platz des Ersatzspielers übernommen.` });
+  }
+  checkInjury();
+}
+
+// Everybody is healthy again for the final summary.
+export function healAll() {
+  const po = app.po;
+  if (!po?.injured) return;
+  app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, po.injured.playerId) };
+  po.injured = null;
 }
 
 const codes = () => Object.keys(app.franchises);
@@ -267,7 +306,7 @@ function finishRound() {
   app.po.live = null;
   if (!series.won) app.po.over = 'out';
   else if (round === PLAYOFFS.rounds.length - 1) app.po.over = 'champion';
-  else app.po.round++;
+  else { app.po.round++; advanceInjuries(); }
   render();
 }
 
@@ -300,6 +339,7 @@ function playoffsScreen() {
     po.over === 'out' && h('div', { class: 'out' }, `Ausgeschieden: ${PLAYOFFS.rounds[po.results.at(-1).round]}`),
     h('p', { class: 'lead' }, `Dein Team: Stärke ${t.strength.toFixed(1)} (${t.chem.name})`),
     h('ol', { class: 'rounds' }, rounds),
+    !po.over && !live && po.notes.map((n) => h('div', { class: `injury-note ${n.kind}` }, n.kind === 'hurt' ? '🚑 ' : '✅ ', n.text)),
     !po.over && !live && h('p', { class: 'hint' }, 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
     h('div', { class: 'row' },
       po.over
@@ -307,7 +347,7 @@ function playoffsScreen() {
            h('button', { class: 'btn primary', onclick: goSummary }, 'Zusammenfassung')]
         : live
           ? h('button', { class: 'btn ghost', onclick: () => { clearTimeout(app.timer); live.shown = live.series.games.length; render(); } }, 'Überspringen')
-          : [h('button', { class: 'btn', onclick: () => go('lineup') }, 'Lineup anpassen'),
+          : [h('button', { class: `btn${po.notes.some((n) => n.kind === 'hurt') ? ' attention' : ''}`, onclick: () => go('lineup') }, 'Lineup anpassen'),
              h('button', { class: 'btn primary', onclick: playRound }, `${PLAYOFFS.rounds[po.round]} spielen`)]),
   );
 }
