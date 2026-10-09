@@ -1,19 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0d12" />
   <title>NBA Draft</title>
+  <link rel="stylesheet" href="./src/styles.css" />
 </head>
-<body style="background:#0b0d12;color:#eee;font-family:system-ui;padding:2rem">
-  <h1>NBA Draft – Phase 1</h1>
-  <p id="status">Loading data…</p>
-  <script type="module">
-    import { loadPlayers } from './src/core/data.js';
-    loadPlayers().then((d) => {
-      document.getElementById('status').textContent =
-        `${d.players.length} players loaded (${d.meta.source})`;
-    });
-  </script>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>

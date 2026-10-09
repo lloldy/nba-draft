@@ -12,3 +12,11 @@ export const POSITION_FIT = {
 export const DEFAULT_SKIPS = { team: 1, era: 1 };
 export const UNDO_PER_RUN = 1;
 export const DECADES = [1960, 1970, 1980, 1990, 2000, 2010, 2020];
+
+// Season simulation. Per game: P(win) = sigmoid((team - opponent) / scale).
+export const SIM = {
+  games: 82,
+  oppMean: 76, // average opponent rating
+  oppSpread: 6, // opponents range roughly oppMean +/- oppSpread
+  scale: 5, // smaller = stronger teams win more reliably (steeper curve)
+};
