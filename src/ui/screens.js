@@ -8,6 +8,7 @@ import { effectiveRating } from '../core/positions.js';
 import { simulateSeason } from '../core/sim.js';
 import { COACHES } from '../core/coaches.js';
 import { buildTeam } from '../core/team.js';
+import { confetti } from './confetti.js';
 import { qualifies, opponentFor, simulateSeries } from '../core/playoffs.js';
 
 let wheelTimer = null;
@@ -18,31 +19,44 @@ function wheelText() {
   return { team: fName(c.franchise), era: `${c.decade}er` };
 }
 
-// Cycle random teams for a moment, then land on the real board.
+// Cycle random teams, slowing down, then land on the real board.
 export function spinAnimation() {
-  clearInterval(wheelTimer);
-  const fr = Object.keys(app.franchises);
-  const finish = () => { app.spinning = false; render(); };
+  clearTimeout(wheelTimer);
+  const codes = Object.keys(app.franchises);
+  const finish = () => {
+    app.spinning = false;
+    app.deal = true; // cards deal in and the wheel thunks - only on this render
+    render();
+    app.deal = false;
+  };
   if (reducedMotion()) return finish();
   app.spinning = true;
   render();
-  const team = document.querySelector('.wheel-team'), era = document.querySelector('.wheel-era');
-  let ticks = 0;
-  wheelTimer = setInterval(() => {
-    ticks++;
-    if (ticks > 14) { clearInterval(wheelTimer); finish(); return; }
-    if (team) team.textContent = fName(fr[Math.floor(Math.random() * fr.length)]);
-    if (era) era.textContent = `${DECADES[Math.floor(Math.random() * DECADES.length)]}er`;
-  }, 70);
+  const teamEl = document.querySelector('.wheel-team'), eraEl = document.querySelector('.wheel-era'), wheel = document.querySelector('.wheel');
+  let tick = 0;
+  const TICKS = 16;
+  const step = () => {
+    if (tick++ >= TICKS) return finish();
+    const code = codes[Math.floor(Math.random() * codes.length)];
+    if (teamEl) teamEl.textContent = fName(code);
+    if (eraEl) eraEl.textContent = `${DECADES[Math.floor(Math.random() * DECADES.length)]}er`;
+    if (wheel) wheel.style.setProperty('--wc', app.franchises[code]?.primary ?? '#444');
+    for (const el of [teamEl, eraEl]) { el?.classList.remove('tick'); void el?.offsetWidth; el?.classList.add('tick'); }
+    wheelTimer = setTimeout(step, 55 + tick * tick * 1.1); // 55ms -> ~340ms
+  };
+  step();
 }
 
-function attempt(fn) {
+function attempt(fn, popSlot = null) {
   try {
     app.draft = fn(app.draft);
     app.selCard = null;
     app.msg = '';
-    if (isComplete(app.draft)) return go('lineup');
+    app.pop = popSlot; // slot card pops in on the next render only
+    navigator.vibrate?.(15);
+    if (isComplete(app.draft)) { go('lineup'); app.pop = null; return; }
     spinAnimation();
+    app.pop = null;
   } catch (e) {
     app.msg = e.message;
     render();
@@ -55,8 +69,9 @@ function draftScreen() {
   const w = wheelText();
   const board = app.spinning
     ? h('div', { class: 'board spinning' }, 'Das Rad dreht…')
-    : h('div', { class: 'board' }, d.current.players.map((p) =>
+    : h('div', { class: 'board' }, d.current.players.map((p, i) =>
         playerCard(p, app.franchises, {
+          deal: app.deal ? i : null,
           selected: app.selCard === p.id,
           onClick: () => { app.selCard = app.selCard === p.id ? null : p.id; app.selSlot = null; render(); },
         })));
@@ -67,7 +82,8 @@ function draftScreen() {
       h('span', { class: 'chip dim' }, `Seed ${app.seed}`),
       teamRatingChip(),
     ),
-    h('section', { class: `wheel${app.spinning ? ' spin' : ''}` },
+    h('section', { class: `wheel${app.spinning ? ' spin' : ''}${app.deal ? ' landed' : ''}`, style: { '--wc': app.franchises[d.current.franchise]?.primary ?? '#444' }, 'aria-live': 'polite' },
+      h('div', { class: 'wheel-label' }, 'Team · Ära'),
       h('div', { class: 'wheel-team' }, w.team),
       h('div', { class: 'wheel-era' }, w.era)),
     h('div', { class: 'row tools' },
@@ -79,7 +95,7 @@ function draftScreen() {
     app.msg && h('p', { class: 'notice' }, app.msg),
     board,
     h('p', { class: 'hint' }, sel ? `${sel.name} gewählt – tippe einen freien Slot.` : 'Tippe einen Spieler, dann einen Slot. Gesetzte Spieler tauschst du per Tipp auf zwei Slots.'),
-    slotsView({ onPickSlot: (slot) => attempt((s) => pick(s, app.selCard, slot)) }),
+    slotsView({ onPickSlot: (slot) => attempt((s) => pick(s, app.selCard, slot), slot) }),
   );
 }
 
@@ -114,7 +130,7 @@ function slotsView({ onPickSlot }) {
     };
     const wrap = h('div', { class: 'slot' }, h('div', { class: 'slot-label' }, slot));
     wrap.append(id
-      ? playerCard(app.data.byId.get(id), app.franchises, { slot, selected: app.selSlot === slot, onClick: onTap })
+      ? playerCard(app.data.byId.get(id), app.franchises, { slot, pop: app.pop === slot, selected: app.selSlot === slot, onClick: onTap })
       : emptySlot(slot, { onClick: onTap, active: !!selPlayer, preview: selPlayer ? effectiveRating(selPlayer, slot) : null }));
     return wrap;
   }));
@@ -209,6 +225,7 @@ function simScreen() {
 function resultScreen() {
   const s = app.season;
   const perfect = s.losses === 0;
+  if (perfect) setTimeout(() => confetti({ count: 260 }), 200);
   return h('main', { class: 'screen result' },
     perfect && h('div', { class: 'perfect' }, '82–0 · PERFEKTE SAISON'),
     h('div', { class: 'record big' }, `${s.wins}–${s.losses}`),
@@ -257,6 +274,7 @@ function finishRound() {
 function playoffsScreen() {
   const po = app.po, t = team();
   const live = po.live;
+  if (po.over === 'champion' && !po.celebrated) { po.celebrated = true; setTimeout(() => confetti({ count: 220 }), 200); }
   if (live) {
     const total = live.series.games.length;
     if (reducedMotion()) live.shown = total;

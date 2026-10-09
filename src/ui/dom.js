@@ -4,7 +4,12 @@ export function h(tag, attrs = {}, ...children) {
   for (const [k, v] of Object.entries(attrs ?? {})) {
     if (v == null || v === false) continue;
     if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
-    else if (k === 'style' && typeof v === 'object') Object.assign(el.style, v);
+    else if (k === 'style' && typeof v === 'object') {
+      for (const [prop, val] of Object.entries(v)) {
+        if (prop.startsWith('--')) el.style.setProperty(prop, val); // CSS custom properties
+        else el.style[prop] = val;
+      }
+    }
     else if (k === 'class') el.className = v;
     else el.setAttribute(k, v === true ? '' : v);
   }

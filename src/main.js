@@ -1,3 +1,4 @@
+import '@fontsource/bebas-neue/400.css';
 import { loadPlayers } from './core/data.js';
 import { parseChallenge } from './core/challenge.js';
 import { app, render } from './ui/state.js';
@@ -25,6 +26,7 @@ async function boot() {
     loadPlayers('./data/players.json'),
     fetch('./data/franchises.json').then((r) => r.json()),
   ]);
+  await document.fonts.load('40px "Bebas Neue"').catch(() => {}); // so the share card canvas has the font
   app.data = data;
   app.franchises = franchises;
   app.name = load(KEYS.name, '');
@@ -42,3 +44,8 @@ async function boot() {
 boot().catch((e) => {
   document.getElementById('app').textContent = `Fehler beim Laden: ${e.message}`;
 });
+
+// Offline support + installability (production build only).
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}

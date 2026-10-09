@@ -14,7 +14,7 @@ export function shareText(run, link) {
   ].filter(Boolean).join('\n');
 }
 
-const FONT = 'Impact, "Arial Narrow", system-ui, sans-serif';
+const FONT = '"Bebas Neue", Impact, "Arial Narrow", system-ui, sans-serif';
 
 export function renderShareCard(run, franchises) {
   const W = 1080, H = 1350;

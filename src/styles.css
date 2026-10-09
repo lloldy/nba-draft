@@ -7,7 +7,7 @@
   --accent: #ffb020;
   --win: #3ddc84;
   --loss: #ff5d5d;
-  --display: 'Arial Narrow', 'Bebas Neue', Impact, system-ui, sans-serif;
+  --display: 'Bebas Neue', Impact, 'Arial Narrow', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
 body {
@@ -166,3 +166,62 @@ h3 { font-family: var(--display); letter-spacing: .04em; text-transform: upperca
 .tile-bar { display: block; height: 6px; border-radius: 3px; margin-bottom: 8px; }
 .browse h3 a { color: inherit; text-decoration: none; }
 .browse h3 a:hover { color: var(--accent); }
+
+/* ===== Phase 5: arena look + motion ===== */
+body {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='520' viewBox='0 0 900 520' fill='none' stroke='%23ffffff' stroke-opacity='.045' stroke-width='3'%3E%3Crect x='20' y='20' width='860' height='480'/%3E%3Cline x1='450' y1='20' x2='450' y2='500'/%3E%3Ccircle cx='450' cy='260' r='70'/%3E%3Crect x='20' y='170' width='170' height='180'/%3E%3Crect x='710' y='170' width='170' height='180'/%3E%3Cpath d='M190 190a70 70 0 0 1 0 140M710 190a70 70 0 0 0 0 140'/%3E%3C/svg%3E") center 90px / min(1100px, 150vw) no-repeat,
+    radial-gradient(1200px 520px at 50% -10%, #20294a 0%, var(--bg) 62%) no-repeat,
+    var(--bg);
+  background-attachment: fixed;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.screen { animation: screenIn .28s ease-out; }
+@keyframes screenIn { from { opacity: 0; transform: translateY(8px); } }
+
+/* scoreboard records */
+.record { background: #07080c; border: 2px solid #2a3040; border-radius: 14px; padding: .08em .4em; color: var(--accent);
+  text-shadow: 0 0 14px #ffb02088, 0 0 2px #ffb020; box-shadow: inset 0 0 30px #000, 0 0 0 4px #141821; }
+.record.big { margin: 6px 0; }
+
+/* wheel: team-tinted scoreboard that thunks when it lands */
+.wheel { --wc: #444; position: relative; overflow: hidden; border-color: color-mix(in srgb, var(--wc) 70%, #1d2433);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--wc) 35%, #000) 0%, #000 80%); transition: background .1s, border-color .1s; }
+.wheel::before, .wheel::after { content: ''; position: absolute; top: 0; bottom: 0; width: 6px; background: repeating-linear-gradient(180deg, var(--accent) 0 6px, transparent 6px 14px); opacity: .55; }
+.wheel::before { left: 8px; } .wheel::after { right: 8px; }
+.wheel-label { font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: var(--dim); font-family: system-ui, sans-serif; }
+.wheel-team.tick, .wheel-era.tick { animation: tick .09s ease-out; }
+@keyframes tick { from { transform: translateY(-40%); opacity: .2; } }
+.wheel.landed { animation: thunk .45s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes thunk { 0% { transform: scale(.94); box-shadow: 0 0 0 0 var(--wc); } 60% { transform: scale(1.03); box-shadow: 0 0 40px 6px color-mix(in srgb, var(--wc) 70%, transparent); } 100% { transform: scale(1); } }
+
+/* cards: tiers, sheen, deal-in, pop */
+.card { box-shadow: 0 4px 14px #0007; isolation: isolate; }
+.card::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .2s;
+  background: linear-gradient(115deg, transparent 30%, #ffffff22 45%, transparent 60%); background-size: 250% 100%; }
+.card:hover::before, .card.selected::before { opacity: 1; animation: sheen 1.2s linear infinite; }
+@keyframes sheen { from { background-position: 150% 0; } to { background-position: -100% 0; } }
+.card.tier-elite { border-color: #9fb6ff; }
+.card.tier-gold { border-color: #ffd36a; box-shadow: 0 4px 22px #ffb02044; }
+.card.tier-gold .card-rating { color: #ffd36a; text-shadow: 0 0 12px #ffb020aa; }
+.card.tier-gold::before { opacity: .7; animation: sheen 3s linear infinite; }
+.card.deal { animation: deal .45s cubic-bezier(.2, .9, .3, 1.2) both; animation-delay: calc(var(--i) * 70ms); }
+@keyframes deal { from { opacity: 0; transform: translateY(40px) rotate(-6deg) scale(.85); } }
+.card.pop { animation: pop .5s cubic-bezier(.2, 1.7, .4, 1); }
+@keyframes pop { from { transform: scale(.4) rotate(-8deg); opacity: 0; } 70% { transform: scale(1.08); } }
+
+/* ticker + playoff motion */
+.ticker li:first-child { animation: flash .5s ease-out; }
+@keyframes flash { from { background: #ffffff33; transform: scale(1.02); } }
+.round-games i { animation: pop .35s cubic-bezier(.2, 1.7, .4, 1); }
+.round.live { box-shadow: 0 0 18px #ffb02033; }
+.perfect { animation: glow 1.6s ease-in-out infinite alternate; }
+@keyframes glow { to { box-shadow: 0 0 28px #ffb02066; } }
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
+.btn { transition: transform .1s, border-color .15s; }
+.btn:active:not(:disabled) { transform: scale(.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}
