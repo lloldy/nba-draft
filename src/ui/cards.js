@@ -12,7 +12,7 @@ export function playerCard(p, franchises, { slot, selected, onClick, hint, deal 
   const eff = slot ? effectiveRating(p, slot) : p.rating;
   const kind = slot ? fitKind(p, slot) : null;
   return h('button', {
-    class: `card tier-${hidden ? 'base' : p.rating >= 90 ? 'gold' : p.rating >= 80 ? 'elite' : 'base'}${hidden ? ' hidden-stats' : ''}${selected ? ' selected' : ''}${kind ? ` fit-${kind}` : ''}${deal != null ? ' deal' : ''}${pop ? ' pop' : ''}`,
+    class: `card tier-${hidden ? 'base' : p.rating >= 97 ? 'legend' : p.rating >= 90 ? 'gold' : p.rating >= 80 ? 'elite' : 'base'}${hidden ? ' hidden-stats' : ''}${selected ? ' selected' : ''}${kind ? ` fit-${kind}` : ''}${deal != null ? ' deal' : ''}${pop ? ' pop' : ''}`,
     style: { '--c1': f.primary, '--c2': f.secondary, '--i': deal ?? 0 },
     onclick: onClick,
     type: 'button',

@@ -90,7 +90,7 @@ function draftScreen() {
       teamRatingChip(),
     ),
     h('section', { class: `wheel${app.spinning ? ' spin' : ''}${app.deal ? ' landed' : ''}`, style: { '--wc': app.franchises[d.current.franchise]?.primary ?? '#444' }, 'aria-live': 'polite' },
-      h('div', { class: 'wheel-label' }, 'Team · Ära'),
+      h('div', { class: 'wheel-label' }, 'Team und Ära'),
       h('div', { class: 'wheel-team' }, w.team),
       h('div', { class: 'wheel-era' }, w.era)),
     h('div', { class: 'row tools' },

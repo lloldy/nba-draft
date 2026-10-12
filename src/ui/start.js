@@ -47,7 +47,7 @@ function dailyCard() {
   const played = hasPlayed(daily, today);
   const result = daily.attempts[today];
   return h('section', { class: 'panel daily' },
-    h('div', { class: 'panel-head' }, h('h3', {}, `Daily · ${today}`), h('span', { class: 'chip accent' }, `Streak ${currentStreak(daily, today)}`)),
+    h('div', { class: 'panel-head' }, h('h3', {}, `Daily vom ${today}`), h('span', { class: 'chip accent' }, `Streak ${currentStreak(daily, today)}`)),
     h('p', { class: 'rule-line' }, h('b', {}, info.rule.label), ` – ${info.rule.desc}`),
     played
       ? h('p', { class: 'hint' }, result?.done
@@ -66,7 +66,7 @@ function startScreen() {
   const iqBox = h('input', { type: 'checkbox', id: 'iq', checked: app.hoopiq });
   const ch = app.challenge;
   return h('main', { class: 'screen start' },
-    h('h1', { class: 'logo' }, 'NBA ', h('span', {}, 'DRAFT')),
+    h('h1', { class: 'logo' }, 'NBA', h('span', {}, 'Draft')),
     h('p', { class: 'lead' }, 'Dreh das Rad, drafte fünf Spieler und simuliere 82 Spiele.'),
     app.data.meta.source.includes('SYNTHETIC') && h('p', { class: 'notice' }, 'Beispieldaten (erfundene Spieler) – echte Daten siehe DATA_SOURCES.md'),
     ch && h('section', { class: 'panel challenge' },

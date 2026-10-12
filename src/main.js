@@ -1,4 +1,7 @@
-import '@fontsource/bebas-neue/400.css';
+import '@fontsource/big-shoulders-display/800';
+import '@fontsource/barlow/400';
+import '@fontsource/barlow/600';
+import '@fontsource/barlow/700';
 import { loadPlayers } from './core/data.js';
 import { BENCH } from './core/injuries.js';
 import { parseChallenge } from './core/challenge.js';
@@ -27,7 +30,7 @@ async function boot() {
     loadPlayers('./data/players.json'),
     fetch('./data/franchises.json').then((r) => r.json()),
   ]);
-  await document.fonts.load('40px "Bebas Neue"').catch(() => {}); // so the share card canvas has the font
+  await document.fonts.load('800 40px "Big Shoulders Display"').catch(() => {}); // so the share card canvas has the font
   data.byId.set(BENCH.id, BENCH); // replacement player for injuries (never part of draft pools)
   app.data = data;
   app.franchises = franchises;
