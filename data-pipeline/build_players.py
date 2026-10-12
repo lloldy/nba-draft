@@ -60,6 +60,7 @@ def zscore(s):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")  # Windows console: names like Dončić
     pg = load("Player Per Game.csv")
     adv = load("Advanced.csv")
     allstar = load("All-Star Selections.csv")
@@ -75,7 +76,7 @@ def main():
                   on=["player", "season", "team"], how="inner")
     df = df[df["mp"] >= MIN_SEASON_MINUTES].copy()
     df["franchise"] = df["team"].map(TEAM_TO_FRANCHISE)
-    df = df.dropna(subset=["franchise"])
+    df = df.dropna(subset=["franchise", "pos"])  # some rows have no position listed
     df["decade"] = df["season"] // 10 * 10  # season = ending year, 1996-97 -> 1997 -> 1990s
 
     # 2. Era-adjusted score: z-scores against the league in that very season.
@@ -141,6 +142,11 @@ def main():
     stints["rank_key"] = stints["rating"] * stints["minutes"]
     top = (stints.sort_values("rank_key", ascending=False)
            .groupby(["franchise", "decade"]).head(PLAYERS_PER_COMBO))
+
+    # Re-rate within the final pool: the first rating spans ALL stints (role players too), so the
+    # selected best-of-franchise players would cluster at 90+. Spreading over the pool keeps 99 rare.
+    top = top.copy()
+    top["rating"] = (50 + top["score"].rank(pct=True) ** 1.6 * 49).round().astype(int)
 
     players = []
     for r in top.itertuples():
