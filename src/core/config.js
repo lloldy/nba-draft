@@ -13,10 +13,19 @@ export const DEFAULT_SKIPS = { team: 1, era: 1 };
 export const UNDO_PER_RUN = 1;
 export const DECADES = [1960, 1970, 1980, 1990, 2000, 2010, 2020];
 
+// Spin odds: better and more famous boards (franchise + decade) come up more often.
+// weight = exp((boardValue - average) / temperature); a LOWER temperature favours strong boards more,
+// a very high one (e.g. 1e9) makes every board equally likely.
+export const SPIN = {
+  topN: 3, // boardValue looks at the N best players of a board
+  fameWeight: 0.4, // how much their fans value (fame) counts next to the rating
+  temperature: 25,
+};
+
 // Season simulation. Per game: P(win) = sigmoid((team - opponent) / scale).
 export const SIM = {
   games: 82,
-  oppMean: 84, // average opponent rating
+  oppMean: 88, // average opponent rating
   oppSpread: 6, // opponents range roughly oppMean +/- oppSpread
   scale: 8, // smaller = stronger teams win more reliably (steeper curve)
 };
@@ -43,7 +52,7 @@ export const PLAYOFFS = {
   winsNeeded: 4,
   minWins: 41, // fewer regular-season wins = playoffs missed
   rounds: ['Runde 1', 'Conference Semis', 'Conference Finals', 'Finals'],
-  oppBase: [85, 89, 93, 97], // opponent rating per round
+  oppBase: [89, 93, 97, 101], // opponent rating per round
   oppNoise: 3,
 };
 

@@ -8,6 +8,7 @@ import { POSITIONS, DEFAULT_SKIPS, UNDO_PER_RUN } from './config.js';
 import { createRng } from './seed.js';
 import { indexPlayers } from './data.js';
 import { effectiveRating } from './positions.js';
+import { boardWeights, weightedOrder } from './spin.js';
 
 // constraints: { decades?: number[], excludeFranchises?: string[], allowPlayer?: (p) => boolean }
 // locked: { slot, playerId } = a legend that is already on the team (not offered again).
@@ -27,8 +28,8 @@ export function createDraft({ seed, players, skips = DEFAULT_SKIPS, constraints 
   }
   if (!pool.size) throw new Error('No eligible players for these constraints');
 
-  // Shuffle all combos once; spins walk through this list in order.
-  const queue = createRng(seed).shuffle([...pool.keys()].sort());
+  // Order all combos once (weighted: strong, famous boards tend to come first); spins walk through it.
+  const queue = weightedOrder([...pool.keys()].sort(), boardWeights(pool), createRng(seed));
 
   const state = {
     seed,
