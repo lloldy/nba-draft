@@ -11,7 +11,7 @@ import { COACHES } from '../core/coaches.js';
 import { buildTeam } from '../core/team.js';
 import { confetti } from './confetti.js';
 import { rollInjury, applyInjury, tickInjury, recoverPlayer } from '../core/injuries.js';
-import { qualifies, opponentFor, simulateSeries } from '../core/playoffs.js';
+import { qualifies, opponentFor, opponentBoards, simulateSeries } from '../core/playoffs.js';
 
 let wheelTimer = null;
 
@@ -300,10 +300,14 @@ export function healAll() {
 }
 
 const codes = () => Object.keys(app.franchises);
+let boardsCache = null;
+const boards = () => (boardsCache ??= opponentBoards(app.data.players));
+const oppFor = (round) => opponentFor({ seed: app.seed, round, franchiseCodes: codes(), boards: boards() });
+const oppLabel = (o) => `${tName(o.team, o.franchise)}${o.decade ? ` ${o.decade}er` : ''}`;
 
 function playRound() {
   const round = app.po.round;
-  const opponent = opponentFor({ seed: app.seed, round, franchiseCodes: codes() });
+  const opponent = oppFor(round);
   const series = simulateSeries({ seed: app.seed, round, strength: team().strength, opponent });
   app.po.live = { round, opponent, series, shown: 0 };
   render();
@@ -332,13 +336,13 @@ function playoffsScreen() {
   const rounds = PLAYOFFS.rounds.map((name, i) => {
     const res = po.results.find((r) => r.round === i);
     const isLive = live && live.round === i;
-    const opp = res?.opponent ?? (isLive ? live.opponent : opponentFor({ seed: app.seed, round: i, franchiseCodes: codes() }));
+    const opp = res?.opponent ?? (isLive ? live.opponent : oppFor(i));
     const shownGames = isLive ? live.series.games.slice(0, live.shown) : res?.series.games ?? [];
     const score = shownGames.length ? `${shownGames.at(-1).team}–${shownGames.at(-1).opp}` : '';
     const state = res ? (res.series.won ? 'won' : 'lost') : isLive ? 'live' : i === po.round && !po.over ? 'next' : 'pending';
     return h('li', { class: `round ${state}` },
       h('div', { class: 'round-name' }, name),
-      h('div', { class: 'round-opp' }, `${app.franchises[opp.franchise]?.name ?? opp.franchise} · ${opp.rating}`),
+      h('div', { class: 'round-opp' }, `${oppLabel(opp)} · ${opp.rating}`),
       h('div', { class: 'round-games' }, shownGames.map((g) => h('i', { class: g.win ? 'w' : 'l' }, g.win ? 'W' : 'L'))),
       h('div', { class: 'round-score' }, score));
   });

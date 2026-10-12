@@ -35,3 +35,25 @@ describe('all-position players', () => {
     expect(fitKind({ rating: 80, pos: ['SF'], altPos: [] }, 'C')).toBe('off');
   });
 });
+
+import { opponentFor, opponentBoards } from '../src/core/playoffs.js';
+
+describe('historical playoff opponents', () => {
+  const mk = (franchise, decade, team, rating) => ({ franchise, decade, team, rating, fans: 10 });
+  const players = [];
+  for (let i = 0; i < 10; i++) for (const r of [60 + i * 4, 55 + i * 4, 50 + i * 4]) players.push(mk(`F${i}`, 1990, `T${i}`, r));
+  const boards = opponentBoards(players);
+
+  it('lists boards weakest first with their historical team', () => {
+    expect(boards).toHaveLength(10);
+    expect(boards[0]).toMatchObject({ franchise: 'F0', decade: 1990, team: 'T0' });
+    expect(boards.at(-1).franchise).toBe('F9');
+  });
+  it('is deterministic and later rounds face stronger boards', () => {
+    const a = opponentFor({ seed: 4, round: 0, franchiseCodes: [], boards });
+    expect(a).toEqual(opponentFor({ seed: 4, round: 0, franchiseCodes: [], boards }));
+    for (let seed = 1; seed < 50; seed++) {
+      expect(['F7', 'F8', 'F9']).toContain(opponentFor({ seed, round: 3, franchiseCodes: [], boards }).franchise);
+    }
+  });
+});
