@@ -10,7 +10,9 @@ import { simulateSeason } from '../core/sim.js';
 import { COACHES } from '../core/coaches.js';
 import { buildTeam } from '../core/team.js';
 import { confetti } from './confetti.js';
-import { rollInjury, applyInjury, tickInjury, recoverPlayer } from '../core/injuries.js';
+import { rollInjury, applyInjury, tickInjury, recoverPlayer, standIn, replacementSkips, leftoverSkips, replacementSeed, BENCH_ID } from '../core/injuries.js';
+import { createDraft } from '../core/draft.js';
+import { constraintsFor } from '../core/rules.js';
 import { qualifies, opponentFor, opponentBoards, simulateSeries } from '../core/playoffs.js';
 
 let wheelTimer = null;
@@ -273,8 +275,86 @@ function checkInjury() {
   if (!inj) return;
   const { slots, slot } = applyInjury(app.draft.slots, inj.playerId);
   app.draft = { ...app.draft, slots };
-  po.injured = { ...inj, slot };
-  po.notes.push({ kind: 'hurt', text: `${playerName(inj.playerId)} (${slot}) verletzt sich und fällt ${inj.roundsLeft === 1 ? 'für 1 Runde' : `für ${inj.roundsLeft} Runden`} aus. Ein Ersatzspieler ist eingesprungen: stell dein Lineup um!` });
+  po.injured = { ...inj, slot, standInId: BENCH_ID };
+  po.notes.push({ kind: 'hurt', text: `${playerName(inj.playerId)} (${slot}) verletzt sich und fällt ${inj.roundsLeft === 1 ? 'für 1 Runde' : `für ${inj.roundsLeft} Runden`} aus.` });
+  startReplacement();
+}
+
+// The replacement spin: one board, your leftover skips (or one random bonus skip), pick one player.
+function startReplacement() {
+  const po = app.po;
+  const { skips, bonus } = replacementSkips(app.draft.skips, { seed: app.seed, round: po.round, allowEra: !app.decade });
+  const names = new Set([...Object.values(app.draft.slots), po.injured.playerId].filter((id) => id && id !== BENCH_ID).map((id) => app.data.byId.get(id).name));
+  const base = constraintsFor(app.rule, app.decade);
+  try {
+    const draft = createDraft({
+      seed: replacementSeed(app.seed, po.round),
+      players: app.data.players,
+      skips,
+      constraints: { ...base, allowPlayer: (p) => !names.has(p.name) && (!base.allowPlayer || base.allowPlayer(p)) },
+    });
+    po.replace = { draft, bonus, selected: null };
+  } catch {
+    po.replace = null; // no suitable board: the bench player stays
+  }
+}
+
+function openReplacement() {
+  app.deal = true; // cards deal in once
+  go('replace');
+  app.deal = false;
+}
+
+function finishReplacement(playerId) {
+  const po = app.po;
+  const rep = po.replace;
+  if (playerId) {
+    app.draft = { ...app.draft, slots: standIn(app.draft.slots, playerId) };
+    po.injured = { ...po.injured, standInId: playerId };
+    po.notes.push({ kind: 'back', text: `${playerName(playerId)} springt als Ersatz ein, bis ${playerName(po.injured.playerId)} zurück ist.` });
+  }
+  app.draft = { ...app.draft, skips: leftoverSkips(app.draft.skips, rep.draft.skips) };
+  po.replace = null;
+  go('playoffs');
+}
+
+function replaceSkip(fn) {
+  try {
+    app.po.replace.draft = fn(app.po.replace.draft);
+    app.po.replace.selected = null;
+    app.msg = '';
+  } catch (e) { app.msg = e.message; }
+  app.deal = true; render(); app.deal = false;
+}
+
+function replaceScreen() {
+  const po = app.po, rep = po.replace, d = rep.draft;
+  const hurt = playerName(po.injured.playerId);
+  const sel = rep.selected && d.current.players.find((p) => p.id === rep.selected);
+  const c = d.current;
+  return h('main', { class: 'screen replace' },
+    h('h2', {}, `Ersatz für ${hurt}`),
+    h('p', { class: 'lead' }, `Wähle einen Spieler von diesem Board. Er springt ein, bis ${hurt} zurück ist.`),
+    h('section', { class: `wheel${app.deal ? ' landed' : ''}`, style: { '--wc': teamColors(app.teams, app.franchises, boardTeam(c.players), c.franchise).primary } },
+      h('div', { class: 'wheel-label' }, 'Team und Ära'),
+      h('div', { class: 'wheel-team' }, tName(boardTeam(c.players), c.franchise)),
+      h('div', { class: 'wheel-era' }, `${c.decade}er`)),
+    h('div', { class: 'row tools' },
+      h('button', { class: 'btn small', disabled: d.skips.team <= 0, onclick: () => replaceSkip(skipTeam) }, `Team-Skip (${d.skips.team})`),
+      h('button', { class: 'btn small', disabled: d.skips.era <= 0 || app.decade, onclick: () => replaceSkip(skipEra) }, `Ära-Skip (${d.skips.era})`)),
+    rep.bonus && h('p', { class: 'hint' }, `Du hattest keinen Skip mehr übrig, deshalb gibt es einen Bonus: ${rep.bonus === 'team' ? 'ein Team-Skip' : 'ein Ära-Skip'}.`),
+    app.msg && h('p', { class: 'notice' }, app.msg),
+    h('div', { class: 'board' }, c.players.map((p, i) =>
+      playerCard(p, app.franchises, {
+        deal: app.deal ? i : null,
+        hidden: app.hoopiq,
+        selected: rep.selected === p.id,
+        onClick: () => { rep.selected = rep.selected === p.id ? null : p.id; render(); },
+      }))),
+    h('div', { class: 'row' },
+      h('button', { class: 'btn ghost', onclick: () => finishReplacement(null) }, 'Ersatzspieler von der Bank'),
+      h('button', { class: 'btn primary', disabled: !sel, onclick: () => finishReplacement(sel.id) }, sel ? `${sel.name} verpflichten` : 'Spieler wählen')),
+  );
 }
 
 // Between rounds: count the injury down, bring the player back, maybe a new injury.
@@ -285,7 +365,7 @@ function advanceInjuries() {
   const { injured, recovered } = tickInjury(po.injured);
   po.injured = injured;
   if (recovered) {
-    app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, was.playerId) };
+    app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, was.playerId, was.standInId) };
     po.notes.push({ kind: 'back', text: `${playerName(was.playerId)} ist zurück und hat den Platz des Ersatzspielers übernommen.` });
   }
   checkInjury();
@@ -295,8 +375,9 @@ function advanceInjuries() {
 export function healAll() {
   const po = app.po;
   if (!po?.injured) return;
-  app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, po.injured.playerId) };
+  app.draft = { ...app.draft, slots: recoverPlayer(app.draft.slots, po.injured.playerId, po.injured.standInId) };
   po.injured = null;
+  po.replace = null;
 }
 
 const codes = () => Object.keys(app.franchises);
@@ -353,15 +434,17 @@ function playoffsScreen() {
     h('p', { class: 'lead' }, `Dein Team: Stärke ${t.strength.toFixed(1)} (${t.chem.name})`),
     h('ol', { class: 'rounds' }, rounds),
     !po.over && !live && po.notes.map((n) => h('div', { class: `injury-note ${n.kind}` }, n.kind === 'hurt' ? '🚑 ' : '✅ ', n.text)),
-    !po.over && !live && h('p', { class: 'hint' }, 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
+    !po.over && !live && h('p', { class: 'hint' }, po.replace ? 'Spinne zuerst einen Ersatzspieler, dann geht es weiter.' : 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
     h('div', { class: 'row' },
       po.over
         ? [h('button', { class: 'btn ghost', onclick: () => go('result') }, 'Zur Saison'),
            h('button', { class: 'btn primary', onclick: goSummary }, 'Zusammenfassung')]
         : live
           ? h('button', { class: 'btn ghost', onclick: () => { clearTimeout(app.timer); live.shown = live.series.games.length; render(); } }, 'Überspringen')
-          : [h('button', { class: `btn${po.notes.some((n) => n.kind === 'hurt') ? ' attention' : ''}`, onclick: () => go('lineup') }, 'Lineup anpassen'),
-             h('button', { class: 'btn primary', onclick: playRound }, `${PLAYOFFS.rounds[po.round]} spielen`)]),
+          : po.replace
+            ? h('button', { class: 'btn primary attention', onclick: openReplacement }, 'Ersatzspieler spinnen')
+            : [h('button', { class: `btn${po.notes.some((n) => n.kind === 'hurt') ? ' attention' : ''}`, onclick: () => go('lineup') }, 'Lineup anpassen'),
+               h('button', { class: 'btn primary', onclick: playRound }, `${PLAYOFFS.rounds[po.round]} spielen`)]),
   );
 }
 
@@ -370,3 +453,4 @@ register('lineup', lineupScreen);
 register('sim', simScreen);
 register('result', resultScreen);
 register('playoffs', playoffsScreen);
+register('replace', replaceScreen);

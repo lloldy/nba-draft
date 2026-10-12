@@ -39,8 +39,32 @@ export function tickInjury(injured) {
     : { injured: { ...injured, roundsLeft: injured.roundsLeft - 1 }, recovered: false };
 }
 
-// The player returns and takes the replacement's current slot.
-export function recoverPlayer(slots, playerId) {
+// A spun replacement player takes the bench player's slot.
+export function standIn(slots, playerId) {
   const slot = POSITIONS.find((s) => slots[s] === BENCH_ID);
   return slot ? { ...slots, [slot]: playerId } : slots;
 }
+
+// The player returns and takes the stand-in's current slot (the stand-in leaves again).
+export function recoverPlayer(slots, playerId, standInId = BENCH_ID) {
+  const slot = POSITIONS.find((s) => slots[s] === standInId) ?? POSITIONS.find((s) => slots[s] === BENCH_ID);
+  return slot ? { ...slots, [slot]: playerId } : slots;
+}
+
+// Skips for the replacement spin: the ones you still have from the draft. If you have none left,
+// you get ONE random bonus skip (era or team; only team in era mode). Same seed -> same bonus.
+export function replacementSkips(skips, { seed, round, allowEra = true }) {
+  if (skips.team + skips.era > 0) return { skips: { ...skips }, bonus: null };
+  const rng = createRng((seed ^ ((round + 1) * 0x2f9be6cf)) >>> 0);
+  const bonus = allowEra ? rng.pick(['team', 'era']) : 'team';
+  return { skips: { ...skips, [bonus]: 1 }, bonus };
+}
+
+// Skips you used during the replacement spin are gone; a granted bonus skip never carries over.
+export const leftoverSkips = (original, remaining) => ({
+  team: Math.min(original.team, remaining.team),
+  era: Math.min(original.era, remaining.era),
+});
+
+// Seed of the replacement spin: depends only on seed and round, so friends get the same board.
+export const replacementSeed = (seed, round) => (seed ^ ((round + 1) * 0x51ed270b)) >>> 0;

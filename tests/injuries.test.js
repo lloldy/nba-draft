@@ -49,3 +49,48 @@ describe('injuries', () => {
     expect(fitFactor(BENCH, 'C')).toBeGreaterThan(0.9);
   });
 });
+
+import { standIn, replacementSkips, leftoverSkips, replacementSeed } from '../src/core/injuries.js';
+
+describe('replacement spin', () => {
+  it('injuries are a quarter as likely as before', () => {
+    expect(INJURY.chance).toEqual([0.0375, 0.075, 0.0875, 0.0875]);
+  });
+
+  it('keeps your leftover skips and only grants a bonus when you have none', () => {
+    expect(replacementSkips({ team: 1, era: 0 }, { seed: 1, round: 0 })).toEqual({ skips: { team: 1, era: 0 }, bonus: null });
+    expect(replacementSkips({ team: 1, era: 1 }, { seed: 1, round: 0 }).bonus).toBeNull();
+    const kinds = new Set();
+    for (let seed = 1; seed < 100; seed++) {
+      const r = replacementSkips({ team: 0, era: 0 }, { seed, round: 1 });
+      expect(r.skips.team + r.skips.era).toBe(1);
+      expect(r.skips[r.bonus]).toBe(1);
+      expect(r).toEqual(replacementSkips({ team: 0, era: 0 }, { seed, round: 1 }));
+      kinds.add(r.bonus);
+    }
+    expect([...kinds].sort()).toEqual(['era', 'team']); // both outcomes happen
+  });
+
+  it('era mode only grants a team skip', () => {
+    for (let seed = 1; seed < 50; seed++) expect(replacementSkips({ team: 0, era: 0 }, { seed, round: 0, allowEra: false }).bonus).toBe('team');
+  });
+
+  it('used skips are gone, a bonus skip does not carry over', () => {
+    expect(leftoverSkips({ team: 1, era: 1 }, { team: 0, era: 1 })).toEqual({ team: 0, era: 1 });
+    expect(leftoverSkips({ team: 0, era: 0 }, { team: 1, era: 0 })).toEqual({ team: 0, era: 0 });
+  });
+
+  it('the stand-in takes the bench slot and leaves when the player returns', () => {
+    const { slots: hurt } = applyInjury(slots, 'c');
+    const withStandIn = standIn(hurt, 'x');
+    expect(withStandIn.SF).toBe('x');
+    expect(recoverPlayer(withStandIn, 'c', 'x')).toEqual(slots);
+    const moved = { ...withStandIn, SF: 'b', SG: 'x' }; // lineup rearranged
+    expect(recoverPlayer(moved, 'c', 'x')).toEqual({ PG: 'a', SG: 'c', SF: 'b', PF: 'd', C: 'e' });
+  });
+
+  it('replacement board seed depends on seed and round only', () => {
+    expect(replacementSeed(5, 1)).toBe(replacementSeed(5, 1));
+    expect(replacementSeed(5, 1)).not.toBe(replacementSeed(5, 2));
+  });
+});

@@ -58,7 +58,7 @@ export const PLAYOFFS = {
 
 // Playoff injuries: before a round a random player may get hurt and sits out.
 export const INJURY = {
-  chance: [0.15, 0.3, 0.35, 0.35], // probability per round (Runde 1 ... Finals)
+  chance: [0.0375, 0.075, 0.0875, 0.0875], // probability per round (Runde 1 ... Finals); a quarter of the original odds
   durations: [1, 1, 2], // rounds missed; one is picked at random (so 1 is more likely)
-  benchRating: 58, // the replacement player who fills the empty slot
+  benchRating: 58, // the bench player who fills the slot until a replacement is spun (or if you decline the spin)
 };
