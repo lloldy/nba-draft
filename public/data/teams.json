@@ -1,0 +1,218 @@
+{
+ "ATL": {
+  "name": "Atlanta Hawks",
+  "franchise": "ATL"
+ },
+ "BAL": {
+  "name": "Baltimore Bullets",
+  "franchise": "WAS",
+  "primary": "#E31837",
+  "secondary": "#002B5C"
+ },
+ "BOS": {
+  "name": "Boston Celtics",
+  "franchise": "BOS"
+ },
+ "BRK": {
+  "name": "Brooklyn Nets",
+  "franchise": "BKN"
+ },
+ "BUF": {
+  "name": "Buffalo Braves",
+  "franchise": "LAC",
+  "primary": "#7AC143",
+  "secondary": "#FF6F00"
+ },
+ "CHA": {
+  "name": "Charlotte Bobcats",
+  "franchise": "CHA"
+ },
+ "CHH": {
+  "name": "Charlotte Hornets",
+  "franchise": "CHA",
+  "primary": "#00778B",
+  "secondary": "#280071"
+ },
+ "CHI": {
+  "name": "Chicago Bulls",
+  "franchise": "CHI"
+ },
+ "CHO": {
+  "name": "Charlotte Hornets",
+  "franchise": "CHA"
+ },
+ "CIN": {
+  "name": "Cincinnati Royals",
+  "franchise": "SAC"
+ },
+ "CLE": {
+  "name": "Cleveland Cavaliers",
+  "franchise": "CLE"
+ },
+ "DAL": {
+  "name": "Dallas Mavericks",
+  "franchise": "DAL"
+ },
+ "DEN": {
+  "name": "Denver Nuggets",
+  "franchise": "DEN"
+ },
+ "DET": {
+  "name": "Detroit Pistons",
+  "franchise": "DET"
+ },
+ "GSW": {
+  "name": "Golden State Warriors",
+  "franchise": "GSW"
+ },
+ "HOU": {
+  "name": "Houston Rockets",
+  "franchise": "HOU"
+ },
+ "IND": {
+  "name": "Indiana Pacers",
+  "franchise": "IND"
+ },
+ "KCK": {
+  "name": "Kansas City Kings",
+  "franchise": "SAC",
+  "primary": "#6F263D",
+  "secondary": "#FFB612"
+ },
+ "KCO": {
+  "name": "Kansas City-Omaha Kings",
+  "franchise": "SAC"
+ },
+ "LAC": {
+  "name": "Los Angeles Clippers",
+  "franchise": "LAC"
+ },
+ "LAL": {
+  "name": "Los Angeles Lakers",
+  "franchise": "LAL"
+ },
+ "MEM": {
+  "name": "Memphis Grizzlies",
+  "franchise": "MEM"
+ },
+ "MIA": {
+  "name": "Miami Heat",
+  "franchise": "MIA"
+ },
+ "MIL": {
+  "name": "Milwaukee Bucks",
+  "franchise": "MIL"
+ },
+ "MIN": {
+  "name": "Minnesota Timberwolves",
+  "franchise": "MIN"
+ },
+ "NJN": {
+  "name": "New Jersey Nets",
+  "franchise": "BKN",
+  "primary": "#002A60",
+  "secondary": "#CD1041"
+ },
+ "NOH": {
+  "name": "New Orleans Hornets",
+  "franchise": "NOP"
+ },
+ "NOJ": {
+  "name": "New Orleans Jazz",
+  "franchise": "UTA",
+  "primary": "#2C1B6E",
+  "secondary": "#F9A01B"
+ },
+ "NOP": {
+  "name": "New Orleans Pelicans",
+  "franchise": "NOP"
+ },
+ "NYK": {
+  "name": "New York Knicks",
+  "franchise": "NYK"
+ },
+ "OKC": {
+  "name": "Oklahoma City Thunder",
+  "franchise": "OKC"
+ },
+ "ORL": {
+  "name": "Orlando Magic",
+  "franchise": "ORL"
+ },
+ "PHI": {
+  "name": "Philadelphia 76ers",
+  "franchise": "PHI"
+ },
+ "PHO": {
+  "name": "Phoenix Suns",
+  "franchise": "PHX"
+ },
+ "PHW": {
+  "name": "Philadelphia Warriors",
+  "franchise": "GSW"
+ },
+ "POR": {
+  "name": "Portland Trail Blazers",
+  "franchise": "POR"
+ },
+ "SAC": {
+  "name": "Sacramento Kings",
+  "franchise": "SAC"
+ },
+ "SAS": {
+  "name": "San Antonio Spurs",
+  "franchise": "SAS"
+ },
+ "SDC": {
+  "name": "San Diego Clippers",
+  "franchise": "LAC",
+  "primary": "#C8102E",
+  "secondary": "#1D428A"
+ },
+ "SDR": {
+  "name": "San Diego Rockets",
+  "franchise": "HOU"
+ },
+ "SEA": {
+  "name": "Seattle SuperSonics",
+  "franchise": "OKC",
+  "primary": "#00653A",
+  "secondary": "#FFC200"
+ },
+ "SFW": {
+  "name": "San Francisco Warriors",
+  "franchise": "GSW"
+ },
+ "STL": {
+  "name": "St. Louis Hawks",
+  "franchise": "ATL"
+ },
+ "SYR": {
+  "name": "Syracuse Nationals",
+  "franchise": "PHI"
+ },
+ "TOR": {
+  "name": "Toronto Raptors",
+  "franchise": "TOR"
+ },
+ "UTA": {
+  "name": "Utah Jazz",
+  "franchise": "UTA"
+ },
+ "VAN": {
+  "name": "Vancouver Grizzlies",
+  "franchise": "MEM",
+  "primary": "#00B2A9",
+  "secondary": "#E43C40"
+ },
+ "WAS": {
+  "name": "Washington Wizards",
+  "franchise": "WAS"
+ },
+ "WSB": {
+  "name": "Washington Bullets",
+  "franchise": "WAS",
+  "primary": "#E31837",
+  "secondary": "#002B5C"
+ }
+}

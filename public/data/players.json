@@ -1,7 +1,7 @@
 {
  "meta": {
   "source": "Kaggle: NBA Stats (1947-present) by Sumitro Datta / Basketball-Reference",
-  "generated": "2026-10-12T20:23:22.009540+00:00",
+  "generated": "2026-10-12T20:50:57.695766+00:00",
   "version": 1
  },
  "players": [
@@ -10,10 +10,13 @@
    "name": "Bob Pettit",
    "franchise": "ATL",
    "decade": 1960,
+   "team": "STL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 27.6,
    "rpg": 16.7,
    "apg": 3.3,
@@ -31,10 +34,13 @@
    "name": "Cliff Hagan",
    "franchise": "ATL",
    "decade": 1960,
+   "team": "STL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.6,
    "rpg": 6.3,
    "apg": 3.2,
@@ -51,10 +57,13 @@
    "name": "Zelmo Beaty",
    "franchise": "ATL",
    "decade": 1960,
+   "team": "STL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.4,
    "rpg": 11.2,
    "apg": 1.5,
@@ -71,10 +80,13 @@
    "name": "Lenny Wilkens",
    "franchise": "ATL",
    "decade": 1960,
+   "team": "STL",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 15.5,
    "rpg": 5.0,
    "apg": 5.5,
@@ -89,10 +101,13 @@
    "name": "Bill Bridges",
    "franchise": "ATL",
    "decade": 1960,
+   "team": "STL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 13.0,
    "rpg": 12.4,
    "apg": 2.8,
@@ -109,6 +124,7 @@
    "name": "John Drew",
    "franchise": "ATL",
    "decade": 1970,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
@@ -132,6 +148,7 @@
    "name": "Lou Hudson",
    "franchise": "ATL",
    "decade": 1970,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
@@ -156,10 +173,13 @@
    "name": "Pete Maravich",
    "franchise": "ATL",
    "decade": 1970,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 24.2,
    "rpg": 4.2,
    "apg": 5.6,
@@ -178,10 +198,13 @@
    "name": "Walt Bellamy",
    "franchise": "ATL",
    "decade": 1970,
+   "team": "ATL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.6,
    "rpg": 12.2,
    "apg": 2.8,
@@ -198,6 +221,7 @@
    "name": "Herm Gilliam",
    "franchise": "ATL",
    "decade": 1970,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -220,10 +244,13 @@
    "name": "Dominique Wilkins",
    "franchise": "ATL",
    "decade": 1980,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 26.0,
    "rpg": 6.8,
    "apg": 2.4,
@@ -241,6 +268,7 @@
    "name": "Doc Rivers",
    "franchise": "ATL",
    "decade": 1980,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -262,10 +290,13 @@
    "name": "Dan Roundfield",
    "franchise": "ATL",
    "decade": 1980,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 18.1,
    "rpg": 10.7,
    "apg": 2.6,
@@ -283,6 +314,7 @@
    "name": "Tree Rollins",
    "franchise": "ATL",
    "decade": 1980,
+   "team": "ATL",
    "pos": [
     "C"
    ],
@@ -303,10 +335,13 @@
    "name": "Eddie Johnson",
    "franchise": "ATL",
    "decade": 1980,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.3,
    "rpg": 2.4,
    "apg": 5.7,
@@ -323,10 +358,13 @@
    "name": "Dominique Wilkins",
    "franchise": "ATL",
    "decade": 1990,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 27.0,
    "rpg": 7.2,
    "apg": 3.0,
@@ -344,6 +382,7 @@
    "name": "Mookie Blaylock",
    "franchise": "ATL",
    "decade": 1990,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -365,10 +404,13 @@
    "name": "Steve Smith",
    "franchise": "ATL",
    "decade": 1990,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.6,
    "rpg": 3.8,
    "apg": 3.5,
@@ -385,10 +427,13 @@
    "name": "Kevin Willis",
    "franchise": "ATL",
    "decade": 1990,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.2,
    "rpg": 11.4,
    "apg": 1.6,
@@ -405,6 +450,7 @@
    "name": "Stacey Augmon",
    "franchise": "ATL",
    "decade": 1990,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
@@ -425,10 +471,13 @@
    "name": "Shareef Abdur-Rahim",
    "franchise": "ATL",
    "decade": 2000,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 20.4,
    "rpg": 8.8,
    "apg": 2.9,
@@ -443,10 +492,13 @@
    "name": "Joe Johnson",
    "franchise": "ATL",
    "decade": 2000,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.8,
    "rpg": 4.3,
    "apg": 5.7,
@@ -463,6 +515,7 @@
    "name": "Josh Smith",
    "franchise": "ATL",
    "decade": 2000,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
@@ -485,6 +538,7 @@
    "name": "Jason Terry",
    "franchise": "ATL",
    "decade": 2000,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -507,11 +561,13 @@
    "name": "Josh Childress",
    "franchise": "ATL",
    "decade": 2000,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 11.1,
    "rpg": 5.5,
@@ -527,10 +583,13 @@
    "name": "Paul Millsap",
    "franchise": "ATL",
    "decade": 2010,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 17.4,
    "rpg": 8.3,
    "apg": 3.3,
@@ -547,10 +606,13 @@
    "name": "Josh Smith",
    "franchise": "ATL",
    "decade": 2010,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 17.0,
    "rpg": 8.8,
    "apg": 3.9,
@@ -567,6 +629,7 @@
    "name": "Al Horford",
    "franchise": "ATL",
    "decade": 2010,
+   "team": "ATL",
    "pos": [
     "C"
    ],
@@ -585,6 +648,7 @@
    "name": "Jeff Teague",
    "franchise": "ATL",
    "decade": 2010,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -603,6 +667,7 @@
    "name": "Kyle Korver",
    "franchise": "ATL",
    "decade": 2010,
+   "team": "ATL",
    "pos": [
     "SG"
    ],
@@ -623,6 +688,7 @@
    "name": "Trae Young",
    "franchise": "ATL",
    "decade": 2020,
+   "team": "ATL",
    "pos": [
     "PG"
    ],
@@ -645,10 +711,13 @@
    "name": "Jalen Johnson",
    "franchise": "ATL",
    "decade": 2020,
+   "team": "ATL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.3,
    "rpg": 8.0,
    "apg": 4.4,
@@ -663,6 +732,7 @@
    "name": "Clint Capela",
    "franchise": "ATL",
    "decade": 2020,
+   "team": "ATL",
    "pos": [
     "C"
    ],
@@ -683,10 +753,13 @@
    "name": "John Collins",
    "franchise": "ATL",
    "decade": 2020,
+   "team": "ATL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.6,
    "rpg": 7.7,
    "apg": 1.4,
@@ -701,6 +774,7 @@
    "name": "Onyeka Okongwu",
    "franchise": "ATL",
    "decade": 2020,
+   "team": "ATL",
    "pos": [
     "C"
    ],
@@ -719,10 +793,13 @@
    "name": "Bernard King",
    "franchise": "BKN",
    "decade": 1970,
+   "team": "NJN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 22.9,
    "rpg": 8.8,
    "apg": 3.0,
@@ -740,6 +817,7 @@
    "name": "Kevin Porter",
    "franchise": "BKN",
    "decade": 1970,
+   "team": "NJN",
    "pos": [
     "PG"
    ],
@@ -762,10 +840,13 @@
    "name": "John Williamson",
    "franchise": "BKN",
    "decade": 1970,
+   "team": "NJN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 23.4,
    "rpg": 2.8,
    "apg": 2.8,
@@ -783,10 +864,13 @@
    "name": "Jan van Breda Kolff",
    "franchise": "BKN",
    "decade": 1970,
+   "team": "NJN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 7.1,
    "rpg": 5.0,
    "apg": 1.8,
@@ -801,10 +885,13 @@
    "name": "George Johnson",
    "franchise": "BKN",
    "decade": 1970,
+   "team": "NJN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 7.7,
    "rpg": 8.8,
    "apg": 1.3,
@@ -821,6 +908,7 @@
    "name": "Michael Ray Richardson",
    "franchise": "BKN",
    "decade": 1980,
+   "team": "NJN",
    "pos": [
     "PG"
    ],
@@ -843,10 +931,13 @@
    "name": "Buck Williams",
    "franchise": "BKN",
    "decade": 1980,
+   "team": "NJN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.5,
    "rpg": 11.9,
    "apg": 1.5,
@@ -863,6 +954,7 @@
    "name": "Mike Gminski",
    "franchise": "BKN",
    "decade": 1980,
+   "team": "NJN",
    "pos": [
     "C"
    ],
@@ -881,6 +973,7 @@
    "name": "Darwin Cook",
    "franchise": "BKN",
    "decade": 1980,
+   "team": "NJN",
    "pos": [
     "PG"
    ],
@@ -901,10 +994,13 @@
    "name": "Otis Birdsong",
    "franchise": "BKN",
    "decade": 1980,
+   "team": "NJN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.1,
    "rpg": 2.5,
    "apg": 3.7,
@@ -921,10 +1017,13 @@
    "name": "Derrick Coleman",
    "franchise": "BKN",
    "decade": 1990,
+   "team": "NJN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.9,
    "rpg": 10.6,
    "apg": 3.1,
@@ -942,6 +1041,7 @@
    "name": "Kenny Anderson",
    "franchise": "BKN",
    "decade": 1990,
+   "team": "NJN",
    "pos": [
     "PG"
    ],
@@ -963,10 +1063,13 @@
    "name": "Kendall Gill",
    "franchise": "BKN",
    "decade": 1990,
+   "team": "NJN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 16.3,
    "rpg": 5.3,
    "apg": 3.1,
@@ -984,10 +1087,13 @@
    "name": "Kerry Kittles",
    "franchise": "BKN",
    "decade": 1990,
+   "team": "NJN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 15.9,
    "rpg": 4.3,
    "apg": 2.6,
@@ -1004,10 +1110,13 @@
    "name": "Chris Morris",
    "franchise": "BKN",
    "decade": 1990,
+   "team": "NJN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.1,
    "rpg": 5.8,
    "apg": 2.1,
@@ -1024,6 +1133,7 @@
    "name": "Jason Kidd",
    "franchise": "BKN",
    "decade": 2000,
+   "team": "NJN",
    "pos": [
     "PG"
    ],
@@ -1045,11 +1155,13 @@
    "name": "Vince Carter",
    "franchise": "BKN",
    "decade": 2000,
+   "team": "NJN",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 23.6,
    "rpg": 5.8,
@@ -1068,10 +1180,13 @@
    "name": "Richard Jefferson",
    "franchise": "BKN",
    "decade": 2000,
+   "team": "NJN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.4,
    "rpg": 5.4,
    "apg": 3.0,
@@ -1088,10 +1203,13 @@
    "name": "Kerry Kittles",
    "franchise": "BKN",
    "decade": 2000,
+   "team": "NJN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 13.1,
    "rpg": 3.7,
    "apg": 2.5,
@@ -1108,10 +1226,13 @@
    "name": "Kenyon Martin",
    "franchise": "BKN",
    "decade": 2000,
+   "team": "NJN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 15.1,
    "rpg": 7.6,
    "apg": 2.4,
@@ -1126,6 +1247,7 @@
    "name": "Brook Lopez",
    "franchise": "BKN",
    "decade": 2010,
+   "team": "BRK",
    "pos": [
     "C"
    ],
@@ -1146,6 +1268,7 @@
    "name": "Deron Williams",
    "franchise": "BKN",
    "decade": 2010,
+   "team": "BRK",
    "pos": [
     "PG"
    ],
@@ -1167,6 +1290,7 @@
    "name": "Spencer Dinwiddie",
    "franchise": "BKN",
    "decade": 2010,
+   "team": "BRK",
    "pos": [
     "PG"
    ],
@@ -1185,10 +1309,13 @@
    "name": "Kris Humphries",
    "franchise": "BKN",
    "decade": 2010,
+   "team": "NJN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.5,
    "rpg": 8.6,
    "apg": 1.0,
@@ -1203,11 +1330,13 @@
    "name": "Joe Johnson",
    "franchise": "BKN",
    "decade": 2010,
+   "team": "BRK",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 14.7,
    "rpg": 3.8,
@@ -1223,10 +1352,13 @@
    "name": "Kevin Durant",
    "franchise": "BKN",
    "decade": 2020,
+   "team": "BRK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 29.0,
    "rpg": 7.1,
    "apg": 5.9,
@@ -1243,6 +1375,7 @@
    "name": "Kyrie Irving",
    "franchise": "BKN",
    "decade": 2020,
+   "team": "BRK",
    "pos": [
     "PG"
    ],
@@ -1264,6 +1397,7 @@
    "name": "Nic Claxton",
    "franchise": "BKN",
    "decade": 2020,
+   "team": "BRK",
    "pos": [
     "C"
    ],
@@ -1284,6 +1418,7 @@
    "name": "Spencer Dinwiddie",
    "franchise": "BKN",
    "decade": 2020,
+   "team": "BRK",
    "pos": [
     "PG"
    ],
@@ -1305,6 +1440,7 @@
    "name": "Joe Harris",
    "franchise": "BKN",
    "decade": 2020,
+   "team": "BRK",
    "pos": [
     "SF"
    ],
@@ -1323,10 +1459,13 @@
    "name": "Bill Russell",
    "franchise": "BOS",
    "decade": 1960,
+   "team": "BOS",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.8,
    "rpg": 22.5,
    "apg": 4.6,
@@ -1343,10 +1482,13 @@
    "name": "Sam Jones",
    "franchise": "BOS",
    "decade": 1960,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 19.3,
    "rpg": 5.0,
    "apg": 2.8,
@@ -1363,11 +1505,13 @@
    "name": "John Havlicek",
    "franchise": "BOS",
    "decade": 1960,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 19.3,
    "rpg": 6.2,
@@ -1385,6 +1529,7 @@
    "name": "Tom Sanders",
    "franchise": "BOS",
    "decade": 1960,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
@@ -1405,10 +1550,13 @@
    "name": "K.C. Jones",
    "franchise": "BOS",
    "decade": 1960,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 7.7,
    "rpg": 3.6,
    "apg": 4.5,
@@ -1423,10 +1571,13 @@
    "name": "Dave Cowens",
    "franchise": "BOS",
    "decade": 1970,
+   "team": "BOS",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.6,
    "rpg": 14.6,
    "apg": 4.0,
@@ -1443,10 +1594,13 @@
    "name": "John Havlicek",
    "franchise": "BOS",
    "decade": 1970,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 21.9,
    "rpg": 6.4,
    "apg": 5.8,
@@ -1463,10 +1617,13 @@
    "name": "Paul Silas",
    "franchise": "BOS",
    "decade": 1970,
+   "team": "BOS",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.5,
    "rpg": 12.3,
    "apg": 2.6,
@@ -1483,6 +1640,7 @@
    "name": "Don Nelson",
    "franchise": "BOS",
    "decade": 1970,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
@@ -1503,6 +1661,7 @@
    "name": "Jo Jo White",
    "franchise": "BOS",
    "decade": 1970,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
@@ -1523,11 +1682,13 @@
    "name": "Larry Bird",
    "franchise": "BOS",
    "decade": 1980,
+   "team": "BOS",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 25.0,
    "rpg": 10.2,
@@ -1548,6 +1709,7 @@
    "name": "Robert Parish",
    "franchise": "BOS",
    "decade": 1980,
+   "team": "BOS",
    "pos": [
     "C"
    ],
@@ -1569,10 +1731,13 @@
    "name": "Kevin McHale",
    "franchise": "BOS",
    "decade": 1980,
+   "team": "BOS",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 18.5,
    "rpg": 7.6,
    "apg": 1.8,
@@ -1589,10 +1754,13 @@
    "name": "Cedric Maxwell",
    "franchise": "BOS",
    "decade": 1980,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.8,
    "rpg": 6.3,
    "apg": 2.4,
@@ -1607,10 +1775,13 @@
    "name": "Danny Ainge",
    "franchise": "BOS",
    "decade": 1980,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 11.2,
    "rpg": 2.8,
    "apg": 4.3,
@@ -1625,6 +1796,7 @@
    "name": "Robert Parish",
    "franchise": "BOS",
    "decade": 1990,
+   "team": "BOS",
    "pos": [
     "C"
    ],
@@ -1645,10 +1817,13 @@
    "name": "Reggie Lewis",
    "franchise": "BOS",
    "decade": 1990,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 19.3,
    "rpg": 4.7,
    "apg": 2.8,
@@ -1665,6 +1840,7 @@
    "name": "Dee Brown",
    "franchise": "BOS",
    "decade": 1990,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
@@ -1685,10 +1861,13 @@
    "name": "Rick Fox",
    "franchise": "BOS",
    "decade": 1990,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 10.7,
    "rpg": 3.9,
    "apg": 2.8,
@@ -1703,10 +1882,13 @@
    "name": "Kevin Gamble",
    "franchise": "BOS",
    "decade": 1990,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.0,
    "rpg": 2.7,
    "apg": 2.5,
@@ -1721,6 +1903,7 @@
    "name": "Paul Pierce",
    "franchise": "BOS",
    "decade": 2000,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
@@ -1745,6 +1928,7 @@
    "name": "Ray Allen",
    "franchise": "BOS",
    "decade": 2000,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
@@ -1765,10 +1949,13 @@
    "name": "Antoine Walker",
    "franchise": "BOS",
    "decade": 2000,
+   "team": "BOS",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 21.2,
    "rpg": 8.2,
    "apg": 4.6,
@@ -1783,6 +1970,7 @@
    "name": "Rajon Rondo",
    "franchise": "BOS",
    "decade": 2000,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
@@ -1803,6 +1991,7 @@
    "name": "Kendrick Perkins",
    "franchise": "BOS",
    "decade": 2000,
+   "team": "BOS",
    "pos": [
     "C"
    ],
@@ -1821,10 +2010,13 @@
    "name": "Paul Pierce",
    "franchise": "BOS",
    "decade": 2010,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 18.8,
    "rpg": 5.4,
    "apg": 3.9,
@@ -1841,6 +2033,7 @@
    "name": "Kevin Garnett",
    "franchise": "BOS",
    "decade": 2010,
+   "team": "BOS",
    "pos": [
     "C"
    ],
@@ -1861,10 +2054,13 @@
    "name": "Al Horford",
    "franchise": "BOS",
    "decade": 2010,
+   "team": "BOS",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.5,
    "rpg": 7.0,
    "apg": 4.6,
@@ -1879,6 +2075,7 @@
    "name": "Rajon Rondo",
    "franchise": "BOS",
    "decade": 2010,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
@@ -1900,6 +2097,7 @@
    "name": "Ray Allen",
    "franchise": "BOS",
    "decade": 2010,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
@@ -1918,6 +2116,7 @@
    "name": "Jayson Tatum",
    "franchise": "BOS",
    "decade": 2020,
+   "team": "BOS",
    "pos": [
     "PF"
    ],
@@ -1940,11 +2139,13 @@
    "name": "Jaylen Brown",
    "franchise": "BOS",
    "decade": 2020,
+   "team": "BOS",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 24.3,
    "rpg": 6.2,
@@ -1963,10 +2164,13 @@
    "name": "Derrick White",
    "franchise": "BOS",
    "decade": 2020,
+   "team": "BOS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.8,
    "rpg": 4.1,
    "apg": 4.7,
@@ -1981,6 +2185,7 @@
    "name": "Al Horford",
    "franchise": "BOS",
    "decade": 2020,
+   "team": "BOS",
    "pos": [
     "C"
    ],
@@ -1999,10 +2204,13 @@
    "name": "Payton Pritchard",
    "franchise": "BOS",
    "decade": 2020,
+   "team": "BOS",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 10.5,
    "rpg": 2.9,
    "apg": 3.0,
@@ -2017,10 +2225,13 @@
    "name": "Kurt Rambis",
    "franchise": "CHA",
    "decade": 1980,
+   "team": "CHH",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.1,
    "rpg": 9.4,
    "apg": 2.1,
@@ -2037,10 +2248,13 @@
    "name": "Kelly Tripucka",
    "franchise": "CHA",
    "decade": 1980,
+   "team": "CHH",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 22.6,
    "rpg": 3.8,
    "apg": 3.2,
@@ -2058,6 +2272,7 @@
    "name": "Muggsy Bogues",
    "franchise": "CHA",
    "decade": 1980,
+   "team": "CHH",
    "pos": [
     "PG"
    ],
@@ -2078,6 +2293,7 @@
    "name": "Rex Chapman",
    "franchise": "CHA",
    "decade": 1980,
+   "team": "CHH",
    "pos": [
     "SG"
    ],
@@ -2098,6 +2314,7 @@
    "name": "Robert Reid",
    "franchise": "CHA",
    "decade": 1980,
+   "team": "CHH",
    "pos": [
     "SF"
    ],
@@ -2116,6 +2333,7 @@
    "name": "Alonzo Mourning",
    "franchise": "CHA",
    "decade": 1990,
+   "team": "CHH",
    "pos": [
     "C"
    ],
@@ -2137,10 +2355,13 @@
    "name": "Larry Johnson",
    "franchise": "CHA",
    "decade": 1990,
+   "team": "CHH",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.6,
    "rpg": 9.2,
    "apg": 4.1,
@@ -2157,10 +2378,13 @@
    "name": "Glen Rice",
    "franchise": "CHA",
    "decade": 1990,
+   "team": "CHH",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 23.6,
    "rpg": 4.4,
    "apg": 2.4,
@@ -2178,6 +2402,7 @@
    "name": "Muggsy Bogues",
    "franchise": "CHA",
    "decade": 1990,
+   "team": "CHH",
    "pos": [
     "PG"
    ],
@@ -2199,6 +2424,7 @@
    "name": "Dell Curry",
    "franchise": "CHA",
    "decade": 1990,
+   "team": "CHH",
    "pos": [
     "SG"
    ],
@@ -2217,6 +2443,7 @@
    "name": "Gerald Wallace",
    "franchise": "CHA",
    "decade": 2000,
+   "team": "CHA",
    "pos": [
     "SF"
    ],
@@ -2240,6 +2467,7 @@
    "name": "Baron Davis",
    "franchise": "CHA",
    "decade": 2000,
+   "team": "CHH",
    "pos": [
     "PG"
    ],
@@ -2261,6 +2489,7 @@
    "name": "Emeka Okafor",
    "franchise": "CHA",
    "decade": 2000,
+   "team": "CHA",
    "pos": [
     "C"
    ],
@@ -2284,6 +2513,7 @@
    "name": "David Wesley",
    "franchise": "CHA",
    "decade": 2000,
+   "team": "CHH",
    "pos": [
     "SG"
    ],
@@ -2304,6 +2534,7 @@
    "name": "Raymond Felton",
    "franchise": "CHA",
    "decade": 2000,
+   "team": "CHA",
    "pos": [
     "PG"
    ],
@@ -2324,6 +2555,7 @@
    "name": "Kemba Walker",
    "franchise": "CHA",
    "decade": 2010,
+   "team": "CHO",
    "pos": [
     "PG"
    ],
@@ -2344,6 +2576,7 @@
    "name": "Nicolas Batum",
    "franchise": "CHA",
    "decade": 2010,
+   "team": "CHO",
    "pos": [
     "SF"
    ],
@@ -2364,6 +2597,7 @@
    "name": "Marvin Williams",
    "franchise": "CHA",
    "decade": 2010,
+   "team": "CHO",
    "pos": [
     "PF"
    ],
@@ -2382,10 +2616,13 @@
    "name": "Cody Zeller",
    "franchise": "CHA",
    "decade": 2010,
+   "team": "CHO",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 8.2,
    "rpg": 5.8,
    "apg": 1.4,
@@ -2400,10 +2637,13 @@
    "name": "Michael Kidd-Gilchrist",
    "franchise": "CHA",
    "decade": 2010,
+   "team": "CHO",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 8.7,
    "rpg": 5.6,
    "apg": 1.2,
@@ -2418,6 +2658,7 @@
    "name": "LaMelo Ball",
    "franchise": "CHA",
    "decade": 2020,
+   "team": "CHO",
    "pos": [
     "PG"
    ],
@@ -2439,6 +2680,7 @@
    "name": "Terry Rozier",
    "franchise": "CHA",
    "decade": 2020,
+   "team": "CHO",
    "pos": [
     "SG"
    ],
@@ -2461,6 +2703,7 @@
    "name": "Miles Bridges",
    "franchise": "CHA",
    "decade": 2020,
+   "team": "CHO",
    "pos": [
     "PF"
    ],
@@ -2481,10 +2724,13 @@
    "name": "Gordon Hayward",
    "franchise": "CHA",
    "decade": 2020,
+   "team": "CHO",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 16.3,
    "rpg": 4.9,
    "apg": 4.0,
@@ -2501,6 +2747,7 @@
    "name": "P.J. Washington",
    "franchise": "CHA",
    "decade": 2020,
+   "team": "CHO",
    "pos": [
     "PF"
    ],
@@ -2521,6 +2768,7 @@
    "name": "Guy Rodgers",
    "franchise": "CHI",
    "decade": 1960,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -2542,10 +2790,13 @@
    "name": "Bob Boozer",
    "franchise": "CHI",
    "decade": 1960,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 20.4,
    "rpg": 8.7,
    "apg": 1.6,
@@ -2560,10 +2811,13 @@
    "name": "Jerry Sloan",
    "franchise": "CHI",
    "decade": 1960,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 15.9,
    "rpg": 8.2,
    "apg": 2.9,
@@ -2578,10 +2832,13 @@
    "name": "Clem Haskins",
    "franchise": "CHI",
    "decade": 1960,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 13.1,
    "rpg": 3.8,
    "apg": 3.1,
@@ -2596,6 +2853,7 @@
    "name": "Jim Washington",
    "franchise": "CHI",
    "decade": 1960,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
@@ -2617,10 +2875,13 @@
    "name": "Chet Walker",
    "franchise": "CHI",
    "decade": 1970,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.7,
    "rpg": 6.1,
    "apg": 2.3,
@@ -2637,10 +2898,13 @@
    "name": "Tom Boerwinkle",
    "franchise": "CHI",
    "decade": 1970,
+   "team": "CHI",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 7.1,
    "rpg": 9.0,
    "apg": 3.3,
@@ -2657,6 +2921,7 @@
    "name": "Norm Van Lier",
    "franchise": "CHI",
    "decade": 1970,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -2678,10 +2943,13 @@
    "name": "Bob Love",
    "franchise": "CHI",
    "decade": 1970,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 22.6,
    "rpg": 7.1,
    "apg": 1.8,
@@ -2698,10 +2966,13 @@
    "name": "Jerry Sloan",
    "franchise": "CHI",
    "decade": 1970,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.1,
    "rpg": 7.5,
    "apg": 2.5,
@@ -2718,10 +2989,13 @@
    "name": "Michael Jordan",
    "franchise": "CHI",
    "decade": 1980,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 33.2,
    "rpg": 6.3,
    "apg": 6.1,
@@ -2741,6 +3015,7 @@
    "name": "Reggie Theus",
    "franchise": "CHI",
    "decade": 1980,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
@@ -2763,10 +3038,13 @@
    "name": "Orlando Woolridge",
    "franchise": "CHI",
    "decade": 1980,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.4,
    "rpg": 4.7,
    "apg": 1.9,
@@ -2783,10 +3061,13 @@
    "name": "Dave Greenwood",
    "franchise": "CHI",
    "decade": 1980,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.6,
    "rpg": 9.1,
    "apg": 2.2,
@@ -2803,6 +3084,7 @@
    "name": "Dave Corzine",
    "franchise": "CHI",
    "decade": 1980,
+   "team": "CHI",
    "pos": [
     "C"
    ],
@@ -2821,10 +3103,13 @@
    "name": "Michael Jordan",
    "franchise": "CHI",
    "decade": 1990,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 30.8,
    "rpg": 6.3,
    "apg": 5.1,
@@ -2843,10 +3128,13 @@
    "name": "Scottie Pippen",
    "franchise": "CHI",
    "decade": 1990,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 19.5,
    "rpg": 7.2,
    "apg": 5.9,
@@ -2864,10 +3152,13 @@
    "name": "Horace Grant",
    "franchise": "CHI",
    "decade": 1990,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 13.7,
    "rpg": 9.3,
    "apg": 2.7,
@@ -2884,10 +3175,13 @@
    "name": "Toni Kukoč",
    "franchise": "CHI",
    "decade": 1990,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 13.9,
    "rpg": 4.8,
    "apg": 4.2,
@@ -2902,6 +3196,7 @@
    "name": "B.J. Armstrong",
    "franchise": "CHI",
    "decade": 1990,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -2920,10 +3215,13 @@
    "name": "Elton Brand",
    "franchise": "CHI",
    "decade": 2000,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 20.1,
    "rpg": 10.0,
    "apg": 2.5,
@@ -2941,6 +3239,7 @@
    "name": "Kirk Hinrich",
    "franchise": "CHI",
    "decade": 2000,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -2961,10 +3260,13 @@
    "name": "Luol Deng",
    "franchise": "CHI",
    "decade": 2000,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.4,
    "rpg": 6.3,
    "apg": 2.2,
@@ -2979,6 +3281,7 @@
    "name": "Ben Gordon",
    "franchise": "CHI",
    "decade": 2000,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
@@ -2999,6 +3302,7 @@
    "name": "Tyson Chandler",
    "franchise": "CHI",
    "decade": 2000,
+   "team": "CHI",
    "pos": [
     "C"
    ],
@@ -3019,11 +3323,13 @@
    "name": "Jimmy Butler",
    "franchise": "CHI",
    "decade": 2010,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 17.1,
    "rpg": 5.2,
@@ -3042,6 +3348,7 @@
    "name": "Joakim Noah",
    "franchise": "CHI",
    "decade": 2010,
+   "team": "CHI",
    "pos": [
     "C"
    ],
@@ -3062,6 +3369,7 @@
    "name": "Derrick Rose",
    "franchise": "CHI",
    "decade": 2010,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -3083,10 +3391,13 @@
    "name": "Luol Deng",
    "franchise": "CHI",
    "decade": 2010,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.0,
    "rpg": 6.5,
    "apg": 2.8,
@@ -3103,10 +3414,13 @@
    "name": "Taj Gibson",
    "franchise": "CHI",
    "decade": 2010,
+   "team": "CHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.4,
    "rpg": 6.4,
    "apg": 1.0,
@@ -3121,11 +3435,13 @@
    "name": "DeMar DeRozan",
    "franchise": "CHI",
    "decade": 2020,
+   "team": "CHI",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "SG"
    ],
    "ppg": 25.5,
    "rpg": 4.7,
@@ -3144,11 +3460,13 @@
    "name": "Zach LaVine",
    "franchise": "CHI",
    "decade": 2020,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 24.8,
    "rpg": 4.8,
@@ -3167,10 +3485,13 @@
    "name": "Nikola Vučević",
    "franchise": "CHI",
    "decade": 2020,
+   "team": "CHI",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.0,
    "rpg": 10.5,
    "apg": 3.4,
@@ -3187,6 +3508,7 @@
    "name": "Coby White",
    "franchise": "CHI",
    "decade": 2020,
+   "team": "CHI",
    "pos": [
     "PG"
    ],
@@ -3207,10 +3529,13 @@
    "name": "Ayo Dosunmu",
    "franchise": "CHI",
    "decade": 2020,
+   "team": "CHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 10.9,
    "rpg": 2.9,
    "apg": 3.3,
@@ -3225,10 +3550,13 @@
    "name": "Campy Russell",
    "franchise": "CLE",
    "decade": 1970,
+   "team": "CLE",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 15.9,
    "rpg": 5.1,
    "apg": 2.7,
@@ -3243,6 +3571,7 @@
    "name": "Jim Chones",
    "franchise": "CLE",
    "decade": 1970,
+   "team": "CLE",
    "pos": [
     "C"
    ],
@@ -3263,6 +3592,7 @@
    "name": "Austin Carr",
    "franchise": "CLE",
    "decade": 1970,
+   "team": "CLE",
    "pos": [
     "SG"
    ],
@@ -3283,6 +3613,7 @@
    "name": "Bingo Smith",
    "franchise": "CLE",
    "decade": 1970,
+   "team": "CLE",
    "pos": [
     "SG"
    ],
@@ -3303,10 +3634,13 @@
    "name": "Jim Brewer",
    "franchise": "CLE",
    "decade": 1970,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 7.5,
    "rpg": 7.7,
    "apg": 1.8,
@@ -3321,10 +3655,13 @@
    "name": "Ron Harper",
    "franchise": "CLE",
    "decade": 1980,
+   "team": "CLE",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.4,
    "rpg": 4.6,
    "apg": 5.0,
@@ -3342,6 +3679,7 @@
    "name": "Mark Price",
    "franchise": "CLE",
    "decade": 1980,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3360,10 +3698,13 @@
    "name": "Brad Daugherty",
    "franchise": "CLE",
    "decade": 1980,
+   "team": "CLE",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.8,
    "rpg": 8.6,
    "apg": 3.9,
@@ -3378,10 +3719,13 @@
    "name": "World B. Free",
    "franchise": "CLE",
    "decade": 1980,
+   "team": "CLE",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 23.0,
    "rpg": 2.9,
    "apg": 3.9,
@@ -3399,6 +3743,7 @@
    "name": "Phil Hubbard",
    "franchise": "CLE",
    "decade": 1980,
+   "team": "CLE",
    "pos": [
     "SF"
    ],
@@ -3417,6 +3762,7 @@
    "name": "Mark Price",
    "franchise": "CLE",
    "decade": 1990,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3438,10 +3784,13 @@
    "name": "Brad Daugherty",
    "franchise": "CLE",
    "decade": 1990,
+   "team": "CLE",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.9,
    "rpg": 10.3,
    "apg": 3.6,
@@ -3458,10 +3807,13 @@
    "name": "Larry Nance",
    "franchise": "CLE",
    "decade": 1990,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.7,
    "rpg": 8.3,
    "apg": 2.7,
@@ -3478,6 +3830,7 @@
    "name": "Terrell Brandon",
    "franchise": "CLE",
    "decade": 1990,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3496,6 +3849,7 @@
    "name": "Hot Rod Williams",
    "franchise": "CLE",
    "decade": 1990,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
@@ -3518,10 +3872,13 @@
    "name": "LeBron James",
    "franchise": "CLE",
    "decade": 2000,
+   "team": "CLE",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 27.5,
    "rpg": 7.0,
    "apg": 6.7,
@@ -3534,13 +3891,15 @@
     "scorer",
     "defender",
     "shooter"
-   ]
+   ],
+   "allPos": true
   },
   {
    "id": "CLE-2000-andre-miller",
    "name": "Andre Miller",
    "franchise": "CLE",
    "decade": 2000,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3561,6 +3920,7 @@
    "name": "Zydrunas Ilgauskas",
    "franchise": "CLE",
    "decade": 2000,
+   "team": "CLE",
    "pos": [
     "C"
    ],
@@ -3581,10 +3941,13 @@
    "name": "Drew Gooden",
    "franchise": "CLE",
    "decade": 2000,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.0,
    "rpg": 8.6,
    "apg": 1.1,
@@ -3599,6 +3962,7 @@
    "name": "Anderson Varejão",
    "franchise": "CLE",
    "decade": 2000,
+   "team": "CLE",
    "pos": [
     "C"
    ],
@@ -3619,11 +3983,13 @@
    "name": "LeBron James",
    "franchise": "CLE",
    "decade": 2010,
+   "team": "CLE",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "SG"
    ],
    "ppg": 26.9,
    "rpg": 7.6,
@@ -3636,13 +4002,15 @@
     "playmaker",
     "scorer",
     "shooter"
-   ]
+   ],
+   "allPos": true
   },
   {
    "id": "CLE-2010-kyrie-irving",
    "name": "Kyrie Irving",
    "franchise": "CLE",
    "decade": 2010,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3663,6 +4031,7 @@
    "name": "Kevin Love",
    "franchise": "CLE",
    "decade": 2010,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
@@ -3685,10 +4054,13 @@
    "name": "Anderson Varejão",
    "franchise": "CLE",
    "decade": 2010,
+   "team": "CLE",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 9.5,
    "rpg": 9.4,
    "apg": 1.8,
@@ -3705,6 +4077,7 @@
    "name": "Tristan Thompson",
    "franchise": "CLE",
    "decade": 2010,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
@@ -3725,10 +4098,13 @@
    "name": "Donovan Mitchell",
    "franchise": "CLE",
    "decade": 2020,
+   "team": "CLE",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 26.7,
    "rpg": 4.6,
    "apg": 5.3,
@@ -3747,6 +4123,7 @@
    "name": "Jarrett Allen",
    "franchise": "CLE",
    "decade": 2020,
+   "team": "CLE",
    "pos": [
     "C"
    ],
@@ -3767,10 +4144,13 @@
    "name": "Evan Mobley",
    "franchise": "CLE",
    "decade": 2020,
+   "team": "CLE",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.8,
    "rpg": 9.0,
    "apg": 3.0,
@@ -3787,6 +4167,7 @@
    "name": "Darius Garland",
    "franchise": "CLE",
    "decade": 2020,
+   "team": "CLE",
    "pos": [
     "PG"
    ],
@@ -3808,6 +4189,7 @@
    "name": "Isaac Okoro",
    "franchise": "CLE",
    "decade": 2020,
+   "team": "CLE",
    "pos": [
     "SF"
    ],
@@ -3828,10 +4210,13 @@
    "name": "Mark Aguirre",
    "franchise": "DAL",
    "decade": 1980,
+   "team": "DAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 24.6,
    "rpg": 5.7,
    "apg": 3.8,
@@ -3849,6 +4234,7 @@
    "name": "Derek Harper",
    "franchise": "DAL",
    "decade": 1980,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -3869,6 +4255,7 @@
    "name": "Rolando Blackman",
    "franchise": "DAL",
    "decade": 1980,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
@@ -3889,6 +4276,7 @@
    "name": "Brad Davis",
    "franchise": "DAL",
    "decade": 1980,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -3907,10 +4295,13 @@
    "name": "Sam Perkins",
    "franchise": "DAL",
    "decade": 1980,
+   "team": "DAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.1,
    "rpg": 8.1,
    "apg": 1.7,
@@ -3925,10 +4316,13 @@
    "name": "Michael Finley",
    "franchise": "DAL",
    "decade": 1990,
+   "team": "DAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 19.5,
    "rpg": 5.1,
    "apg": 4.1,
@@ -3945,6 +4339,7 @@
    "name": "Jason Kidd",
    "franchise": "DAL",
    "decade": 1990,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -3966,6 +4361,7 @@
    "name": "Derek Harper",
    "franchise": "DAL",
    "decade": 1990,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -3987,11 +4383,13 @@
    "name": "Jim Jackson",
    "franchise": "DAL",
    "decade": 1990,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 19.6,
    "rpg": 4.9,
@@ -4009,10 +4407,13 @@
    "name": "Rolando Blackman",
    "franchise": "DAL",
    "decade": 1990,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.2,
    "rpg": 3.3,
    "apg": 3.4,
@@ -4029,6 +4430,7 @@
    "name": "Dirk Nowitzki",
    "franchise": "DAL",
    "decade": 2000,
+   "team": "DAL",
    "pos": [
     "PF"
    ],
@@ -4051,6 +4453,7 @@
    "name": "Steve Nash",
    "franchise": "DAL",
    "decade": 2000,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -4071,6 +4474,7 @@
    "name": "Jason Terry",
    "franchise": "DAL",
    "decade": 2000,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
@@ -4093,6 +4497,7 @@
    "name": "Michael Finley",
    "franchise": "DAL",
    "decade": 2000,
+   "team": "DAL",
    "pos": [
     "SF"
    ],
@@ -4115,10 +4520,13 @@
    "name": "Josh Howard",
    "franchise": "DAL",
    "decade": 2000,
+   "team": "DAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.6,
    "rpg": 6.2,
    "apg": 1.7,
@@ -4133,6 +4541,7 @@
    "name": "Dirk Nowitzki",
    "franchise": "DAL",
    "decade": 2010,
+   "team": "DAL",
    "pos": [
     "PF"
    ],
@@ -4151,6 +4560,7 @@
    "name": "Jason Kidd",
    "franchise": "DAL",
    "decade": 2010,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -4172,10 +4582,13 @@
    "name": "Jason Terry",
    "franchise": "DAL",
    "decade": 2010,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 15.9,
    "rpg": 2.0,
    "apg": 3.9,
@@ -4190,6 +4603,7 @@
    "name": "Shawn Marion",
    "franchise": "DAL",
    "decade": 2010,
+   "team": "DAL",
    "pos": [
     "SF"
    ],
@@ -4210,6 +4624,7 @@
    "name": "J.J. Barea",
    "franchise": "DAL",
    "decade": 2010,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -4228,6 +4643,7 @@
    "name": "Luka Dončić",
    "franchise": "DAL",
    "decade": 2020,
+   "team": "DAL",
    "pos": [
     "PG"
    ],
@@ -4250,10 +4666,13 @@
    "name": "Kyrie Irving",
    "franchise": "DAL",
    "decade": 2020,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 25.5,
    "rpg": 4.9,
    "apg": 5.1,
@@ -4271,10 +4690,13 @@
    "name": "Dwight Powell",
    "franchise": "DAL",
    "decade": 2020,
+   "team": "DAL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 5.7,
    "rpg": 4.0,
    "apg": 1.1,
@@ -4289,10 +4711,13 @@
    "name": "Dorian Finney-Smith",
    "franchise": "DAL",
    "decade": 2020,
+   "team": "DAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 10.0,
    "rpg": 5.2,
    "apg": 1.7,
@@ -4307,6 +4732,7 @@
    "name": "Tim Hardaway Jr.",
    "franchise": "DAL",
    "decade": 2020,
+   "team": "DAL",
    "pos": [
     "SG"
    ],
@@ -4327,10 +4753,13 @@
    "name": "Bobby Jones",
    "franchise": "DEN",
    "decade": 1970,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.8,
    "rpg": 8.4,
    "apg": 3.3,
@@ -4348,10 +4777,13 @@
    "name": "David Thompson",
    "franchise": "DEN",
    "decade": 1970,
+   "team": "DEN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 25.7,
    "rpg": 4.2,
    "apg": 3.9,
@@ -4369,10 +4801,13 @@
    "name": "Dan Issel",
    "franchise": "DEN",
    "decade": 1970,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.2,
    "rpg": 9.3,
    "apg": 3.0,
@@ -4389,10 +4824,13 @@
    "name": "George McGinnis",
    "franchise": "DEN",
    "decade": 1970,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.6,
    "rpg": 11.4,
    "apg": 3.7,
@@ -4411,10 +4849,13 @@
    "name": "Bob Wilkerson",
    "franchise": "DEN",
    "decade": 1970,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 11.4,
    "rpg": 5.6,
    "apg": 4.5,
@@ -4431,6 +4872,7 @@
    "name": "Fat Lever",
    "franchise": "DEN",
    "decade": 1980,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4455,10 +4897,13 @@
    "name": "Alex English",
    "franchise": "DEN",
    "decade": 1980,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 26.7,
    "rpg": 5.8,
    "apg": 4.6,
@@ -4476,10 +4921,13 @@
    "name": "Dan Issel",
    "franchise": "DEN",
    "decade": 1980,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.5,
    "rpg": 7.3,
    "apg": 2.3,
@@ -4494,6 +4942,7 @@
    "name": "Kiki Vandeweghe",
    "franchise": "DEN",
    "decade": 1980,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
@@ -4516,10 +4965,13 @@
    "name": "T.R. Dunn",
    "franchise": "DEN",
    "decade": 1980,
+   "team": "DEN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 5.3,
    "rpg": 5.1,
    "apg": 1.9,
@@ -4536,10 +4988,13 @@
    "name": "Dikembe Mutombo",
    "franchise": "DEN",
    "decade": 1990,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.9,
    "rpg": 12.3,
    "apg": 1.7,
@@ -4557,10 +5012,13 @@
    "name": "Reggie Williams",
    "franchise": "DEN",
    "decade": 1990,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 14.2,
    "rpg": 4.6,
    "apg": 2.9,
@@ -4575,11 +5033,13 @@
    "name": "LaPhonso Ellis",
    "franchise": "DEN",
    "decade": 1990,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 15.4,
    "rpg": 8.0,
@@ -4595,6 +5055,7 @@
    "name": "Mahmoud Abdul-Rauf",
    "franchise": "DEN",
    "decade": 1990,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4615,10 +5076,13 @@
    "name": "Bryant Stith",
    "franchise": "DEN",
    "decade": 1990,
+   "team": "DEN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 11.4,
    "rpg": 3.7,
    "apg": 2.2,
@@ -4633,10 +5097,13 @@
    "name": "Marcus Camby",
    "franchise": "DEN",
    "decade": 2000,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 10.1,
    "rpg": 11.1,
    "apg": 2.5,
@@ -4654,10 +5121,13 @@
    "name": "Carmelo Anthony",
    "franchise": "DEN",
    "decade": 2000,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 24.2,
    "rpg": 6.1,
    "apg": 3.1,
@@ -4675,6 +5145,7 @@
    "name": "Andre Miller",
    "franchise": "DEN",
    "decade": 2000,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4696,6 +5167,7 @@
    "name": "Nenê",
    "franchise": "DEN",
    "decade": 2000,
+   "team": "DEN",
    "pos": [
     "C"
    ],
@@ -4716,6 +5188,7 @@
    "name": "Nick Van Exel",
    "franchise": "DEN",
    "decade": 2000,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4737,10 +5210,13 @@
    "name": "Nikola Jokić",
    "franchise": "DEN",
    "decade": 2010,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.3,
    "rpg": 9.6,
    "apg": 5.2,
@@ -4757,6 +5233,7 @@
    "name": "Ty Lawson",
    "franchise": "DEN",
    "decade": 2010,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4777,6 +5254,7 @@
    "name": "Danilo Gallinari",
    "franchise": "DEN",
    "decade": 2010,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
@@ -4797,10 +5275,13 @@
    "name": "Kenneth Faried",
    "franchise": "DEN",
    "decade": 2010,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.9,
    "rpg": 8.5,
    "apg": 1.1,
@@ -4815,10 +5296,13 @@
    "name": "Wilson Chandler",
    "franchise": "DEN",
    "decade": 2010,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.2,
    "rpg": 5.6,
    "apg": 1.8,
@@ -4833,10 +5317,13 @@
    "name": "Nikola Jokić",
    "franchise": "DEN",
    "decade": 2020,
+   "team": "DEN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 25.9,
    "rpg": 12.0,
    "apg": 8.9,
@@ -4855,6 +5342,7 @@
    "name": "Jamal Murray",
    "franchise": "DEN",
    "decade": 2020,
+   "team": "DEN",
    "pos": [
     "PG"
    ],
@@ -4875,6 +5363,7 @@
    "name": "Aaron Gordon",
    "franchise": "DEN",
    "decade": 2020,
+   "team": "DEN",
    "pos": [
     "PF"
    ],
@@ -4893,10 +5382,13 @@
    "name": "Michael Porter Jr.",
    "franchise": "DEN",
    "decade": 2020,
+   "team": "DEN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.4,
    "rpg": 6.4,
    "apg": 1.4,
@@ -4913,10 +5405,13 @@
    "name": "Christian Braun",
    "franchise": "DEN",
    "decade": 2020,
+   "team": "DEN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 9.6,
    "rpg": 3.9,
    "apg": 1.8,
@@ -4931,6 +5426,7 @@
    "name": "Bailey Howell",
    "franchise": "DET",
    "decade": 1960,
+   "team": "DET",
    "pos": [
     "SF"
    ],
@@ -4954,10 +5450,13 @@
    "name": "Gene Shue",
    "franchise": "DET",
    "decade": 1960,
+   "team": "DET",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 21.4,
    "rpg": 4.8,
    "apg": 5.5,
@@ -4974,6 +5473,7 @@
    "name": "Dave DeBusschere",
    "franchise": "DET",
    "decade": 1960,
+   "team": "DET",
    "pos": [
     "SF"
    ],
@@ -4997,10 +5497,13 @@
    "name": "Ray Scott",
    "franchise": "DET",
    "decade": 1960,
+   "team": "DET",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.0,
    "rpg": 10.7,
    "apg": 2.7,
@@ -5017,11 +5520,13 @@
    "name": "Eddie Miles",
    "franchise": "DET",
    "decade": 1960,
+   "team": "DET",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "PG"
+    "PG",
+    "SF"
    ],
    "ppg": 15.1,
    "rpg": 3.3,
@@ -5037,10 +5542,13 @@
    "name": "Bob Lanier",
    "franchise": "DET",
    "decade": 1970,
+   "team": "DET",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 22.8,
    "rpg": 11.9,
    "apg": 3.3,
@@ -5059,6 +5567,7 @@
    "name": "Dave Bing",
    "franchise": "DET",
    "decade": 1970,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5081,10 +5590,13 @@
    "name": "M.L. Carr",
    "franchise": "DET",
    "decade": 1970,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.8,
    "rpg": 7.4,
    "apg": 2.6,
@@ -5101,6 +5613,7 @@
    "name": "Curtis Rowe",
    "franchise": "DET",
    "decade": 1970,
+   "team": "DET",
    "pos": [
     "PF"
    ],
@@ -5119,10 +5632,13 @@
    "name": "Chris Ford",
    "franchise": "DET",
    "decade": 1970,
+   "team": "DET",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 8.5,
    "rpg": 3.5,
    "apg": 3.5,
@@ -5139,6 +5655,7 @@
    "name": "Isiah Thomas",
    "franchise": "DET",
    "decade": 1980,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5161,6 +5678,7 @@
    "name": "Bill Laimbeer",
    "franchise": "DET",
    "decade": 1980,
+   "team": "DET",
    "pos": [
     "C"
    ],
@@ -5181,10 +5699,13 @@
    "name": "Kelly Tripucka",
    "franchise": "DET",
    "decade": 1980,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 21.6,
    "rpg": 4.5,
    "apg": 3.2,
@@ -5201,10 +5722,13 @@
    "name": "Terry Tyler",
    "franchise": "DET",
    "decade": 1980,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 11.4,
    "rpg": 6.0,
    "apg": 1.4,
@@ -5221,10 +5745,13 @@
    "name": "Vinnie Johnson",
    "franchise": "DET",
    "decade": 1980,
+   "team": "DET",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 13.2,
    "rpg": 3.1,
    "apg": 3.4,
@@ -5239,10 +5766,13 @@
    "name": "Grant Hill",
    "franchise": "DET",
    "decade": 1990,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 20.7,
    "rpg": 8.1,
    "apg": 6.5,
@@ -5261,11 +5791,13 @@
    "name": "Dennis Rodman",
    "franchise": "DET",
    "decade": 1990,
+   "team": "DET",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 8.6,
    "rpg": 14.6,
@@ -5283,6 +5815,7 @@
    "name": "Isiah Thomas",
    "franchise": "DET",
    "decade": 1990,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5305,10 +5838,13 @@
    "name": "Joe Dumars",
    "franchise": "DET",
    "decade": 1990,
+   "team": "DET",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.5,
    "rpg": 2.2,
    "apg": 4.4,
@@ -5325,6 +5861,7 @@
    "name": "Terry Mills",
    "franchise": "DET",
    "decade": 1990,
+   "team": "DET",
    "pos": [
     "PF"
    ],
@@ -5343,6 +5880,7 @@
    "name": "Chauncey Billups",
    "franchise": "DET",
    "decade": 2000,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5364,10 +5902,13 @@
    "name": "Ben Wallace",
    "franchise": "DET",
    "decade": 2000,
+   "team": "DET",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 7.9,
    "rpg": 12.9,
    "apg": 1.6,
@@ -5386,6 +5927,7 @@
    "name": "Rasheed Wallace",
    "franchise": "DET",
    "decade": 2000,
+   "team": "DET",
    "pos": [
     "C"
    ],
@@ -5408,10 +5950,13 @@
    "name": "Richard Hamilton",
    "franchise": "DET",
    "decade": 2000,
+   "team": "DET",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.8,
    "rpg": 3.6,
    "apg": 3.9,
@@ -5428,10 +5973,13 @@
    "name": "Tayshaun Prince",
    "franchise": "DET",
    "decade": 2000,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.5,
    "rpg": 5.0,
    "apg": 2.8,
@@ -5446,10 +5994,13 @@
    "name": "Andre Drummond",
    "franchise": "DET",
    "decade": 2010,
+   "team": "DET",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.1,
    "rpg": 13.7,
    "apg": 1.1,
@@ -5467,6 +6018,7 @@
    "name": "Greg Monroe",
    "franchise": "DET",
    "decade": 2010,
+   "team": "DET",
    "pos": [
     "C"
    ],
@@ -5489,6 +6041,7 @@
    "name": "Reggie Jackson",
    "franchise": "DET",
    "decade": 2010,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5509,6 +6062,7 @@
    "name": "Rodney Stuckey",
    "franchise": "DET",
    "decade": 2010,
+   "team": "DET",
    "pos": [
     "SG"
    ],
@@ -5529,6 +6083,7 @@
    "name": "Kentavious Caldwell-Pope",
    "franchise": "DET",
    "decade": 2010,
+   "team": "DET",
    "pos": [
     "SG"
    ],
@@ -5547,6 +6102,7 @@
    "name": "Jalen Duren",
    "franchise": "DET",
    "decade": 2020,
+   "team": "DET",
    "pos": [
     "C"
    ],
@@ -5567,6 +6123,7 @@
    "name": "Cade Cunningham",
    "franchise": "DET",
    "decade": 2020,
+   "team": "DET",
    "pos": [
     "PG"
    ],
@@ -5591,10 +6148,13 @@
    "name": "Ausar Thompson",
    "franchise": "DET",
    "decade": 2020,
+   "team": "DET",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 9.6,
    "rpg": 5.7,
    "apg": 2.5,
@@ -5611,6 +6171,7 @@
    "name": "Isaiah Stewart",
    "franchise": "DET",
    "decade": 2020,
+   "team": "DET",
    "pos": [
     "C"
    ],
@@ -5629,6 +6190,7 @@
    "name": "Saddiq Bey",
    "franchise": "DET",
    "decade": 2020,
+   "team": "DET",
    "pos": [
     "SF"
    ],
@@ -5647,10 +6209,13 @@
    "name": "Wilt Chamberlain",
    "franchise": "GSW",
    "decade": 1960,
+   "team": "PHW",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 41.5,
    "rpg": 25.1,
    "apg": 3.0,
@@ -5668,6 +6233,7 @@
    "name": "Nate Thurmond",
    "franchise": "GSW",
    "decade": 1960,
+   "team": "SFW",
    "pos": [
     "C"
    ],
@@ -5690,6 +6256,7 @@
    "name": "Guy Rodgers",
    "franchise": "GSW",
    "decade": 1960,
+   "team": "SFW",
    "pos": [
     "PG"
    ],
@@ -5712,10 +6279,13 @@
    "name": "Al Attles",
    "franchise": "GSW",
    "decade": 1960,
+   "team": "SFW",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 9.6,
    "rpg": 3.7,
    "apg": 3.6,
@@ -5730,11 +6300,13 @@
    "name": "Tom Meschery",
    "franchise": "GSW",
    "decade": 1960,
+   "team": "SFW",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 12.9,
    "rpg": 8.6,
@@ -5750,10 +6322,13 @@
    "name": "Rick Barry",
    "franchise": "GSW",
    "decade": 1970,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 24.0,
    "rpg": 6.4,
    "apg": 5.8,
@@ -5772,10 +6347,13 @@
    "name": "Nate Thurmond",
    "franchise": "GSW",
    "decade": 1970,
+   "team": "GSW",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.6,
    "rpg": 15.6,
    "apg": 3.1,
@@ -5793,10 +6371,13 @@
    "name": "Phil Smith",
    "franchise": "GSW",
    "decade": 1970,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.3,
    "rpg": 3.6,
    "apg": 3.9,
@@ -5813,10 +6394,13 @@
    "name": "Jeff Mullins",
    "franchise": "GSW",
    "decade": 1970,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.0,
    "rpg": 4.3,
    "apg": 4.3,
@@ -5833,6 +6417,7 @@
    "name": "Clifford Ray",
    "franchise": "GSW",
    "decade": 1970,
+   "team": "GSW",
    "pos": [
     "C"
    ],
@@ -5853,6 +6438,7 @@
    "name": "Chris Mullin",
    "franchise": "GSW",
    "decade": 1980,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
@@ -5876,6 +6462,7 @@
    "name": "Sleepy Floyd",
    "franchise": "GSW",
    "decade": 1980,
+   "team": "GSW",
    "pos": [
     "PG"
    ],
@@ -5898,6 +6485,7 @@
    "name": "Joe Barry Carroll",
    "franchise": "GSW",
    "decade": 1980,
+   "team": "GSW",
    "pos": [
     "C"
    ],
@@ -5918,10 +6506,13 @@
    "name": "Purvis Short",
    "franchise": "GSW",
    "decade": 1980,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 20.6,
    "rpg": 4.9,
    "apg": 3.0,
@@ -5938,10 +6529,13 @@
    "name": "Larry Smith",
    "franchise": "GSW",
    "decade": 1980,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 8.5,
    "rpg": 10.5,
    "apg": 1.2,
@@ -5958,10 +6552,13 @@
    "name": "Chris Mullin",
    "franchise": "GSW",
    "decade": 1990,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 21.1,
    "rpg": 5.0,
    "apg": 4.0,
@@ -5979,6 +6576,7 @@
    "name": "Tim Hardaway",
    "franchise": "GSW",
    "decade": 1990,
+   "team": "GSW",
    "pos": [
     "PG"
    ],
@@ -6001,10 +6599,13 @@
    "name": "Latrell Sprewell",
    "franchise": "GSW",
    "decade": 1990,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 20.1,
    "rpg": 4.3,
    "apg": 4.6,
@@ -6022,10 +6623,13 @@
    "name": "Billy Owens",
    "franchise": "GSW",
    "decade": 1990,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 15.0,
    "rpg": 7.9,
    "apg": 3.4,
@@ -6040,10 +6644,13 @@
    "name": "Joe Smith",
    "franchise": "GSW",
    "decade": 1990,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 17.1,
    "rpg": 8.2,
    "apg": 1.3,
@@ -6058,6 +6665,7 @@
    "name": "Baron Davis",
    "franchise": "GSW",
    "decade": 2000,
+   "team": "GSW",
    "pos": [
     "PG"
    ],
@@ -6080,10 +6688,13 @@
    "name": "Antawn Jamison",
    "franchise": "GSW",
    "decade": 2000,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.9,
    "rpg": 7.6,
    "apg": 2.0,
@@ -6100,10 +6711,13 @@
    "name": "Jason Richardson",
    "franchise": "GSW",
    "decade": 2000,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 18.3,
    "rpg": 5.4,
    "apg": 3.2,
@@ -6120,6 +6734,7 @@
    "name": "Troy Murphy",
    "franchise": "GSW",
    "decade": 2000,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
@@ -6138,6 +6753,7 @@
    "name": "Mike Dunleavy",
    "franchise": "GSW",
    "decade": 2000,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
@@ -6158,6 +6774,7 @@
    "name": "Stephen Curry",
    "franchise": "GSW",
    "decade": 2010,
+   "team": "GSW",
    "pos": [
     "PG"
    ],
@@ -6181,11 +6798,13 @@
    "name": "Draymond Green",
    "franchise": "GSW",
    "decade": 2010,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 9.1,
    "rpg": 6.9,
@@ -6201,10 +6820,13 @@
    "name": "David Lee",
    "franchise": "GSW",
    "decade": 2010,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.7,
    "rpg": 9.3,
    "apg": 2.7,
@@ -6221,10 +6843,13 @@
    "name": "Klay Thompson",
    "franchise": "GSW",
    "decade": 2010,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 19.5,
    "rpg": 3.5,
    "apg": 2.3,
@@ -6241,10 +6866,13 @@
    "name": "Andre Iguodala",
    "franchise": "GSW",
    "decade": 2010,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 7.2,
    "rpg": 3.9,
    "apg": 3.4,
@@ -6259,6 +6887,7 @@
    "name": "Stephen Curry",
    "franchise": "GSW",
    "decade": 2020,
+   "team": "GSW",
    "pos": [
     "PG"
    ],
@@ -6280,10 +6909,13 @@
    "name": "Draymond Green",
    "franchise": "GSW",
    "decade": 2020,
+   "team": "GSW",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 8.2,
    "rpg": 6.6,
    "apg": 6.6,
@@ -6300,10 +6932,13 @@
    "name": "Kevon Looney",
    "franchise": "GSW",
    "decade": 2020,
+   "team": "GSW",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 5.3,
    "rpg": 6.9,
    "apg": 2.0,
@@ -6318,6 +6953,7 @@
    "name": "Andrew Wiggins",
    "franchise": "GSW",
    "decade": 2020,
+   "team": "GSW",
    "pos": [
     "SF"
    ],
@@ -6340,6 +6976,7 @@
    "name": "Jordan Poole",
    "franchise": "GSW",
    "decade": 2020,
+   "team": "GSW",
    "pos": [
     "SG"
    ],
@@ -6360,10 +6997,13 @@
    "name": "Elvin Hayes",
    "franchise": "HOU",
    "decade": 1960,
+   "team": "SDR",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 28.4,
    "rpg": 17.1,
    "apg": 1.4,
@@ -6381,10 +7021,13 @@
    "name": "Don Kojis",
    "franchise": "HOU",
    "decade": 1960,
+   "team": "SDR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.2,
    "rpg": 9.9,
    "apg": 2.6,
@@ -6402,6 +7045,7 @@
    "name": "John Block",
    "franchise": "HOU",
    "decade": 1960,
+   "team": "SDR",
    "pos": [
     "PF"
    ],
@@ -6424,10 +7068,13 @@
    "name": "Toby Kimball",
    "franchise": "HOU",
    "decade": 1960,
+   "team": "SDR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.5,
    "rpg": 10.3,
    "apg": 1.5,
@@ -6444,10 +7091,13 @@
    "name": "Jim Barnett",
    "franchise": "HOU",
    "decade": 1960,
+   "team": "SDR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 12.6,
    "rpg": 4.1,
    "apg": 3.7,
@@ -6462,10 +7112,13 @@
    "name": "Moses Malone",
    "franchise": "HOU",
    "decade": 1970,
+   "team": "HOU",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.3,
    "rpg": 15.4,
    "apg": 1.2,
@@ -6483,6 +7136,7 @@
    "name": "Rudy Tomjanovich",
    "franchise": "HOU",
    "decade": 1970,
+   "team": "HOU",
    "pos": [
     "PF"
    ],
@@ -6503,6 +7157,7 @@
    "name": "Calvin Murphy",
    "franchise": "HOU",
    "decade": 1970,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6524,10 +7179,13 @@
    "name": "Elvin Hayes",
    "franchise": "HOU",
    "decade": 1970,
+   "team": "SDR",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 27.1,
    "rpg": 16.0,
    "apg": 2.5,
@@ -6545,10 +7203,13 @@
    "name": "Mike Newlin",
    "franchise": "HOU",
    "decade": 1970,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.0,
    "rpg": 3.2,
    "apg": 4.3,
@@ -6563,10 +7224,13 @@
    "name": "Hakeem Olajuwon",
    "franchise": "HOU",
    "decade": 1980,
+   "team": "HOU",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 23.0,
    "rpg": 12.1,
    "apg": 2.0,
@@ -6586,10 +7250,13 @@
    "name": "Moses Malone",
    "franchise": "HOU",
    "decade": 1980,
+   "team": "HOU",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 28.2,
    "rpg": 14.7,
    "apg": 1.8,
@@ -6608,10 +7275,13 @@
    "name": "Rodney McCray",
    "franchise": "HOU",
    "decade": 1980,
+   "team": "HOU",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.5,
    "rpg": 6.7,
    "apg": 3.8,
@@ -6626,6 +7296,7 @@
    "name": "Robert Reid",
    "franchise": "HOU",
    "decade": 1980,
+   "team": "HOU",
    "pos": [
     "SF"
    ],
@@ -6646,6 +7317,7 @@
    "name": "Allen Leavell",
    "franchise": "HOU",
    "decade": 1980,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6666,10 +7338,13 @@
    "name": "Hakeem Olajuwon",
    "franchise": "HOU",
    "decade": 1990,
+   "team": "HOU",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 23.9,
    "rpg": 11.6,
    "apg": 3.0,
@@ -6689,10 +7364,13 @@
    "name": "Clyde Drexler",
    "franchise": "HOU",
    "decade": 1990,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.0,
    "rpg": 6.1,
    "apg": 5.5,
@@ -6710,10 +7388,13 @@
    "name": "Otis Thorpe",
    "franchise": "HOU",
    "decade": 1990,
+   "team": "HOU",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 15.6,
    "rpg": 9.7,
    "apg": 2.6,
@@ -6730,6 +7411,7 @@
    "name": "Kenny Smith",
    "franchise": "HOU",
    "decade": 1990,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6748,10 +7430,13 @@
    "name": "Vernon Maxwell",
    "franchise": "HOU",
    "decade": 1990,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.9,
    "rpg": 2.9,
    "apg": 4.3,
@@ -6766,6 +7451,7 @@
    "name": "Yao Ming",
    "franchise": "HOU",
    "decade": 2000,
+   "team": "HOU",
    "pos": [
     "C"
    ],
@@ -6787,11 +7473,13 @@
    "name": "Tracy McGrady",
    "franchise": "HOU",
    "decade": 2000,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 23.1,
    "rpg": 5.6,
@@ -6810,6 +7498,7 @@
    "name": "Steve Francis",
    "franchise": "HOU",
    "decade": 2000,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6832,10 +7521,13 @@
    "name": "Cuttino Mobley",
    "franchise": "HOU",
    "decade": 2000,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 18.0,
    "rpg": 4.3,
    "apg": 2.7,
@@ -6852,6 +7544,7 @@
    "name": "Rafer Alston",
    "franchise": "HOU",
    "decade": 2000,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6870,6 +7563,7 @@
    "name": "James Harden",
    "franchise": "HOU",
    "decade": 2010,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
@@ -6895,6 +7589,7 @@
    "name": "Clint Capela",
    "franchise": "HOU",
    "decade": 2010,
+   "team": "HOU",
    "pos": [
     "C"
    ],
@@ -6915,10 +7610,13 @@
    "name": "Chandler Parsons",
    "franchise": "HOU",
    "decade": 2010,
+   "team": "HOU",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 14.1,
    "rpg": 5.2,
    "apg": 3.3,
@@ -6933,10 +7631,13 @@
    "name": "Trevor Ariza",
    "franchise": "HOU",
    "decade": 2010,
+   "team": "HOU",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.8,
    "rpg": 5.2,
    "apg": 2.5,
@@ -6953,6 +7654,7 @@
    "name": "Patrick Beverley",
    "franchise": "HOU",
    "decade": 2010,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -6973,10 +7675,13 @@
    "name": "Alperen Şengün",
    "franchise": "HOU",
    "decade": 2020,
+   "team": "HOU",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.9,
    "rpg": 8.6,
    "apg": 4.5,
@@ -6991,11 +7696,13 @@
    "name": "Amen Thompson",
    "franchise": "HOU",
    "decade": 2020,
+   "team": "HOU",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PG"
+    "PG",
+    "PF"
    ],
    "ppg": 14.3,
    "rpg": 7.6,
@@ -7011,6 +7718,7 @@
    "name": "Fred VanVleet",
    "franchise": "HOU",
    "decade": 2020,
+   "team": "HOU",
    "pos": [
     "PG"
    ],
@@ -7031,10 +7739,13 @@
    "name": "Jalen Green",
    "franchise": "HOU",
    "decade": 2020,
+   "team": "HOU",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 20.1,
    "rpg": 4.3,
    "apg": 3.3,
@@ -7051,10 +7762,13 @@
    "name": "Jabari Smith Jr.",
    "franchise": "HOU",
    "decade": 2020,
+   "team": "HOU",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 13.7,
    "rpg": 7.3,
    "apg": 1.5,
@@ -7069,10 +7783,13 @@
    "name": "Billy Knight",
    "franchise": "IND",
    "decade": 1970,
+   "team": "IND",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 22.6,
    "rpg": 6.5,
    "apg": 2.9,
@@ -7090,10 +7807,13 @@
    "name": "Dan Roundfield",
    "franchise": "IND",
    "decade": 1970,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 13.6,
    "rpg": 9.5,
    "apg": 1.9,
@@ -7111,6 +7831,7 @@
    "name": "Ricky Sobers",
    "franchise": "IND",
    "decade": 1970,
+   "team": "IND",
    "pos": [
     "SG"
    ],
@@ -7135,11 +7856,13 @@
    "name": "Mike Bantom",
    "franchise": "IND",
    "decade": 1970,
+   "team": "IND",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 15.0,
    "rpg": 7.7,
@@ -7155,6 +7878,7 @@
    "name": "James Edwards",
    "franchise": "IND",
    "decade": 1970,
+   "team": "IND",
    "pos": [
     "C"
    ],
@@ -7173,10 +7897,13 @@
    "name": "Clark Kellogg",
    "franchise": "IND",
    "decade": 1980,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 19.2,
    "rpg": 9.6,
    "apg": 3.0,
@@ -7193,6 +7920,7 @@
    "name": "Vern Fleming",
    "franchise": "IND",
    "decade": 1980,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7211,10 +7939,13 @@
    "name": "Steve Stipanovich",
    "franchise": "IND",
    "decade": 1980,
+   "team": "IND",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.2,
    "rpg": 7.8,
    "apg": 2.3,
@@ -7229,6 +7960,7 @@
    "name": "Billy Knight",
    "franchise": "IND",
    "decade": 1980,
+   "team": "IND",
    "pos": [
     "SG"
    ],
@@ -7249,6 +7981,7 @@
    "name": "Herb Williams",
    "franchise": "IND",
    "decade": 1980,
+   "team": "IND",
    "pos": [
     "C"
    ],
@@ -7269,10 +8002,13 @@
    "name": "Reggie Miller",
    "franchise": "IND",
    "decade": 1990,
+   "team": "IND",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.0,
    "rpg": 3.1,
    "apg": 3.2,
@@ -7289,10 +8025,13 @@
    "name": "Detlef Schrempf",
    "franchise": "IND",
    "decade": 1990,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 17.2,
    "rpg": 8.8,
    "apg": 4.2,
@@ -7307,6 +8046,7 @@
    "name": "Mark Jackson",
    "franchise": "IND",
    "decade": 1990,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7327,10 +8067,13 @@
    "name": "Dale Davis",
    "franchise": "IND",
    "decade": 1990,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.3,
    "rpg": 8.8,
    "apg": 0.8,
@@ -7345,6 +8088,7 @@
    "name": "Rik Smits",
    "franchise": "IND",
    "decade": 1990,
+   "team": "IND",
    "pos": [
     "C"
    ],
@@ -7363,6 +8107,7 @@
    "name": "Jermaine O'Neal",
    "franchise": "IND",
    "decade": 2000,
+   "team": "IND",
    "pos": [
     "PF"
    ],
@@ -7386,10 +8131,13 @@
    "name": "Danny Granger",
    "franchise": "IND",
    "decade": 2000,
+   "team": "IND",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.4,
    "rpg": 5.2,
    "apg": 1.8,
@@ -7406,6 +8154,7 @@
    "name": "Reggie Miller",
    "franchise": "IND",
    "decade": 2000,
+   "team": "IND",
    "pos": [
     "SG"
    ],
@@ -7424,6 +8173,7 @@
    "name": "Jamaal Tinsley",
    "franchise": "IND",
    "decade": 2000,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7445,10 +8195,13 @@
    "name": "Jeff Foster",
    "franchise": "IND",
    "decade": 2000,
+   "team": "IND",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 5.2,
    "rpg": 7.2,
    "apg": 1.0,
@@ -7463,6 +8216,7 @@
    "name": "Paul George",
    "franchise": "IND",
    "decade": 2010,
+   "team": "IND",
    "pos": [
     "SF"
    ],
@@ -7486,10 +8240,13 @@
    "name": "Danny Granger",
    "franchise": "IND",
    "decade": 2010,
+   "team": "IND",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.5,
    "rpg": 5.1,
    "apg": 2.3,
@@ -7506,10 +8263,13 @@
    "name": "David West",
    "franchise": "IND",
    "decade": 2010,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.0,
    "rpg": 7.0,
    "apg": 2.8,
@@ -7524,6 +8284,7 @@
    "name": "George Hill",
    "franchise": "IND",
    "decade": 2010,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7542,6 +8303,7 @@
    "name": "Roy Hibbert",
    "franchise": "IND",
    "decade": 2010,
+   "team": "IND",
    "pos": [
     "C"
    ],
@@ -7562,6 +8324,7 @@
    "name": "Tyrese Haliburton",
    "franchise": "IND",
    "decade": 2020,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7583,10 +8346,13 @@
    "name": "Domantas Sabonis",
    "franchise": "IND",
    "decade": 2020,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.3,
    "rpg": 12.2,
    "apg": 5.6,
@@ -7603,10 +8369,13 @@
    "name": "Pascal Siakam",
    "franchise": "IND",
    "decade": 2020,
+   "team": "IND",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 21.8,
    "rpg": 7.0,
    "apg": 3.6,
@@ -7621,6 +8390,7 @@
    "name": "Myles Turner",
    "franchise": "IND",
    "decade": 2020,
+   "team": "IND",
    "pos": [
     "C"
    ],
@@ -7641,6 +8411,7 @@
    "name": "T.J. McConnell",
    "franchise": "IND",
    "decade": 2020,
+   "team": "IND",
    "pos": [
     "PG"
    ],
@@ -7659,6 +8430,7 @@
    "name": "Bob McAdoo",
    "franchise": "LAC",
    "decade": 1970,
+   "team": "BUF",
    "pos": [
     "C"
    ],
@@ -7683,10 +8455,13 @@
    "name": "Randy Smith",
    "franchise": "LAC",
    "decade": 1970,
+   "team": "BUF",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.7,
    "rpg": 4.5,
    "apg": 5.1,
@@ -7704,10 +8479,13 @@
    "name": "Jim McMillian",
    "franchise": "LAC",
    "decade": 1970,
+   "team": "BUF",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 16.4,
    "rpg": 6.3,
    "apg": 2.8,
@@ -7724,6 +8502,7 @@
    "name": "Bob Kauffman",
    "franchise": "LAC",
    "decade": 1970,
+   "team": "BUF",
    "pos": [
     "PF"
    ],
@@ -7747,10 +8526,13 @@
    "name": "Gar Heard",
    "franchise": "LAC",
    "decade": 1970,
+   "team": "BUF",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.5,
    "rpg": 10.7,
    "apg": 2.5,
@@ -7769,10 +8551,13 @@
    "name": "Swen Nater",
    "franchise": "LAC",
    "decade": 1980,
+   "team": "SDC",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.3,
    "rpg": 13.2,
    "apg": 2.5,
@@ -7789,6 +8574,7 @@
    "name": "Benoit Benjamin",
    "franchise": "LAC",
    "decade": 1980,
+   "team": "LAC",
    "pos": [
     "C"
    ],
@@ -7809,10 +8595,13 @@
    "name": "Michael Cage",
    "franchise": "LAC",
    "decade": 1980,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.0,
    "rpg": 8.7,
    "apg": 1.2,
@@ -7827,6 +8616,7 @@
    "name": "Norm Nixon",
    "franchise": "LAC",
    "decade": 1980,
+   "team": "LAC",
    "pos": [
     "PG"
    ],
@@ -7847,10 +8637,13 @@
    "name": "Michael Brooks",
    "franchise": "LAC",
    "decade": 1980,
+   "team": "SDC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.7,
    "rpg": 6.6,
    "apg": 2.7,
@@ -7865,10 +8658,13 @@
    "name": "Danny Manning",
    "franchise": "LAC",
    "decade": 1990,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.3,
    "rpg": 6.4,
    "apg": 3.0,
@@ -7883,6 +8679,7 @@
    "name": "Charles Smith",
    "franchise": "LAC",
    "decade": 1990,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
@@ -7906,10 +8703,13 @@
    "name": "Ron Harper",
    "franchise": "LAC",
    "decade": 1990,
+   "team": "LAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.2,
    "rpg": 5.5,
    "apg": 4.8,
@@ -7927,10 +8727,13 @@
    "name": "Ken Norman",
    "franchise": "LAC",
    "decade": 1990,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.1,
    "rpg": 6.8,
    "apg": 2.1,
@@ -7945,6 +8748,7 @@
    "name": "Loy Vaught",
    "franchise": "LAC",
    "decade": 1990,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
@@ -7963,10 +8767,13 @@
    "name": "Elton Brand",
    "franchise": "LAC",
    "decade": 2000,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 20.4,
    "rpg": 10.3,
    "apg": 2.7,
@@ -7984,6 +8791,7 @@
    "name": "Lamar Odom",
    "franchise": "LAC",
    "decade": 2000,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
@@ -8004,6 +8812,7 @@
    "name": "Corey Maggette",
    "franchise": "LAC",
    "decade": 2000,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
@@ -8026,6 +8835,7 @@
    "name": "Chris Kaman",
    "franchise": "LAC",
    "decade": 2000,
+   "team": "LAC",
    "pos": [
     "C"
    ],
@@ -8044,10 +8854,13 @@
    "name": "Cuttino Mobley",
    "franchise": "LAC",
    "decade": 2000,
+   "team": "LAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 13.8,
    "rpg": 3.8,
    "apg": 2.7,
@@ -8062,6 +8875,7 @@
    "name": "Chris Paul",
    "franchise": "LAC",
    "decade": 2010,
+   "team": "LAC",
    "pos": [
     "PG"
    ],
@@ -8084,10 +8898,13 @@
    "name": "Blake Griffin",
    "franchise": "LAC",
    "decade": 2010,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 21.5,
    "rpg": 9.3,
    "apg": 4.2,
@@ -8104,6 +8921,7 @@
    "name": "DeAndre Jordan",
    "franchise": "LAC",
    "decade": 2010,
+   "team": "LAC",
    "pos": [
     "C"
    ],
@@ -8125,6 +8943,7 @@
    "name": "JJ Redick",
    "franchise": "LAC",
    "decade": 2010,
+   "team": "LAC",
    "pos": [
     "SG"
    ],
@@ -8143,6 +8962,7 @@
    "name": "Jamal Crawford",
    "franchise": "LAC",
    "decade": 2010,
+   "team": "LAC",
    "pos": [
     "SG"
    ],
@@ -8161,10 +8981,13 @@
    "name": "Kawhi Leonard",
    "franchise": "LAC",
    "decade": 2020,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 25.1,
    "rpg": 6.4,
    "apg": 4.1,
@@ -8183,6 +9006,7 @@
    "name": "James Harden",
    "franchise": "LAC",
    "decade": 2020,
+   "team": "LAC",
    "pos": [
     "PG"
    ],
@@ -8204,11 +9028,13 @@
    "name": "Paul George",
    "franchise": "LAC",
    "decade": 2020,
+   "team": "LAC",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "SG"
    ],
    "ppg": 23.0,
    "rpg": 6.0,
@@ -8227,6 +9053,7 @@
    "name": "Ivica Zubac",
    "franchise": "LAC",
    "decade": 2020,
+   "team": "LAC",
    "pos": [
     "C"
    ],
@@ -8247,6 +9074,7 @@
    "name": "Nicolas Batum",
    "franchise": "LAC",
    "decade": 2020,
+   "team": "LAC",
    "pos": [
     "PF"
    ],
@@ -8267,6 +9095,7 @@
    "name": "Jerry West",
    "franchise": "LAL",
    "decade": 1960,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
@@ -8290,10 +9119,13 @@
    "name": "Elgin Baylor",
    "franchise": "LAL",
    "decade": 1960,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 28.1,
    "rpg": 13.8,
    "apg": 4.3,
@@ -8312,10 +9144,13 @@
    "name": "Rudy LaRusso",
    "franchise": "LAL",
    "decade": 1960,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.1,
    "rpg": 9.6,
    "apg": 2.1,
@@ -8332,10 +9167,13 @@
    "name": "Frank Selvy",
    "franchise": "LAL",
    "decade": 1960,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 10.5,
    "rpg": 3.6,
    "apg": 3.2,
@@ -8350,10 +9188,13 @@
    "name": "Tom Hawkins",
    "franchise": "LAL",
    "decade": 1960,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 9.0,
    "rpg": 5.7,
    "apg": 1.1,
@@ -8368,10 +9209,13 @@
    "name": "Kareem Abdul-Jabbar",
    "franchise": "LAL",
    "decade": 1970,
+   "team": "LAL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 25.9,
    "rpg": 14.1,
    "apg": 4.7,
@@ -8390,6 +9234,7 @@
    "name": "Jerry West",
    "franchise": "LAL",
    "decade": 1970,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
@@ -8413,10 +9258,13 @@
    "name": "Wilt Chamberlain",
    "franchise": "LAL",
    "decade": 1970,
+   "team": "LAL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.7,
    "rpg": 18.7,
    "apg": 4.3,
@@ -8433,10 +9281,13 @@
    "name": "Happy Hairston",
    "franchise": "LAL",
    "decade": 1970,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 15.2,
    "rpg": 12.4,
    "apg": 2.3,
@@ -8453,10 +9304,13 @@
    "name": "Gail Goodrich",
    "franchise": "LAL",
    "decade": 1970,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 22.5,
    "rpg": 3.2,
    "apg": 5.0,
@@ -8475,6 +9329,7 @@
    "name": "Magic Johnson",
    "franchise": "LAL",
    "decade": 1980,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
@@ -8499,6 +9354,7 @@
    "name": "Kareem Abdul-Jabbar",
    "franchise": "LAL",
    "decade": 1980,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8519,10 +9375,13 @@
    "name": "James Worthy",
    "franchise": "LAL",
    "decade": 1980,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.9,
    "rpg": 5.7,
    "apg": 2.8,
@@ -8539,10 +9398,13 @@
    "name": "Byron Scott",
    "franchise": "LAL",
    "decade": 1980,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.8,
    "rpg": 3.2,
    "apg": 3.1,
@@ -8559,10 +9421,13 @@
    "name": "Michael Cooper",
    "franchise": "LAL",
    "decade": 1980,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 9.1,
    "rpg": 3.2,
    "apg": 4.4,
@@ -8577,6 +9442,7 @@
    "name": "Vlade Divac",
    "franchise": "LAL",
    "decade": 1990,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8597,10 +9463,13 @@
    "name": "Eddie Jones",
    "franchise": "LAL",
    "decade": 1990,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 15.3,
    "rpg": 3.8,
    "apg": 3.0,
@@ -8617,6 +9486,7 @@
    "name": "Nick Van Exel",
    "franchise": "LAL",
    "decade": 1990,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
@@ -8637,10 +9507,13 @@
    "name": "James Worthy",
    "franchise": "LAL",
    "decade": 1990,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 17.3,
    "rpg": 4.2,
    "apg": 3.3,
@@ -8657,10 +9530,13 @@
    "name": "Elden Campbell",
    "franchise": "LAL",
    "decade": 1990,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.2,
    "rpg": 6.2,
    "apg": 1.2,
@@ -8677,6 +9553,7 @@
    "name": "Shaquille O'Neal",
    "franchise": "LAL",
    "decade": 2000,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8699,10 +9576,13 @@
    "name": "Kobe Bryant",
    "franchise": "LAL",
    "decade": 2000,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 28.2,
    "rpg": 5.8,
    "apg": 5.3,
@@ -8721,10 +9601,13 @@
    "name": "Lamar Odom",
    "franchise": "LAL",
    "decade": 2000,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.1,
    "rpg": 9.6,
    "apg": 4.0,
@@ -8741,10 +9624,13 @@
    "name": "Robert Horry",
    "franchise": "LAL",
    "decade": 2000,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 6.1,
    "rpg": 5.2,
    "apg": 2.3,
@@ -8759,10 +9645,13 @@
    "name": "Derek Fisher",
    "franchise": "LAL",
    "decade": 2000,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 9.5,
    "rpg": 2.2,
    "apg": 3.0,
@@ -8777,6 +9666,7 @@
    "name": "Pau Gasol",
    "franchise": "LAL",
    "decade": 2010,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8800,10 +9690,13 @@
    "name": "Kobe Bryant",
    "franchise": "LAL",
    "decade": 2010,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 24.8,
    "rpg": 5.1,
    "apg": 4.8,
@@ -8821,6 +9714,7 @@
    "name": "Andrew Bynum",
    "franchise": "LAL",
    "decade": 2010,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8842,10 +9736,13 @@
    "name": "Lamar Odom",
    "franchise": "LAL",
    "decade": 2010,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.6,
    "rpg": 9.2,
    "apg": 3.1,
@@ -8862,10 +9759,13 @@
    "name": "Metta World Peace",
    "franchise": "LAL",
    "decade": 2010,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 9.4,
    "rpg": 3.8,
    "apg": 2.1,
@@ -8880,6 +9780,7 @@
    "name": "Luka Dončić",
    "franchise": "LAL",
    "decade": 2020,
+   "team": "LAL",
    "pos": [
     "PG"
    ],
@@ -8903,6 +9804,7 @@
    "name": "LeBron James",
    "franchise": "LAL",
    "decade": 2020,
+   "team": "LAL",
    "pos": [
     "SF"
    ],
@@ -8921,13 +9823,15 @@
     "playmaker",
     "scorer",
     "shooter"
-   ]
+   ],
+   "allPos": true
   },
   {
    "id": "LAL-2020-anthony-davis",
    "name": "Anthony Davis",
    "franchise": "LAL",
    "decade": 2020,
+   "team": "LAL",
    "pos": [
     "C"
    ],
@@ -8952,10 +9856,13 @@
    "name": "Austin Reaves",
    "franchise": "LAL",
    "decade": 2020,
+   "team": "LAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 15.8,
    "rpg": 4.0,
    "apg": 4.5,
@@ -8970,10 +9877,13 @@
    "name": "Rui Hachimura",
    "franchise": "LAL",
    "decade": 2020,
+   "team": "LAL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 12.3,
    "rpg": 4.2,
    "apg": 1.1,
@@ -8988,6 +9898,7 @@
    "name": "Shareef Abdur-Rahim",
    "franchise": "MEM",
    "decade": 1990,
+   "team": "VAN",
    "pos": [
     "SF"
    ],
@@ -9010,6 +9921,7 @@
    "name": "Greg Anthony",
    "franchise": "MEM",
    "decade": 1990,
+   "team": "VAN",
    "pos": [
     "PG"
    ],
@@ -9031,6 +9943,7 @@
    "name": "Bryant Reeves",
    "franchise": "MEM",
    "decade": 1990,
+   "team": "VAN",
    "pos": [
     "C"
    ],
@@ -9049,6 +9962,7 @@
    "name": "Blue Edwards",
    "franchise": "MEM",
    "decade": 1990,
+   "team": "VAN",
    "pos": [
     "SF"
    ],
@@ -9069,6 +9983,7 @@
    "name": "Lee Mayberry",
    "franchise": "MEM",
    "decade": 1990,
+   "team": "VAN",
    "pos": [
     "PG"
    ],
@@ -9087,6 +10002,7 @@
    "name": "Pau Gasol",
    "franchise": "MEM",
    "decade": 2000,
+   "team": "MEM",
    "pos": [
     "PF"
    ],
@@ -9109,10 +10025,13 @@
    "name": "Shareef Abdur-Rahim",
    "franchise": "MEM",
    "decade": 2000,
+   "team": "VAN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.4,
    "rpg": 9.6,
    "apg": 3.2,
@@ -9130,6 +10049,7 @@
    "name": "Mike Miller",
    "franchise": "MEM",
    "decade": 2000,
+   "team": "MEM",
    "pos": [
     "SG"
    ],
@@ -9150,11 +10070,13 @@
    "name": "Shane Battier",
    "franchise": "MEM",
    "decade": 2000,
+   "team": "MEM",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 10.5,
    "rpg": 4.8,
@@ -9170,6 +10092,7 @@
    "name": "Jason Williams",
    "franchise": "MEM",
    "decade": 2000,
+   "team": "MEM",
    "pos": [
     "PG"
    ],
@@ -9190,6 +10113,7 @@
    "name": "Marc Gasol",
    "franchise": "MEM",
    "decade": 2010,
+   "team": "MEM",
    "pos": [
     "C"
    ],
@@ -9210,6 +10134,7 @@
    "name": "Mike Conley",
    "franchise": "MEM",
    "decade": 2010,
+   "team": "MEM",
    "pos": [
     "PG"
    ],
@@ -9231,10 +10156,13 @@
    "name": "Rudy Gay",
    "franchise": "MEM",
    "decade": 2010,
+   "team": "MEM",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.1,
    "rpg": 6.1,
    "apg": 2.3,
@@ -9252,10 +10180,13 @@
    "name": "Zach Randolph",
    "franchise": "MEM",
    "decade": 2010,
+   "team": "MEM",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.8,
    "rpg": 10.2,
    "apg": 2.0,
@@ -9272,10 +10203,13 @@
    "name": "Tony Allen",
    "franchise": "MEM",
    "decade": 2010,
+   "team": "MEM",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 8.9,
    "rpg": 4.2,
    "apg": 1.4,
@@ -9292,6 +10226,7 @@
    "name": "Ja Morant",
    "franchise": "MEM",
    "decade": 2020,
+   "team": "MEM",
    "pos": [
     "PG"
    ],
@@ -9314,6 +10249,7 @@
    "name": "Jaren Jackson Jr.",
    "franchise": "MEM",
    "decade": 2020,
+   "team": "MEM",
    "pos": [
     "C"
    ],
@@ -9334,10 +10270,13 @@
    "name": "Desmond Bane",
    "franchise": "MEM",
    "decade": 2020,
+   "team": "MEM",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.8,
    "rpg": 4.6,
    "apg": 3.7,
@@ -9354,10 +10293,13 @@
    "name": "Brandon Clarke",
    "franchise": "MEM",
    "decade": 2020,
+   "team": "MEM",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 10.2,
    "rpg": 5.5,
    "apg": 1.3,
@@ -9372,6 +10314,7 @@
    "name": "Santi Aldama",
    "franchise": "MEM",
    "decade": 2020,
+   "team": "MEM",
    "pos": [
     "PF"
    ],
@@ -9390,10 +10333,13 @@
    "name": "Grant Long",
    "franchise": "MIA",
    "decade": 1980,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 11.9,
    "rpg": 6.7,
    "apg": 1.8,
@@ -9410,10 +10356,13 @@
    "name": "Billy Thompson",
    "franchise": "MIA",
    "decade": 1980,
+   "team": "MIA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 10.8,
    "rpg": 7.2,
    "apg": 2.2,
@@ -9428,6 +10377,7 @@
    "name": "Rory Sparrow",
    "franchise": "MIA",
    "decade": 1980,
+   "team": "MIA",
    "pos": [
     "PG"
    ],
@@ -9446,10 +10396,13 @@
    "name": "Kevin Edwards",
    "franchise": "MIA",
    "decade": 1980,
+   "team": "MIA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 13.8,
    "rpg": 3.3,
    "apg": 4.4,
@@ -9466,6 +10419,7 @@
    "name": "Rony Seikaly",
    "franchise": "MIA",
    "decade": 1980,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9484,6 +10438,7 @@
    "name": "Alonzo Mourning",
    "franchise": "MIA",
    "decade": 1990,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9505,6 +10460,7 @@
    "name": "Tim Hardaway",
    "franchise": "MIA",
    "decade": 1990,
+   "team": "MIA",
    "pos": [
     "PG"
    ],
@@ -9527,10 +10483,13 @@
    "name": "Glen Rice",
    "franchise": "MIA",
    "decade": 1990,
+   "team": "MIA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 19.3,
    "rpg": 5.0,
    "apg": 2.2,
@@ -9547,6 +10506,7 @@
    "name": "Rony Seikaly",
    "franchise": "MIA",
    "decade": 1990,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9567,10 +10527,13 @@
    "name": "Grant Long",
    "franchise": "MIA",
    "decade": 1990,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 11.6,
    "rpg": 7.0,
    "apg": 2.2,
@@ -9585,10 +10548,13 @@
    "name": "Dwyane Wade",
    "franchise": "MIA",
    "decade": 2000,
+   "team": "MIA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 25.2,
    "rpg": 4.9,
    "apg": 6.7,
@@ -9608,6 +10574,7 @@
    "name": "Alonzo Mourning",
    "franchise": "MIA",
    "decade": 2000,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9628,10 +10595,13 @@
    "name": "Eddie Jones",
    "franchise": "MIA",
    "decade": 2000,
+   "team": "MIA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 16.0,
    "rpg": 4.5,
    "apg": 3.0,
@@ -9648,6 +10618,7 @@
    "name": "Brian Grant",
    "franchise": "MIA",
    "decade": 2000,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9668,6 +10639,7 @@
    "name": "Udonis Haslem",
    "franchise": "MIA",
    "decade": 2000,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
@@ -9686,6 +10658,7 @@
    "name": "LeBron James",
    "franchise": "MIA",
    "decade": 2010,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
@@ -9703,17 +10676,21 @@
     "playmaker",
     "scorer",
     "defender"
-   ]
+   ],
+   "allPos": true
   },
   {
    "id": "MIA-2010-dwyane-wade",
    "name": "Dwyane Wade",
    "franchise": "MIA",
    "decade": 2010,
+   "team": "MIA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.3,
    "rpg": 4.7,
    "apg": 4.9,
@@ -9730,6 +10707,7 @@
    "name": "Hassan Whiteside",
    "franchise": "MIA",
    "decade": 2010,
+   "team": "MIA",
    "pos": [
     "C"
    ],
@@ -9751,6 +10729,7 @@
    "name": "Chris Bosh",
    "franchise": "MIA",
    "decade": 2010,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
@@ -9771,6 +10750,7 @@
    "name": "Goran Dragić",
    "franchise": "MIA",
    "decade": 2010,
+   "team": "MIA",
    "pos": [
     "PG"
    ],
@@ -9791,6 +10771,7 @@
    "name": "Jimmy Butler",
    "franchise": "MIA",
    "decade": 2020,
+   "team": "MIA",
    "pos": [
     "PF"
    ],
@@ -9813,10 +10794,13 @@
    "name": "Bam Adebayo",
    "franchise": "MIA",
    "decade": 2020,
+   "team": "MIA",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.8,
    "rpg": 9.8,
    "apg": 4.1,
@@ -9833,6 +10817,7 @@
    "name": "Kyle Lowry",
    "franchise": "MIA",
    "decade": 2020,
+   "team": "MIA",
    "pos": [
     "PG"
    ],
@@ -9851,10 +10836,13 @@
    "name": "Tyler Herro",
    "franchise": "MIA",
    "decade": 2020,
+   "team": "MIA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.4,
    "rpg": 5.0,
    "apg": 4.1,
@@ -9871,6 +10859,7 @@
    "name": "Duncan Robinson",
    "franchise": "MIA",
    "decade": 2020,
+   "team": "MIA",
    "pos": [
     "SF"
    ],
@@ -9891,10 +10880,13 @@
    "name": "Jon McGlocklin",
    "franchise": "MIL",
    "decade": 1960,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 19.6,
    "rpg": 4.3,
    "apg": 3.9,
@@ -9911,10 +10903,13 @@
    "name": "Flynn Robinson",
    "franchise": "MIL",
    "decade": 1960,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 20.3,
    "rpg": 3.6,
    "apg": 4.9,
@@ -9931,10 +10926,13 @@
    "name": "Len Chappell",
    "franchise": "MIL",
    "decade": 1960,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.6,
    "rpg": 8.0,
    "apg": 1.2,
@@ -9949,10 +10947,13 @@
    "name": "Wayne Embry",
    "franchise": "MIL",
    "decade": 1960,
+   "team": "MIL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.1,
    "rpg": 8.6,
    "apg": 1.9,
@@ -9967,6 +10968,7 @@
    "name": "Guy Rodgers",
    "franchise": "MIL",
    "decade": 1960,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -9987,10 +10989,13 @@
    "name": "Kareem Abdul-Jabbar",
    "franchise": "MIL",
    "decade": 1970,
+   "team": "MIL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 30.4,
    "rpg": 15.3,
    "apg": 4.3,
@@ -10009,6 +11014,7 @@
    "name": "Oscar Robertson",
    "franchise": "MIL",
    "decade": 1970,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10030,10 +11036,13 @@
    "name": "Bob Dandridge",
    "franchise": "MIL",
    "decade": 1970,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.8,
    "rpg": 7.4,
    "apg": 3.2,
@@ -10051,10 +11060,13 @@
    "name": "Brian Winters",
    "franchise": "MIL",
    "decade": 1970,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.3,
    "rpg": 2.9,
    "apg": 4.7,
@@ -10071,6 +11083,7 @@
    "name": "Jon McGlocklin",
    "franchise": "MIL",
    "decade": 1970,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
@@ -10089,10 +11102,13 @@
    "name": "Marques Johnson",
    "franchise": "MIL",
    "decade": 1980,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.3,
    "rpg": 6.8,
    "apg": 4.1,
@@ -10109,6 +11125,7 @@
    "name": "Sidney Moncrief",
    "franchise": "MIL",
    "decade": 1980,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
@@ -10131,11 +11148,13 @@
    "name": "Paul Pressey",
    "franchise": "MIL",
    "decade": 1980,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 12.0,
    "rpg": 4.5,
@@ -10153,11 +11172,13 @@
    "name": "Terry Cummings",
    "franchise": "MIL",
    "decade": 1980,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 21.7,
    "rpg": 8.3,
@@ -10173,6 +11194,7 @@
    "name": "Jack Sikma",
    "franchise": "MIL",
    "decade": 1980,
+   "team": "MIL",
    "pos": [
     "C"
    ],
@@ -10193,6 +11215,7 @@
    "name": "Eric Murdock",
    "franchise": "MIL",
    "decade": 1990,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10214,10 +11237,13 @@
    "name": "Alvin Robertson",
    "franchise": "MIL",
    "decade": 1990,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 12.7,
    "rpg": 5.3,
    "apg": 5.0,
@@ -10234,6 +11260,7 @@
    "name": "Vin Baker",
    "franchise": "MIL",
    "decade": 1990,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
@@ -10256,6 +11283,7 @@
    "name": "Jay Humphries",
    "franchise": "MIL",
    "decade": 1990,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10277,10 +11305,13 @@
    "name": "Glenn Robinson",
    "franchise": "MIL",
    "decade": 1990,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.1,
    "rpg": 6.1,
    "apg": 2.9,
@@ -10297,10 +11328,13 @@
    "name": "Ray Allen",
    "franchise": "MIL",
    "decade": 2000,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.9,
    "rpg": 4.7,
    "apg": 4.0,
@@ -10317,6 +11351,7 @@
    "name": "Sam Cassell",
    "franchise": "MIL",
    "decade": 2000,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10338,10 +11373,13 @@
    "name": "Michael Redd",
    "franchise": "MIL",
    "decade": 2000,
+   "team": "MIL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 20.7,
    "rpg": 4.2,
    "apg": 2.3,
@@ -10358,10 +11396,13 @@
    "name": "Glenn Robinson",
    "franchise": "MIL",
    "decade": 2000,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.2,
    "rpg": 6.4,
    "apg": 2.7,
@@ -10378,6 +11419,7 @@
    "name": "Andrew Bogut",
    "franchise": "MIL",
    "decade": 2000,
+   "team": "MIL",
    "pos": [
     "C"
    ],
@@ -10398,11 +11440,13 @@
    "name": "Giannis Antetokounmpo",
    "franchise": "MIL",
    "decade": 2010,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 18.8,
    "rpg": 8.3,
@@ -10418,6 +11462,7 @@
    "name": "Brandon Jennings",
    "franchise": "MIL",
    "decade": 2010,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10438,10 +11483,13 @@
    "name": "Khris Middleton",
    "franchise": "MIL",
    "decade": 2010,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 16.3,
    "rpg": 4.6,
    "apg": 3.4,
@@ -10458,6 +11506,7 @@
    "name": "Ersan İlyasova",
    "franchise": "MIL",
    "decade": 2010,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
@@ -10476,6 +11525,7 @@
    "name": "John Henson",
    "franchise": "MIL",
    "decade": 2010,
+   "team": "MIL",
    "pos": [
     "C"
    ],
@@ -10498,10 +11548,13 @@
    "name": "Giannis Antetokounmpo",
    "franchise": "MIL",
    "decade": 2020,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 29.7,
    "rpg": 11.7,
    "apg": 6.0,
@@ -10519,6 +11572,7 @@
    "name": "Jrue Holiday",
    "franchise": "MIL",
    "decade": 2020,
+   "team": "MIL",
    "pos": [
     "PG"
    ],
@@ -10540,10 +11594,13 @@
    "name": "Khris Middleton",
    "franchise": "MIL",
    "decade": 2020,
+   "team": "MIL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 18.3,
    "rpg": 5.3,
    "apg": 5.0,
@@ -10560,6 +11617,7 @@
    "name": "Brook Lopez",
    "franchise": "MIL",
    "decade": 2020,
+   "team": "MIL",
    "pos": [
     "C"
    ],
@@ -10580,6 +11638,7 @@
    "name": "Bobby Portis",
    "franchise": "MIL",
    "decade": 2020,
+   "team": "MIL",
    "pos": [
     "PF"
    ],
@@ -10600,11 +11659,13 @@
    "name": "Kevin Garnett",
    "franchise": "MIN",
    "decade": 1990,
+   "team": "MIN",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 16.2,
    "rpg": 8.4,
@@ -10622,6 +11683,7 @@
    "name": "Tom Gugliotta",
    "franchise": "MIN",
    "decade": 1990,
+   "team": "MIN",
    "pos": [
     "SF"
    ],
@@ -10645,6 +11707,7 @@
    "name": "Christian Laettner",
    "franchise": "MIN",
    "decade": 1990,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10665,6 +11728,7 @@
    "name": "Sam Mitchell",
    "franchise": "MIN",
    "decade": 1990,
+   "team": "MIN",
    "pos": [
     "SF"
    ],
@@ -10685,6 +11749,7 @@
    "name": "Doug West",
    "franchise": "MIN",
    "decade": 1990,
+   "team": "MIN",
    "pos": [
     "SG"
    ],
@@ -10703,10 +11768,13 @@
    "name": "Kevin Garnett",
    "franchise": "MIN",
    "decade": 2000,
+   "team": "MIN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.5,
    "rpg": 12.7,
    "apg": 5.0,
@@ -10725,6 +11793,7 @@
    "name": "Terrell Brandon",
    "franchise": "MIN",
    "decade": 2000,
+   "team": "MIN",
    "pos": [
     "PG"
    ],
@@ -10746,6 +11815,7 @@
    "name": "Al Jefferson",
    "franchise": "MIN",
    "decade": 2000,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10767,6 +11837,7 @@
    "name": "Wally Szczerbiak",
    "franchise": "MIN",
    "decade": 2000,
+   "team": "MIN",
    "pos": [
     "SF"
    ],
@@ -10785,6 +11856,7 @@
    "name": "Anthony Peeler",
    "franchise": "MIN",
    "decade": 2000,
+   "team": "MIN",
    "pos": [
     "SG"
    ],
@@ -10803,10 +11875,13 @@
    "name": "Kevin Love",
    "franchise": "MIN",
    "decade": 2010,
+   "team": "MIN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 21.5,
    "rpg": 13.1,
    "apg": 2.9,
@@ -10823,6 +11898,7 @@
    "name": "Karl-Anthony Towns",
    "franchise": "MIN",
    "decade": 2010,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10844,6 +11920,7 @@
    "name": "Ricky Rubio",
    "franchise": "MIN",
    "decade": 2010,
+   "team": "MIN",
    "pos": [
     "PG"
    ],
@@ -10865,6 +11942,7 @@
    "name": "Gorgui Dieng",
    "franchise": "MIN",
    "decade": 2010,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10883,6 +11961,7 @@
    "name": "Andrew Wiggins",
    "franchise": "MIN",
    "decade": 2010,
+   "team": "MIN",
    "pos": [
     "SF"
    ],
@@ -10903,6 +11982,7 @@
    "name": "Karl-Anthony Towns",
    "franchise": "MIN",
    "decade": 2020,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10926,6 +12006,7 @@
    "name": "Rudy Gobert",
    "franchise": "MIN",
    "decade": 2020,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10947,10 +12028,13 @@
    "name": "Anthony Edwards",
    "franchise": "MIN",
    "decade": 2020,
+   "team": "MIN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 24.5,
    "rpg": 5.3,
    "apg": 4.1,
@@ -10968,6 +12052,7 @@
    "name": "Naz Reid",
    "franchise": "MIN",
    "decade": 2020,
+   "team": "MIN",
    "pos": [
     "C"
    ],
@@ -10986,6 +12071,7 @@
    "name": "Jaden McDaniels",
    "franchise": "MIN",
    "decade": 2020,
+   "team": "MIN",
    "pos": [
     "PF"
    ],
@@ -11006,6 +12092,7 @@
    "name": "Chris Paul",
    "franchise": "NOP",
    "decade": 2000,
+   "team": "NOH",
    "pos": [
     "PG"
    ],
@@ -11028,6 +12115,7 @@
    "name": "Baron Davis",
    "franchise": "NOP",
    "decade": 2000,
+   "team": "NOH",
    "pos": [
     "PG"
    ],
@@ -11050,6 +12138,7 @@
    "name": "Tyson Chandler",
    "franchise": "NOP",
    "decade": 2000,
+   "team": "NOH",
    "pos": [
     "C"
    ],
@@ -11070,10 +12159,13 @@
    "name": "David West",
    "franchise": "NOP",
    "decade": 2000,
+   "team": "NOH",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 15.4,
    "rpg": 7.2,
    "apg": 1.7,
@@ -11088,6 +12180,7 @@
    "name": "P.J. Brown",
    "franchise": "NOP",
    "decade": 2000,
+   "team": "NOH",
    "pos": [
     "PF"
    ],
@@ -11108,6 +12201,7 @@
    "name": "Anthony Davis",
    "franchise": "NOP",
    "decade": 2010,
+   "team": "NOP",
    "pos": [
     "PF"
    ],
@@ -11132,6 +12226,7 @@
    "name": "Chris Paul",
    "franchise": "NOP",
    "decade": 2010,
+   "team": "NOH",
    "pos": [
     "PG"
    ],
@@ -11154,6 +12249,7 @@
    "name": "Jrue Holiday",
    "franchise": "NOP",
    "decade": 2010,
+   "team": "NOP",
    "pos": [
     "PG"
    ],
@@ -11178,10 +12274,13 @@
    "name": "David West",
    "franchise": "NOP",
    "decade": 2010,
+   "team": "NOH",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.0,
    "rpg": 7.5,
    "apg": 2.7,
@@ -11196,6 +12295,7 @@
    "name": "Ryan Anderson",
    "franchise": "NOP",
    "decade": 2010,
+   "team": "NOP",
    "pos": [
     "PF"
    ],
@@ -11214,10 +12314,13 @@
    "name": "Zion Williamson",
    "franchise": "NOP",
    "decade": 2020,
+   "team": "NOP",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 23.9,
    "rpg": 6.4,
    "apg": 4.0,
@@ -11234,10 +12337,13 @@
    "name": "Brandon Ingram",
    "franchise": "NOP",
    "decade": 2020,
+   "team": "NOP",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 23.0,
    "rpg": 5.5,
    "apg": 5.2,
@@ -11255,6 +12361,7 @@
    "name": "Jonas Valančiūnas",
    "franchise": "NOP",
    "decade": 2020,
+   "team": "NOP",
    "pos": [
     "C"
    ],
@@ -11275,6 +12382,7 @@
    "name": "CJ McCollum",
    "franchise": "NOP",
    "decade": 2020,
+   "team": "NOP",
    "pos": [
     "PG"
    ],
@@ -11295,6 +12403,7 @@
    "name": "Trey Murphy III",
    "franchise": "NOP",
    "decade": 2020,
+   "team": "NOP",
    "pos": [
     "SF"
    ],
@@ -11313,10 +12422,13 @@
    "name": "Walt Bellamy",
    "franchise": "NYK",
    "decade": 1960,
+   "team": "NYK",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 18.9,
    "rpg": 13.3,
    "apg": 2.5,
@@ -11333,10 +12445,13 @@
    "name": "Richie Guerin",
    "franchise": "NYK",
    "decade": 1960,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 23.7,
    "rpg": 6.3,
    "apg": 6.0,
@@ -11354,6 +12469,7 @@
    "name": "Willis Reed",
    "franchise": "NYK",
    "decade": 1960,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
@@ -11376,10 +12492,13 @@
    "name": "Dick Barnett",
    "franchise": "NYK",
    "decade": 1960,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 18.9,
    "rpg": 3.4,
    "apg": 3.1,
@@ -11396,10 +12515,13 @@
    "name": "Johnny Green",
    "franchise": "NYK",
    "decade": 1960,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.9,
    "rpg": 10.2,
    "apg": 1.7,
@@ -11416,6 +12538,7 @@
    "name": "Walt Frazier",
    "franchise": "NYK",
    "decade": 1970,
+   "team": "NYK",
    "pos": [
     "PG"
    ],
@@ -11438,6 +12561,7 @@
    "name": "Willis Reed",
    "franchise": "NYK",
    "decade": 1970,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -11458,10 +12582,13 @@
    "name": "Earl Monroe",
    "franchise": "NYK",
    "decade": 1970,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.0,
    "rpg": 2.8,
    "apg": 3.7,
@@ -11478,10 +12605,13 @@
    "name": "Dave DeBusschere",
    "franchise": "NYK",
    "decade": 1970,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.0,
    "rpg": 10.7,
    "apg": 3.1,
@@ -11498,10 +12628,13 @@
    "name": "Bill Bradley",
    "franchise": "NYK",
    "decade": 1970,
+   "team": "NYK",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.7,
    "rpg": 3.1,
    "apg": 3.4,
@@ -11516,10 +12649,13 @@
    "name": "Bernard King",
    "franchise": "NYK",
    "decade": 1980,
+   "team": "NYK",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 26.6,
    "rpg": 5.2,
    "apg": 2.8,
@@ -11537,6 +12673,7 @@
    "name": "Patrick Ewing",
    "franchise": "NYK",
    "decade": 1980,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -11559,6 +12696,7 @@
    "name": "Michael Ray Richardson",
    "franchise": "NYK",
    "decade": 1980,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
@@ -11583,6 +12721,7 @@
    "name": "Ray Williams",
    "franchise": "NYK",
    "decade": 1980,
+   "team": "NYK",
    "pos": [
     "PG"
    ],
@@ -11606,6 +12745,7 @@
    "name": "Bill Cartwright",
    "franchise": "NYK",
    "decade": 1980,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -11624,6 +12764,7 @@
    "name": "Patrick Ewing",
    "franchise": "NYK",
    "decade": 1990,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -11646,6 +12787,7 @@
    "name": "Mark Jackson",
    "franchise": "NYK",
    "decade": 1990,
+   "team": "NYK",
    "pos": [
     "PG"
    ],
@@ -11666,6 +12808,7 @@
    "name": "Anthony Mason",
    "franchise": "NYK",
    "decade": 1990,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
@@ -11686,10 +12829,13 @@
    "name": "Charles Oakley",
    "franchise": "NYK",
    "decade": 1990,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 10.0,
    "rpg": 10.0,
    "apg": 2.3,
@@ -11706,10 +12852,13 @@
    "name": "John Starks",
    "franchise": "NYK",
    "decade": 1990,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.1,
    "rpg": 2.7,
    "apg": 4.0,
@@ -11724,6 +12873,7 @@
    "name": "Stephon Marbury",
    "franchise": "NYK",
    "decade": 2000,
+   "team": "NYK",
    "pos": [
     "PG"
    ],
@@ -11745,6 +12895,7 @@
    "name": "Allan Houston",
    "franchise": "NYK",
    "decade": 2000,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
@@ -11765,6 +12916,7 @@
    "name": "Kurt Thomas",
    "franchise": "NYK",
    "decade": 2000,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
@@ -11785,10 +12937,13 @@
    "name": "Latrell Sprewell",
    "franchise": "NYK",
    "decade": 2000,
+   "team": "NYK",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 18.1,
    "rpg": 4.1,
    "apg": 4.0,
@@ -11805,10 +12960,13 @@
    "name": "Jamal Crawford",
    "franchise": "NYK",
    "decade": 2000,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.6,
    "rpg": 2.9,
    "apg": 4.4,
@@ -11825,6 +12983,7 @@
    "name": "Carmelo Anthony",
    "franchise": "NYK",
    "decade": 2010,
+   "team": "NYK",
    "pos": [
     "SF"
    ],
@@ -11848,6 +13007,7 @@
    "name": "Tyson Chandler",
    "franchise": "NYK",
    "decade": 2010,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -11868,6 +13028,7 @@
    "name": "Amar'e Stoudemire",
    "franchise": "NYK",
    "decade": 2010,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
@@ -11888,10 +13049,13 @@
    "name": "Kristaps Porziņģis",
    "franchise": "NYK",
    "decade": 2010,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 17.8,
    "rpg": 7.1,
    "apg": 1.3,
@@ -11908,6 +13072,7 @@
    "name": "J.R. Smith",
    "franchise": "NYK",
    "decade": 2010,
+   "team": "NYK",
    "pos": [
     "SG"
    ],
@@ -11928,10 +13093,13 @@
    "name": "Karl-Anthony Towns",
    "franchise": "NYK",
    "decade": 2020,
+   "team": "NYK",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 22.2,
    "rpg": 12.3,
    "apg": 3.0,
@@ -11949,6 +13117,7 @@
    "name": "Jalen Brunson",
    "franchise": "NYK",
    "decade": 2020,
+   "team": "NYK",
    "pos": [
     "PG"
    ],
@@ -11971,10 +13140,13 @@
    "name": "Julius Randle",
    "franchise": "NYK",
    "decade": 2020,
+   "team": "NYK",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.6,
    "rpg": 9.9,
    "apg": 4.7,
@@ -11992,6 +13164,7 @@
    "name": "Mitchell Robinson",
    "franchise": "NYK",
    "decade": 2020,
+   "team": "NYK",
    "pos": [
     "C"
    ],
@@ -12012,11 +13185,13 @@
    "name": "Josh Hart",
    "franchise": "NYK",
    "decade": 2020,
+   "team": "NYK",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 11.5,
    "rpg": 8.3,
@@ -12032,6 +13207,7 @@
    "name": "Lenny Wilkens",
    "franchise": "OKC",
    "decade": 1960,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12054,6 +13230,7 @@
    "name": "Walt Hazzard",
    "franchise": "OKC",
    "decade": 1960,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12076,10 +13253,13 @@
    "name": "Bob Rule",
    "franchise": "OKC",
    "decade": 1960,
+   "team": "SEA",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.0,
    "rpg": 10.5,
    "apg": 1.5,
@@ -12096,10 +13276,13 @@
    "name": "Tom Meschery",
    "franchise": "OKC",
    "decade": 1960,
+   "team": "SEA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.2,
    "rpg": 10.1,
    "apg": 2.4,
@@ -12116,10 +13299,13 @@
    "name": "Al Tucker",
    "franchise": "OKC",
    "decade": 1960,
+   "team": "SEA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 12.0,
    "rpg": 6.8,
    "apg": 1.2,
@@ -12134,10 +13320,13 @@
    "name": "Spencer Haywood",
    "franchise": "OKC",
    "decade": 1970,
+   "team": "SEA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 24.9,
    "rpg": 12.1,
    "apg": 2.3,
@@ -12155,10 +13344,13 @@
    "name": "Fred Brown",
    "franchise": "OKC",
    "decade": 1970,
+   "team": "SEA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.4,
    "rpg": 3.6,
    "apg": 3.7,
@@ -12176,6 +13368,7 @@
    "name": "Lenny Wilkens",
    "franchise": "OKC",
    "decade": 1970,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12197,10 +13390,13 @@
    "name": "Dick Snyder",
    "franchise": "OKC",
    "decade": 1970,
+   "team": "SEA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.7,
    "rpg": 3.3,
    "apg": 3.6,
@@ -12215,6 +13411,7 @@
    "name": "Slick Watts",
    "franchise": "OKC",
    "decade": 1970,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12236,6 +13433,7 @@
    "name": "Gus Williams",
    "franchise": "OKC",
    "decade": 1980,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12258,10 +13456,13 @@
    "name": "Jack Sikma",
    "franchise": "OKC",
    "decade": 1980,
+   "team": "SEA",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.9,
    "rpg": 11.0,
    "apg": 3.5,
@@ -12278,10 +13479,13 @@
    "name": "Dale Ellis",
    "franchise": "OKC",
    "decade": 1980,
+   "team": "SEA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 26.1,
    "rpg": 4.7,
    "apg": 2.5,
@@ -12299,10 +13503,13 @@
    "name": "Xavier McDaniel",
    "franchise": "OKC",
    "decade": 1980,
+   "team": "SEA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.5,
    "rpg": 7.1,
    "apg": 2.5,
@@ -12319,6 +13526,7 @@
    "name": "Tom Chambers",
    "franchise": "OKC",
    "decade": 1980,
+   "team": "SEA",
    "pos": [
     "PF"
    ],
@@ -12337,6 +13545,7 @@
    "name": "Gary Payton",
    "franchise": "OKC",
    "decade": 1990,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12359,10 +13568,13 @@
    "name": "Shawn Kemp",
    "franchise": "OKC",
    "decade": 1990,
+   "team": "SEA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 16.2,
    "rpg": 9.6,
    "apg": 1.7,
@@ -12380,10 +13592,13 @@
    "name": "Detlef Schrempf",
    "franchise": "OKC",
    "decade": 1990,
+   "team": "SEA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 16.6,
    "rpg": 6.3,
    "apg": 4.0,
@@ -12400,6 +13615,7 @@
    "name": "Nate McMillan",
    "franchise": "OKC",
    "decade": 1990,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12422,11 +13638,13 @@
    "name": "Sam Perkins",
    "franchise": "OKC",
    "decade": 1990,
+   "team": "SEA",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "C"
+    "C",
+    "SF"
    ],
    "ppg": 11.1,
    "rpg": 4.2,
@@ -12442,6 +13660,7 @@
    "name": "Gary Payton",
    "franchise": "OKC",
    "decade": 2000,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12465,10 +13684,13 @@
    "name": "Ray Allen",
    "franchise": "OKC",
    "decade": 2000,
+   "team": "SEA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 24.6,
    "rpg": 4.6,
    "apg": 4.2,
@@ -12486,10 +13708,13 @@
    "name": "Brent Barry",
    "franchise": "OKC",
    "decade": 2000,
+   "team": "SEA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 11.4,
    "rpg": 4.2,
    "apg": 4.6,
@@ -12504,10 +13729,13 @@
    "name": "Rashard Lewis",
    "franchise": "OKC",
    "decade": 2000,
+   "team": "SEA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.1,
    "rpg": 6.0,
    "apg": 1.7,
@@ -12524,6 +13752,7 @@
    "name": "Luke Ridnour",
    "franchise": "OKC",
    "decade": 2000,
+   "team": "SEA",
    "pos": [
     "PG"
    ],
@@ -12542,10 +13771,13 @@
    "name": "Kevin Durant",
    "franchise": "OKC",
    "decade": 2010,
+   "team": "OKC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 28.9,
    "rpg": 7.6,
    "apg": 4.0,
@@ -12563,6 +13795,7 @@
    "name": "Russell Westbrook",
    "franchise": "OKC",
    "decade": 2010,
+   "team": "OKC",
    "pos": [
     "PG"
    ],
@@ -12586,10 +13819,13 @@
    "name": "Serge Ibaka",
    "franchise": "OKC",
    "decade": 2010,
+   "team": "OKC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.5,
    "rpg": 7.4,
    "apg": 0.6,
@@ -12606,6 +13842,7 @@
    "name": "Steven Adams",
    "franchise": "OKC",
    "decade": 2010,
+   "team": "OKC",
    "pos": [
     "C"
    ],
@@ -12624,10 +13861,13 @@
    "name": "Thabo Sefolosha",
    "franchise": "OKC",
    "decade": 2010,
+   "team": "OKC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 6.1,
    "rpg": 4.0,
    "apg": 1.5,
@@ -12642,6 +13882,7 @@
    "name": "Shai Gilgeous-Alexander",
    "franchise": "OKC",
    "decade": 2020,
+   "team": "OKC",
    "pos": [
     "PG"
    ],
@@ -12665,6 +13906,7 @@
    "name": "Chet Holmgren",
    "franchise": "OKC",
    "decade": 2020,
+   "team": "OKC",
    "pos": [
     "C"
    ],
@@ -12687,11 +13929,13 @@
    "name": "Jalen Williams",
    "franchise": "OKC",
    "decade": 2020,
+   "team": "OKC",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "PG"
    ],
    "ppg": 18.0,
    "rpg": 4.6,
@@ -12709,6 +13953,7 @@
    "name": "Josh Giddey",
    "franchise": "OKC",
    "decade": 2020,
+   "team": "OKC",
    "pos": [
     "SG"
    ],
@@ -12730,6 +13975,7 @@
    "name": "Luguentz Dort",
    "franchise": "OKC",
    "decade": 2020,
+   "team": "OKC",
    "pos": [
     "SF"
    ],
@@ -12750,10 +13996,13 @@
    "name": "Shaquille O'Neal",
    "franchise": "ORL",
    "decade": 1990,
+   "team": "ORL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 27.2,
    "rpg": 12.5,
    "apg": 2.4,
@@ -12772,6 +14021,7 @@
    "name": "Anfernee Hardaway",
    "franchise": "ORL",
    "decade": 1990,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
@@ -12796,6 +14046,7 @@
    "name": "Horace Grant",
    "franchise": "ORL",
    "decade": 1990,
+   "team": "ORL",
    "pos": [
     "PF"
    ],
@@ -12816,6 +14067,7 @@
    "name": "Nick Anderson",
    "franchise": "ORL",
    "decade": 1990,
+   "team": "ORL",
    "pos": [
     "SG"
    ],
@@ -12836,10 +14088,13 @@
    "name": "Dennis Scott",
    "franchise": "ORL",
    "decade": 1990,
+   "team": "ORL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 14.8,
    "rpg": 3.1,
    "apg": 2.3,
@@ -12854,10 +14109,13 @@
    "name": "Tracy McGrady",
    "franchise": "ORL",
    "decade": 2000,
+   "team": "ORL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 28.1,
    "rpg": 7.0,
    "apg": 5.2,
@@ -12876,6 +14134,7 @@
    "name": "Dwight Howard",
    "franchise": "ORL",
    "decade": 2000,
+   "team": "ORL",
    "pos": [
     "C"
    ],
@@ -12899,6 +14158,7 @@
    "name": "Darrell Armstrong",
    "franchise": "ORL",
    "decade": 2000,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
@@ -12919,10 +14179,13 @@
    "name": "Hedo Türkoğlu",
    "franchise": "ORL",
    "decade": 2000,
+   "team": "ORL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 15.8,
    "rpg": 4.6,
    "apg": 3.7,
@@ -12937,6 +14200,7 @@
    "name": "Jameer Nelson",
    "franchise": "ORL",
    "decade": 2000,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
@@ -12955,10 +14219,13 @@
    "name": "Dwight Howard",
    "franchise": "ORL",
    "decade": 2010,
+   "team": "ORL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.6,
    "rpg": 13.9,
    "apg": 1.7,
@@ -12976,10 +14243,13 @@
    "name": "Nikola Vučević",
    "franchise": "ORL",
    "decade": 2010,
+   "team": "ORL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.8,
    "rpg": 10.7,
    "apg": 2.7,
@@ -12996,6 +14266,7 @@
    "name": "Jameer Nelson",
    "franchise": "ORL",
    "decade": 2010,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
@@ -13016,6 +14287,7 @@
    "name": "Aaron Gordon",
    "franchise": "ORL",
    "decade": 2010,
+   "team": "ORL",
    "pos": [
     "PF"
    ],
@@ -13036,6 +14308,7 @@
    "name": "Evan Fournier",
    "franchise": "ORL",
    "decade": 2010,
+   "team": "ORL",
    "pos": [
     "SG"
    ],
@@ -13056,10 +14329,13 @@
    "name": "Paolo Banchero",
    "franchise": "ORL",
    "decade": 2020,
+   "team": "ORL",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 22.4,
    "rpg": 7.4,
    "apg": 4.8,
@@ -13076,10 +14352,13 @@
    "name": "Franz Wagner",
    "franchise": "ORL",
    "decade": 2020,
+   "team": "ORL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 19.3,
    "rpg": 4.9,
    "apg": 3.6,
@@ -13096,10 +14375,13 @@
    "name": "Wendell Carter Jr.",
    "franchise": "ORL",
    "decade": 2020,
+   "team": "ORL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.3,
    "rpg": 8.1,
    "apg": 2.1,
@@ -13114,6 +14396,7 @@
    "name": "Jalen Suggs",
    "franchise": "ORL",
    "decade": 2020,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
@@ -13134,10 +14417,13 @@
    "name": "Cole Anthony",
    "franchise": "ORL",
    "decade": 2020,
+   "team": "ORL",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.5,
    "rpg": 4.3,
    "apg": 3.8,
@@ -13152,10 +14438,13 @@
    "name": "Wilt Chamberlain",
    "franchise": "PHI",
    "decade": 1960,
+   "team": "PHI",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 27.6,
    "rpg": 24.0,
    "apg": 6.8,
@@ -13174,10 +14463,13 @@
    "name": "Hal Greer",
    "franchise": "PHI",
    "decade": 1960,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 21.2,
    "rpg": 5.6,
    "apg": 4.2,
@@ -13194,10 +14486,13 @@
    "name": "Larry Costello",
    "franchise": "PHI",
    "decade": 1960,
+   "team": "SYR",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.6,
    "rpg": 3.5,
    "apg": 4.8,
@@ -13212,10 +14507,13 @@
    "name": "Chet Walker",
    "franchise": "PHI",
    "decade": 1960,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.2,
    "rpg": 7.9,
    "apg": 1.8,
@@ -13232,10 +14530,13 @@
    "name": "Red Kerr",
    "franchise": "PHI",
    "decade": 1960,
+   "team": "SYR",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.2,
    "rpg": 11.9,
    "apg": 2.7,
@@ -13252,10 +14553,13 @@
    "name": "Julius Erving",
    "franchise": "PHI",
    "decade": 1970,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.8,
    "rpg": 7.4,
    "apg": 4.0,
@@ -13273,10 +14577,13 @@
    "name": "Billy Cunningham",
    "franchise": "PHI",
    "decade": 1970,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 22.4,
    "rpg": 11.4,
    "apg": 5.2,
@@ -13295,6 +14602,7 @@
    "name": "Steve Mix",
    "franchise": "PHI",
    "decade": 1970,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
@@ -13317,10 +14625,13 @@
    "name": "Doug Collins",
    "franchise": "PHI",
    "decade": 1970,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.3,
    "rpg": 3.4,
    "apg": 3.5,
@@ -13337,6 +14648,7 @@
    "name": "Fred Carter",
    "franchise": "PHI",
    "decade": 1970,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
@@ -13359,10 +14671,13 @@
    "name": "Charles Barkley",
    "franchise": "PHI",
    "decade": 1980,
+   "team": "PHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.1,
    "rpg": 12.0,
    "apg": 3.5,
@@ -13381,11 +14696,13 @@
    "name": "Julius Erving",
    "franchise": "PHI",
    "decade": 1980,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 22.0,
    "rpg": 6.4,
@@ -13406,10 +14723,13 @@
    "name": "Moses Malone",
    "franchise": "PHI",
    "decade": 1980,
+   "team": "PHI",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 23.9,
    "rpg": 13.4,
    "apg": 1.4,
@@ -13428,6 +14748,7 @@
    "name": "Maurice Cheeks",
    "franchise": "PHI",
    "decade": 1980,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13449,10 +14770,13 @@
    "name": "Bobby Jones",
    "franchise": "PHI",
    "decade": 1980,
+   "team": "PHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 10.5,
    "rpg": 4.5,
    "apg": 2.2,
@@ -13467,10 +14791,13 @@
    "name": "Charles Barkley",
    "franchise": "PHI",
    "decade": 1990,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 25.2,
    "rpg": 10.9,
    "apg": 4.1,
@@ -13490,6 +14817,7 @@
    "name": "Allen Iverson",
    "franchise": "PHI",
    "decade": 1990,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13515,6 +14843,7 @@
    "name": "Dana Barros",
    "franchise": "PHI",
    "decade": 1990,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13537,10 +14866,13 @@
    "name": "Hersey Hawkins",
    "franchise": "PHI",
    "decade": 1990,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 20.0,
    "rpg": 3.8,
    "apg": 3.5,
@@ -13558,10 +14890,13 @@
    "name": "Clarence Weatherspoon",
    "franchise": "PHI",
    "decade": 1990,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.3,
    "rpg": 8.3,
    "apg": 2.0,
@@ -13576,6 +14911,7 @@
    "name": "Allen Iverson",
    "franchise": "PHI",
    "decade": 2000,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
@@ -13601,6 +14937,7 @@
    "name": "Andre Iguodala",
    "franchise": "PHI",
    "decade": 2000,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
@@ -13623,6 +14960,7 @@
    "name": "Eric Snow",
    "franchise": "PHI",
    "decade": 2000,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13644,11 +14982,13 @@
    "name": "Aaron McKie",
    "franchise": "PHI",
    "decade": 2000,
+   "team": "PHI",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 8.6,
    "rpg": 3.6,
@@ -13664,6 +15004,7 @@
    "name": "Samuel Dalembert",
    "franchise": "PHI",
    "decade": 2000,
+   "team": "PHI",
    "pos": [
     "C"
    ],
@@ -13684,10 +15025,13 @@
    "name": "Andre Iguodala",
    "franchise": "PHI",
    "decade": 2010,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 14.8,
    "rpg": 6.2,
    "apg": 5.9,
@@ -13704,6 +15048,7 @@
    "name": "Elton Brand",
    "franchise": "PHI",
    "decade": 2010,
+   "team": "PHI",
    "pos": [
     "PF"
    ],
@@ -13724,10 +15069,13 @@
    "name": "Thaddeus Young",
    "franchise": "PHI",
    "decade": 2010,
+   "team": "PHI",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 14.5,
    "rpg": 5.9,
    "apg": 1.5,
@@ -13742,6 +15090,7 @@
    "name": "Jrue Holiday",
    "franchise": "PHI",
    "decade": 2010,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13760,10 +15109,13 @@
    "name": "Robert Covington",
    "franchise": "PHI",
    "decade": 2010,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.9,
    "rpg": 5.6,
    "apg": 1.6,
@@ -13780,10 +15132,13 @@
    "name": "Joel Embiid",
    "franchise": "PHI",
    "decade": 2020,
+   "team": "PHI",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 29.3,
    "rpg": 10.5,
    "apg": 3.9,
@@ -13801,6 +15156,7 @@
    "name": "Ben Simmons",
    "franchise": "PHI",
    "decade": 2020,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13822,6 +15178,7 @@
    "name": "Tyrese Maxey",
    "franchise": "PHI",
    "decade": 2020,
+   "team": "PHI",
    "pos": [
     "PG"
    ],
@@ -13844,6 +15201,7 @@
    "name": "Tobias Harris",
    "franchise": "PHI",
    "decade": 2020,
+   "team": "PHI",
    "pos": [
     "PF"
    ],
@@ -13864,10 +15222,13 @@
    "name": "Kelly Oubre Jr.",
    "franchise": "PHI",
    "decade": 2020,
+   "team": "PHI",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.9,
    "rpg": 5.4,
    "apg": 1.6,
@@ -13882,10 +15243,13 @@
    "name": "Dick Van Arsdale",
    "franchise": "PHX",
    "decade": 1960,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.0,
    "rpg": 6.9,
    "apg": 4.8,
@@ -13902,6 +15266,7 @@
    "name": "Gail Goodrich",
    "franchise": "PHX",
    "decade": 1960,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -13924,10 +15289,13 @@
    "name": "Jim Fox",
    "franchise": "PHX",
    "decade": 1960,
+   "team": "PHO",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.8,
    "rpg": 13.3,
    "apg": 2.8,
@@ -13944,10 +15312,13 @@
    "name": "Dick Snyder",
    "franchise": "PHX",
    "decade": 1960,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.1,
    "rpg": 4.0,
    "apg": 2.6,
@@ -13962,10 +15333,13 @@
    "name": "Gary Gregor",
    "franchise": "PHX",
    "decade": 1960,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.1,
    "rpg": 8.9,
    "apg": 1.2,
@@ -13980,6 +15354,7 @@
    "name": "Paul Westphal",
    "franchise": "PHX",
    "decade": 1970,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
@@ -14004,10 +15379,13 @@
    "name": "Alvan Adams",
    "franchise": "PHX",
    "decade": 1970,
+   "team": "PHO",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.6,
    "rpg": 8.9,
    "apg": 4.5,
@@ -14022,10 +15400,13 @@
    "name": "Connie Hawkins",
    "franchise": "PHX",
    "decade": 1970,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.7,
    "rpg": 9.1,
    "apg": 4.3,
@@ -14043,10 +15424,13 @@
    "name": "Dick Van Arsdale",
    "franchise": "PHX",
    "decade": 1970,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.2,
    "rpg": 3.1,
    "apg": 3.3,
@@ -14063,10 +15447,13 @@
    "name": "Neal Walk",
    "franchise": "PHX",
    "decade": 1970,
+   "team": "PHO",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.7,
    "rpg": 8.9,
    "apg": 2.4,
@@ -14081,10 +15468,13 @@
    "name": "Larry Nance",
    "franchise": "PHX",
    "decade": 1980,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 17.3,
    "rpg": 7.8,
    "apg": 2.6,
@@ -14101,10 +15491,13 @@
    "name": "Alvan Adams",
    "franchise": "PHX",
    "decade": 1980,
+   "team": "PHO",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.6,
    "rpg": 6.2,
    "apg": 3.9,
@@ -14119,11 +15512,13 @@
    "name": "Walter Davis",
    "franchise": "PHX",
    "decade": 1980,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 19.5,
    "rpg": 2.7,
@@ -14141,6 +15536,7 @@
    "name": "Dennis Johnson",
    "franchise": "PHX",
    "decade": 1980,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14163,6 +15559,7 @@
    "name": "Kyle Macy",
    "franchise": "PHX",
    "decade": 1980,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14181,10 +15578,13 @@
    "name": "Charles Barkley",
    "franchise": "PHX",
    "decade": 1990,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 23.4,
    "rpg": 11.5,
    "apg": 4.4,
@@ -14203,6 +15603,7 @@
    "name": "Kevin Johnson",
    "franchise": "PHX",
    "decade": 1990,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14224,10 +15625,13 @@
    "name": "Jeff Hornacek",
    "franchise": "PHX",
    "decade": 1990,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.2,
    "rpg": 4.6,
    "apg": 5.1,
@@ -14245,6 +15649,7 @@
    "name": "Dan Majerle",
    "franchise": "PHX",
    "decade": 1990,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
@@ -14265,6 +15670,7 @@
    "name": "Tom Chambers",
    "franchise": "PHX",
    "decade": 1990,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
@@ -14283,6 +15689,7 @@
    "name": "Steve Nash",
    "franchise": "PHX",
    "decade": 2000,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14304,6 +15711,7 @@
    "name": "Shawn Marion",
    "franchise": "PHX",
    "decade": 2000,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
@@ -14328,6 +15736,7 @@
    "name": "Amar'e Stoudemire",
    "franchise": "PHX",
    "decade": 2000,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
@@ -14348,6 +15757,7 @@
    "name": "Stephon Marbury",
    "franchise": "PHX",
    "decade": 2000,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14369,6 +15779,7 @@
    "name": "Leandro Barbosa",
    "franchise": "PHX",
    "decade": 2000,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
@@ -14389,6 +15800,7 @@
    "name": "Steve Nash",
    "franchise": "PHX",
    "decade": 2010,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14409,6 +15821,7 @@
    "name": "Eric Bledsoe",
    "franchise": "PHX",
    "decade": 2010,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14431,6 +15844,7 @@
    "name": "Goran Dragić",
    "franchise": "PHX",
    "decade": 2010,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14451,10 +15865,13 @@
    "name": "Devin Booker",
    "franchise": "PHX",
    "decade": 2010,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 21.4,
    "rpg": 3.5,
    "apg": 4.2,
@@ -14471,11 +15888,13 @@
    "name": "Jared Dudley",
    "franchise": "PHX",
    "decade": 2010,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "SG"
    ],
    "ppg": 9.1,
    "rpg": 3.5,
@@ -14491,6 +15910,7 @@
    "name": "Chris Paul",
    "franchise": "PHX",
    "decade": 2020,
+   "team": "PHO",
    "pos": [
     "PG"
    ],
@@ -14512,10 +15932,13 @@
    "name": "Kevin Durant",
    "franchise": "PHX",
    "decade": 2020,
+   "team": "PHO",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 26.9,
    "rpg": 6.3,
    "apg": 4.6,
@@ -14532,10 +15955,13 @@
    "name": "Devin Booker",
    "franchise": "PHX",
    "decade": 2020,
+   "team": "PHO",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 26.5,
    "rpg": 4.3,
    "apg": 5.9,
@@ -14553,6 +15979,7 @@
    "name": "Deandre Ayton",
    "franchise": "PHX",
    "decade": 2020,
+   "team": "PHO",
    "pos": [
     "C"
    ],
@@ -14573,10 +16000,13 @@
    "name": "Mikal Bridges",
    "franchise": "PHX",
    "decade": 2020,
+   "team": "PHO",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 13.3,
    "rpg": 4.2,
    "apg": 2.4,
@@ -14591,10 +16021,13 @@
    "name": "Bill Walton",
    "franchise": "POR",
    "decade": 1970,
+   "team": "POR",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.1,
    "rpg": 13.5,
    "apg": 4.4,
@@ -14612,10 +16045,13 @@
    "name": "Sidney Wicks",
    "franchise": "POR",
    "decade": 1970,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.3,
    "rpg": 10.3,
    "apg": 4.1,
@@ -14633,6 +16069,7 @@
    "name": "Geoff Petrie",
    "franchise": "POR",
    "decade": 1970,
+   "team": "POR",
    "pos": [
     "SG"
    ],
@@ -14655,10 +16092,13 @@
    "name": "Larry Steele",
    "franchise": "POR",
    "decade": 1970,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 8.2,
    "rpg": 2.9,
    "apg": 2.8,
@@ -14675,10 +16115,13 @@
    "name": "Lloyd Neal",
    "franchise": "POR",
    "decade": 1970,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 11.2,
    "rpg": 7.8,
    "apg": 1.5,
@@ -14693,10 +16136,13 @@
    "name": "Clyde Drexler",
    "franchise": "POR",
    "decade": 1980,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.8,
    "rpg": 5.9,
    "apg": 5.6,
@@ -14714,6 +16160,7 @@
    "name": "Terry Porter",
    "franchise": "POR",
    "decade": 1980,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -14735,6 +16182,7 @@
    "name": "Mychal Thompson",
    "franchise": "POR",
    "decade": 1980,
+   "team": "POR",
    "pos": [
     "C"
    ],
@@ -14755,10 +16203,13 @@
    "name": "Calvin Natt",
    "franchise": "POR",
    "decade": 1980,
+   "team": "POR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 17.2,
    "rpg": 6.9,
    "apg": 2.1,
@@ -14775,10 +16226,13 @@
    "name": "Jim Paxson",
    "franchise": "POR",
    "decade": 1980,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.2,
    "rpg": 2.3,
    "apg": 3.3,
@@ -14795,10 +16249,13 @@
    "name": "Clyde Drexler",
    "franchise": "POR",
    "decade": 1990,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 22.0,
    "rpg": 6.5,
    "apg": 5.8,
@@ -14816,6 +16273,7 @@
    "name": "Rod Strickland",
    "franchise": "POR",
    "decade": 1990,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -14840,6 +16298,7 @@
    "name": "Terry Porter",
    "franchise": "POR",
    "decade": 1990,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -14861,6 +16320,7 @@
    "name": "Clifford Robinson",
    "franchise": "POR",
    "decade": 1990,
+   "team": "POR",
    "pos": [
     "SF"
    ],
@@ -14883,10 +16343,13 @@
    "name": "Buck Williams",
    "franchise": "POR",
    "decade": 1990,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 10.2,
    "rpg": 8.7,
    "apg": 1.1,
@@ -14901,10 +16364,13 @@
    "name": "Brandon Roy",
    "franchise": "POR",
    "decade": 2000,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.8,
    "rpg": 4.6,
    "apg": 5.0,
@@ -14921,10 +16387,13 @@
    "name": "Rasheed Wallace",
    "franchise": "POR",
    "decade": 2000,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 18.1,
    "rpg": 7.5,
    "apg": 2.2,
@@ -14939,10 +16408,13 @@
    "name": "Scottie Pippen",
    "franchise": "POR",
    "decade": 2000,
+   "team": "POR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 11.4,
    "rpg": 5.3,
    "apg": 5.0,
@@ -14959,6 +16431,7 @@
    "name": "Zach Randolph",
    "franchise": "POR",
    "decade": 2000,
+   "team": "POR",
    "pos": [
     "PF"
    ],
@@ -14977,6 +16450,7 @@
    "name": "Damon Stoudamire",
    "franchise": "POR",
    "decade": 2000,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -14995,6 +16469,7 @@
    "name": "Damian Lillard",
    "franchise": "POR",
    "decade": 2010,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -15017,10 +16492,13 @@
    "name": "LaMarcus Aldridge",
    "franchise": "POR",
    "decade": 2010,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 21.4,
    "rpg": 9.2,
    "apg": 2.2,
@@ -15037,10 +16515,13 @@
    "name": "Nicolas Batum",
    "franchise": "POR",
    "decade": 2010,
+   "team": "POR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.3,
    "rpg": 5.5,
    "apg": 3.4,
@@ -15055,10 +16536,13 @@
    "name": "CJ McCollum",
    "franchise": "POR",
    "decade": 2010,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.1,
    "rpg": 3.3,
    "apg": 3.2,
@@ -15075,6 +16559,7 @@
    "name": "Wesley Matthews",
    "franchise": "POR",
    "decade": 2010,
+   "team": "POR",
    "pos": [
     "SG"
    ],
@@ -15093,6 +16578,7 @@
    "name": "Damian Lillard",
    "franchise": "POR",
    "decade": 2020,
+   "team": "POR",
    "pos": [
     "PG"
    ],
@@ -15115,10 +16601,13 @@
    "name": "Deni Avdija",
    "franchise": "POR",
    "decade": 2020,
+   "team": "POR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.4,
    "rpg": 7.1,
    "apg": 5.2,
@@ -15135,10 +16624,13 @@
    "name": "CJ McCollum",
    "franchise": "POR",
    "decade": 2020,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 22.1,
    "rpg": 4.1,
    "apg": 4.5,
@@ -15156,10 +16648,13 @@
    "name": "Jerami Grant",
    "franchise": "POR",
    "decade": 2020,
+   "team": "POR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 18.8,
    "rpg": 3.8,
    "apg": 2.4,
@@ -15174,10 +16669,13 @@
    "name": "Anfernee Simons",
    "franchise": "POR",
    "decade": 2020,
+   "team": "POR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 15.6,
    "rpg": 2.6,
    "apg": 3.4,
@@ -15192,10 +16690,13 @@
    "name": "Oscar Robertson",
    "franchise": "SAC",
    "decade": 1960,
+   "team": "CIN",
    "pos": [
     "PG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 29.7,
    "rpg": 8.7,
    "apg": 10.5,
@@ -15214,10 +16715,13 @@
    "name": "Jerry Lucas",
    "franchise": "SAC",
    "decade": 1960,
+   "team": "CIN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.7,
    "rpg": 19.2,
    "apg": 3.0,
@@ -15234,10 +16738,13 @@
    "name": "Jack Twyman",
    "franchise": "SAC",
    "decade": 1960,
+   "team": "CIN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.7,
    "rpg": 6.5,
    "apg": 2.3,
@@ -15254,10 +16761,13 @@
    "name": "Wayne Embry",
    "franchise": "SAC",
    "decade": 1960,
+   "team": "CIN",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.4,
    "rpg": 10.5,
    "apg": 1.6,
@@ -15274,10 +16784,13 @@
    "name": "Adrian Smith",
    "franchise": "SAC",
    "decade": 1960,
+   "team": "CIN",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 12.7,
    "rpg": 2.4,
    "apg": 2.5,
@@ -15292,6 +16805,7 @@
    "name": "Tiny Archibald",
    "franchise": "SAC",
    "decade": 1970,
+   "team": "KCO",
    "pos": [
     "PG"
    ],
@@ -15315,10 +16829,13 @@
    "name": "Sam Lacey",
    "franchise": "SAC",
    "decade": 1970,
+   "team": "KCK",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 11.9,
    "rpg": 11.2,
    "apg": 3.7,
@@ -15337,10 +16854,13 @@
    "name": "Johnny Green",
    "franchise": "SAC",
    "decade": 1970,
+   "team": "CIN",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 12.4,
    "rpg": 8.0,
    "apg": 1.3,
@@ -15355,10 +16875,13 @@
    "name": "Scott Wedman",
    "franchise": "SAC",
    "decade": 1970,
+   "team": "KCK",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.6,
    "rpg": 6.2,
    "apg": 2.3,
@@ -15373,10 +16896,13 @@
    "name": "Tom Van Arsdale",
    "franchise": "SAC",
    "decade": 1970,
+   "team": "CIN",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.0,
    "rpg": 5.4,
    "apg": 2.3,
@@ -15393,6 +16919,7 @@
    "name": "Reggie Theus",
    "franchise": "SAC",
    "decade": 1980,
+   "team": "SAC",
    "pos": [
     "SG"
    ],
@@ -15416,10 +16943,13 @@
    "name": "Mike Woodson",
    "franchise": "SAC",
    "decade": 1980,
+   "team": "KCK",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.3,
    "rpg": 2.8,
    "apg": 2.5,
@@ -15436,6 +16966,7 @@
    "name": "Larry Drew",
    "franchise": "SAC",
    "decade": 1980,
+   "team": "KCK",
    "pos": [
     "PG"
    ],
@@ -15456,6 +16987,7 @@
    "name": "LaSalle Thompson",
    "franchise": "SAC",
    "decade": 1980,
+   "team": "SAC",
    "pos": [
     "C"
    ],
@@ -15474,6 +17006,7 @@
    "name": "Eddie Johnson",
    "franchise": "SAC",
    "decade": 1980,
+   "team": "KCK",
    "pos": [
     "SF"
    ],
@@ -15494,10 +17027,13 @@
    "name": "Mitch Richmond",
    "franchise": "SAC",
    "decade": 1990,
+   "team": "SAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 23.4,
    "rpg": 3.7,
    "apg": 4.1,
@@ -15515,6 +17051,7 @@
    "name": "Spud Webb",
    "franchise": "SAC",
    "decade": 1990,
+   "team": "SAC",
    "pos": [
     "PG"
    ],
@@ -15535,10 +17072,13 @@
    "name": "Lionel Simmons",
    "franchise": "SAC",
    "decade": 1990,
+   "team": "SAC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 12.9,
    "rpg": 6.2,
    "apg": 3.3,
@@ -15553,10 +17093,13 @@
    "name": "Wayman Tisdale",
    "franchise": "SAC",
    "decade": 1990,
+   "team": "SAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 18.3,
    "rpg": 7.0,
    "apg": 1.6,
@@ -15571,6 +17114,7 @@
    "name": "Olden Polynice",
    "franchise": "SAC",
    "decade": 1990,
+   "team": "SAC",
    "pos": [
     "C"
    ],
@@ -15589,10 +17133,13 @@
    "name": "Chris Webber",
    "franchise": "SAC",
    "decade": 2000,
+   "team": "SAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 23.9,
    "rpg": 10.3,
    "apg": 4.8,
@@ -15611,6 +17158,7 @@
    "name": "Peja Stojaković",
    "franchise": "SAC",
    "decade": 2000,
+   "team": "SAC",
    "pos": [
     "SF"
    ],
@@ -15631,10 +17179,13 @@
    "name": "Brad Miller",
    "franchise": "SAC",
    "decade": 2000,
+   "team": "SAC",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 13.3,
    "rpg": 8.6,
    "apg": 4.0,
@@ -15649,6 +17200,7 @@
    "name": "Mike Bibby",
    "franchise": "SAC",
    "decade": 2000,
+   "team": "SAC",
    "pos": [
     "PG"
    ],
@@ -15669,10 +17221,13 @@
    "name": "Doug Christie",
    "franchise": "SAC",
    "decade": 2000,
+   "team": "SAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 10.6,
    "rpg": 4.3,
    "apg": 4.2,
@@ -15689,10 +17244,13 @@
    "name": "DeMarcus Cousins",
    "franchise": "SAC",
    "decade": 2010,
+   "team": "SAC",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 21.1,
    "rpg": 10.8,
    "apg": 3.0,
@@ -15709,10 +17267,13 @@
    "name": "Rudy Gay",
    "franchise": "SAC",
    "decade": 2010,
+   "team": "SAC",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 19.3,
    "rpg": 6.0,
    "apg": 2.8,
@@ -15729,6 +17290,7 @@
    "name": "Isaiah Thomas",
    "franchise": "SAC",
    "decade": 2010,
+   "team": "SAC",
    "pos": [
     "PG"
    ],
@@ -15747,10 +17309,13 @@
    "name": "Tyreke Evans",
    "franchise": "SAC",
    "decade": 2010,
+   "team": "SAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 17.5,
    "rpg": 4.8,
    "apg": 4.9,
@@ -15767,10 +17332,13 @@
    "name": "Jason Thompson",
    "franchise": "SAC",
    "decade": 2010,
+   "team": "SAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.0,
    "rpg": 6.8,
    "apg": 1.1,
@@ -15785,6 +17353,7 @@
    "name": "Domantas Sabonis",
    "franchise": "SAC",
    "decade": 2020,
+   "team": "SAC",
    "pos": [
     "C"
    ],
@@ -15808,6 +17377,7 @@
    "name": "De'Aaron Fox",
    "franchise": "SAC",
    "decade": 2020,
+   "team": "SAC",
    "pos": [
     "PG"
    ],
@@ -15830,10 +17400,13 @@
    "name": "Harrison Barnes",
    "franchise": "SAC",
    "decade": 2020,
+   "team": "SAC",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 14.7,
    "rpg": 4.8,
    "apg": 2.1,
@@ -15848,10 +17421,13 @@
    "name": "Malik Monk",
    "franchise": "SAC",
    "decade": 2020,
+   "team": "SAC",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.6,
    "rpg": 2.8,
    "apg": 4.4,
@@ -15866,11 +17442,13 @@
    "name": "Keegan Murray",
    "franchise": "SAC",
    "decade": 2020,
+   "team": "SAC",
    "pos": [
     "PF"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "C"
    ],
    "ppg": 13.3,
    "rpg": 5.6,
@@ -15886,11 +17464,13 @@
    "name": "George Gervin",
    "franchise": "SAS",
    "decade": 1970,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "SG"
+    "SG",
+    "PF"
    ],
    "ppg": 26.6,
    "rpg": 5.2,
@@ -15910,6 +17490,7 @@
    "name": "Larry Kenon",
    "franchise": "SAS",
    "decade": 1970,
+   "team": "SAS",
    "pos": [
     "PF"
    ],
@@ -15933,6 +17514,7 @@
    "name": "Billy Paultz",
    "franchise": "SAS",
    "decade": 1970,
+   "team": "SAS",
    "pos": [
     "C"
    ],
@@ -15953,10 +17535,13 @@
    "name": "Mike Gale",
    "franchise": "SAS",
    "decade": 1970,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 9.1,
    "rpg": 2.9,
    "apg": 5.3,
@@ -15973,10 +17558,13 @@
    "name": "Mark Olberding",
    "franchise": "SAS",
    "decade": 1970,
+   "team": "SAS",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 9.3,
    "rpg": 5.2,
    "apg": 1.9,
@@ -15991,10 +17579,13 @@
    "name": "George Gervin",
    "franchise": "SAS",
    "decade": 1980,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 27.7,
    "rpg": 4.6,
    "apg": 2.8,
@@ -16012,6 +17603,7 @@
    "name": "Artis Gilmore",
    "franchise": "SAS",
    "decade": 1980,
+   "team": "SAS",
    "pos": [
     "C"
    ],
@@ -16033,10 +17625,13 @@
    "name": "Alvin Robertson",
    "franchise": "SAS",
    "decade": 1980,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 16.2,
    "rpg": 5.4,
    "apg": 5.4,
@@ -16054,6 +17649,7 @@
    "name": "Johnny Moore",
    "franchise": "SAS",
    "decade": 1980,
+   "team": "SAS",
    "pos": [
     "PG"
    ],
@@ -16075,10 +17671,13 @@
    "name": "Mike Mitchell",
    "franchise": "SAS",
    "decade": 1980,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.1,
    "rpg": 5.5,
    "apg": 1.4,
@@ -16095,10 +17694,13 @@
    "name": "David Robinson",
    "franchise": "SAS",
    "decade": 1990,
+   "team": "SAS",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 24.5,
    "rpg": 11.5,
    "apg": 3.0,
@@ -16118,6 +17720,7 @@
    "name": "Avery Johnson",
    "franchise": "SAS",
    "decade": 1990,
+   "team": "SAS",
    "pos": [
     "PG"
    ],
@@ -16138,6 +17741,7 @@
    "name": "Sean Elliott",
    "franchise": "SAS",
    "decade": 1990,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
@@ -16156,10 +17760,13 @@
    "name": "Willie Anderson",
    "franchise": "SAS",
    "decade": 1990,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 12.0,
    "rpg": 3.7,
    "apg": 4.1,
@@ -16174,10 +17781,13 @@
    "name": "Vinny Del Negro",
    "franchise": "SAS",
    "decade": 1990,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 11.2,
    "rpg": 2.7,
    "apg": 3.6,
@@ -16192,6 +17802,7 @@
    "name": "Tim Duncan",
    "franchise": "SAS",
    "decade": 2000,
+   "team": "SAS",
    "pos": [
     "PF"
    ],
@@ -16215,10 +17826,13 @@
    "name": "Manu Ginóbili",
    "franchise": "SAS",
    "decade": 2000,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.7,
    "rpg": 4.1,
    "apg": 3.6,
@@ -16235,6 +17849,7 @@
    "name": "David Robinson",
    "franchise": "SAS",
    "decade": 2000,
+   "team": "SAS",
    "pos": [
     "C"
    ],
@@ -16255,6 +17870,7 @@
    "name": "Tony Parker",
    "franchise": "SAS",
    "decade": 2000,
+   "team": "SAS",
    "pos": [
     "PG"
    ],
@@ -16275,6 +17891,7 @@
    "name": "Bruce Bowen",
    "franchise": "SAS",
    "decade": 2000,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
@@ -16293,10 +17910,13 @@
    "name": "Kawhi Leonard",
    "franchise": "SAS",
    "decade": 2010,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 16.4,
    "rpg": 6.2,
    "apg": 2.3,
@@ -16314,6 +17934,7 @@
    "name": "Tim Duncan",
    "franchise": "SAS",
    "decade": 2010,
+   "team": "SAS",
    "pos": [
     "C"
    ],
@@ -16335,10 +17956,13 @@
    "name": "Manu Ginóbili",
    "franchise": "SAS",
    "decade": 2010,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 12.1,
    "rpg": 3.0,
    "apg": 4.0,
@@ -16353,6 +17977,7 @@
    "name": "Tony Parker",
    "franchise": "SAS",
    "decade": 2010,
+   "team": "SAS",
    "pos": [
     "PG"
    ],
@@ -16371,10 +17996,13 @@
    "name": "Danny Green",
    "franchise": "SAS",
    "decade": 2010,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 9.1,
    "rpg": 3.6,
    "apg": 1.7,
@@ -16389,10 +18017,13 @@
    "name": "Victor Wembanyama",
    "franchise": "SAS",
    "decade": 2020,
+   "team": "SAS",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 23.4,
    "rpg": 11.0,
    "apg": 3.6,
@@ -16411,6 +18042,7 @@
    "name": "Dejounte Murray",
    "franchise": "SAS",
    "decade": 2020,
+   "team": "SAS",
    "pos": [
     "PG"
    ],
@@ -16432,6 +18064,7 @@
    "name": "Jakob Poeltl",
    "franchise": "SAS",
    "decade": 2020,
+   "team": "SAS",
    "pos": [
     "C"
    ],
@@ -16452,10 +18085,13 @@
    "name": "Keldon Johnson",
    "franchise": "SAS",
    "decade": 2020,
+   "team": "SAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.4,
    "rpg": 5.5,
    "apg": 2.1,
@@ -16470,6 +18106,7 @@
    "name": "Devin Vassell",
    "franchise": "SAS",
    "decade": 2020,
+   "team": "SAS",
    "pos": [
     "SG"
    ],
@@ -16490,6 +18127,7 @@
    "name": "Damon Stoudamire",
    "franchise": "TOR",
    "decade": 1990,
+   "team": "TOR",
    "pos": [
     "PG"
    ],
@@ -16511,11 +18149,13 @@
    "name": "Doug Christie",
    "franchise": "TOR",
    "decade": 1990,
+   "team": "TOR",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 14.7,
    "rpg": 4.8,
@@ -16533,10 +18173,13 @@
    "name": "Walt Williams",
    "franchise": "TOR",
    "decade": 1990,
+   "team": "TOR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.3,
    "rpg": 4.8,
    "apg": 2.6,
@@ -16551,6 +18194,7 @@
    "name": "Oliver Miller",
    "franchise": "TOR",
    "decade": 1990,
+   "team": "TOR",
    "pos": [
     "C"
    ],
@@ -16573,6 +18217,7 @@
    "name": "Marcus Camby",
    "franchise": "TOR",
    "decade": 1990,
+   "team": "TOR",
    "pos": [
     "C"
    ],
@@ -16593,11 +18238,13 @@
    "name": "Vince Carter",
    "franchise": "TOR",
    "decade": 2000,
+   "team": "TOR",
    "pos": [
     "SG"
    ],
    "altPos": [
-    "SF"
+    "SF",
+    "PG"
    ],
    "ppg": 24.1,
    "rpg": 5.1,
@@ -16616,6 +18263,7 @@
    "name": "Chris Bosh",
    "franchise": "TOR",
    "decade": 2000,
+   "team": "TOR",
    "pos": [
     "C"
    ],
@@ -16636,6 +18284,7 @@
    "name": "José Calderón",
    "franchise": "TOR",
    "decade": 2000,
+   "team": "TOR",
    "pos": [
     "PG"
    ],
@@ -16658,6 +18307,7 @@
    "name": "Antonio Davis",
    "franchise": "TOR",
    "decade": 2000,
+   "team": "TOR",
    "pos": [
     "C"
    ],
@@ -16680,6 +18330,7 @@
    "name": "Morris Peterson",
    "franchise": "TOR",
    "decade": 2000,
+   "team": "TOR",
    "pos": [
     "SF"
    ],
@@ -16700,6 +18351,7 @@
    "name": "Kyle Lowry",
    "franchise": "TOR",
    "decade": 2010,
+   "team": "TOR",
    "pos": [
     "PG"
    ],
@@ -16722,6 +18374,7 @@
    "name": "Jonas Valančiūnas",
    "franchise": "TOR",
    "decade": 2010,
+   "team": "TOR",
    "pos": [
     "C"
    ],
@@ -16740,6 +18393,7 @@
    "name": "José Calderón",
    "franchise": "TOR",
    "decade": 2010,
+   "team": "TOR",
    "pos": [
     "PG"
    ],
@@ -16760,10 +18414,13 @@
    "name": "DeMar DeRozan",
    "franchise": "TOR",
    "decade": 2010,
+   "team": "TOR",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.7,
    "rpg": 4.0,
    "apg": 3.1,
@@ -16780,10 +18437,13 @@
    "name": "Amir Johnson",
    "franchise": "TOR",
    "decade": 2010,
+   "team": "TOR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 8.8,
    "rpg": 6.3,
    "apg": 1.2,
@@ -16798,10 +18458,13 @@
    "name": "Pascal Siakam",
    "franchise": "TOR",
    "decade": 2020,
+   "team": "TOR",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SF"
+   ],
    "ppg": 22.8,
    "rpg": 7.5,
    "apg": 4.8,
@@ -16818,6 +18481,7 @@
    "name": "Fred VanVleet",
    "franchise": "TOR",
    "decade": 2020,
+   "team": "TOR",
    "pos": [
     "PG"
    ],
@@ -16842,6 +18506,7 @@
    "name": "Scottie Barnes",
    "franchise": "TOR",
    "decade": 2020,
+   "team": "TOR",
    "pos": [
     "PF"
    ],
@@ -16863,10 +18528,13 @@
    "name": "OG Anunoby",
    "franchise": "TOR",
    "decade": 2020,
+   "team": "TOR",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 14.8,
    "rpg": 5.1,
    "apg": 2.1,
@@ -16883,6 +18551,7 @@
    "name": "Chris Boucher",
    "franchise": "TOR",
    "decade": 2020,
+   "team": "TOR",
    "pos": [
     "PF"
    ],
@@ -16903,6 +18572,7 @@
    "name": "Rich Kelley",
    "franchise": "UTA",
    "decade": 1970,
+   "team": "NOJ",
    "pos": [
     "C"
    ],
@@ -16923,10 +18593,13 @@
    "name": "Pete Maravich",
    "franchise": "UTA",
    "decade": 1970,
+   "team": "NOJ",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 25.7,
    "rpg": 4.4,
    "apg": 5.7,
@@ -16944,10 +18617,13 @@
    "name": "Truck Robinson",
    "franchise": "UTA",
    "decade": 1970,
+   "team": "NOJ",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 23.2,
    "rpg": 14.9,
    "apg": 2.0,
@@ -16965,6 +18641,7 @@
    "name": "Jim McElroy",
    "franchise": "UTA",
    "decade": 1970,
+   "team": "NOJ",
    "pos": [
     "PG"
    ],
@@ -16983,6 +18660,7 @@
    "name": "Otto Moore",
    "franchise": "UTA",
    "decade": 1970,
+   "team": "NOJ",
    "pos": [
     "C"
    ],
@@ -17001,10 +18679,13 @@
    "name": "Adrian Dantley",
    "franchise": "UTA",
    "decade": 1980,
+   "team": "UTA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 29.6,
    "rpg": 6.2,
    "apg": 3.7,
@@ -17022,6 +18703,7 @@
    "name": "John Stockton",
    "franchise": "UTA",
    "decade": 1980,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17043,10 +18725,13 @@
    "name": "Karl Malone",
    "franchise": "UTA",
    "decade": 1980,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 23.3,
    "rpg": 10.5,
    "apg": 2.5,
@@ -17064,6 +18749,7 @@
    "name": "Rickey Green",
    "franchise": "UTA",
    "decade": 1980,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17085,10 +18771,13 @@
    "name": "Mark Eaton",
    "franchise": "UTA",
    "decade": 1980,
+   "team": "UTA",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 7.0,
    "rpg": 8.6,
    "apg": 1.2,
@@ -17105,10 +18794,13 @@
    "name": "Karl Malone",
    "franchise": "UTA",
    "decade": 1990,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 27.2,
    "rpg": 10.7,
    "apg": 3.7,
@@ -17126,6 +18818,7 @@
    "name": "John Stockton",
    "franchise": "UTA",
    "decade": 1990,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17147,10 +18840,13 @@
    "name": "Jeff Hornacek",
    "franchise": "UTA",
    "decade": 1990,
+   "team": "UTA",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 14.7,
    "rpg": 2.9,
    "apg": 4.2,
@@ -17165,10 +18861,13 @@
    "name": "Bryon Russell",
    "franchise": "UTA",
    "decade": 1990,
+   "team": "UTA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 7.5,
    "rpg": 3.3,
    "apg": 1.0,
@@ -17183,6 +18882,7 @@
    "name": "Jeff Malone",
    "franchise": "UTA",
    "decade": 1990,
+   "team": "UTA",
    "pos": [
     "SG"
    ],
@@ -17203,10 +18903,13 @@
    "name": "Karl Malone",
    "franchise": "UTA",
    "decade": 2000,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 22.9,
    "rpg": 8.6,
    "apg": 4.3,
@@ -17223,6 +18926,7 @@
    "name": "John Stockton",
    "franchise": "UTA",
    "decade": 2000,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17244,6 +18948,7 @@
    "name": "Andrei Kirilenko",
    "franchise": "UTA",
    "decade": 2000,
+   "team": "UTA",
    "pos": [
     "SF"
    ],
@@ -17266,6 +18971,7 @@
    "name": "Deron Williams",
    "franchise": "UTA",
    "decade": 2000,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17287,6 +18993,7 @@
    "name": "Mehmet Okur",
    "franchise": "UTA",
    "decade": 2000,
+   "team": "UTA",
    "pos": [
     "C"
    ],
@@ -17307,6 +19014,7 @@
    "name": "Rudy Gobert",
    "franchise": "UTA",
    "decade": 2010,
+   "team": "UTA",
    "pos": [
     "C"
    ],
@@ -17328,10 +19036,13 @@
    "name": "Paul Millsap",
    "franchise": "UTA",
    "decade": 2010,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 14.9,
    "rpg": 7.5,
    "apg": 2.2,
@@ -17346,10 +19057,13 @@
    "name": "Gordon Hayward",
    "franchise": "UTA",
    "decade": 2010,
+   "team": "UTA",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 15.6,
    "rpg": 4.2,
    "apg": 3.4,
@@ -17364,6 +19078,7 @@
    "name": "Derrick Favors",
    "franchise": "UTA",
    "decade": 2010,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
@@ -17384,11 +19099,13 @@
    "name": "Joe Ingles",
    "franchise": "UTA",
    "decade": 2010,
+   "team": "UTA",
    "pos": [
     "SF"
    ],
    "altPos": [
-    "PF"
+    "PF",
+    "SG"
    ],
    "ppg": 8.0,
    "rpg": 3.1,
@@ -17404,6 +19121,7 @@
    "name": "Rudy Gobert",
    "franchise": "UTA",
    "decade": 2020,
+   "team": "UTA",
    "pos": [
     "C"
    ],
@@ -17425,6 +19143,7 @@
    "name": "Donovan Mitchell",
    "franchise": "UTA",
    "decade": 2020,
+   "team": "UTA",
    "pos": [
     "SG"
    ],
@@ -17448,6 +19167,7 @@
    "name": "Lauri Markkanen",
    "franchise": "UTA",
    "decade": 2020,
+   "team": "UTA",
    "pos": [
     "PF"
    ],
@@ -17468,6 +19188,7 @@
    "name": "Mike Conley",
    "franchise": "UTA",
    "decade": 2020,
+   "team": "UTA",
    "pos": [
     "PG"
    ],
@@ -17486,6 +19207,7 @@
    "name": "Jordan Clarkson",
    "franchise": "UTA",
    "decade": 2020,
+   "team": "UTA",
    "pos": [
     "SG"
    ],
@@ -17506,10 +19228,13 @@
    "name": "Walt Bellamy",
    "franchise": "WAS",
    "decade": 1960,
+   "team": "BAL",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 27.8,
    "rpg": 16.7,
    "apg": 2.4,
@@ -17527,10 +19252,13 @@
    "name": "Earl Monroe",
    "franchise": "WAS",
    "decade": 1960,
+   "team": "BAL",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 25.0,
    "rpg": 4.6,
    "apg": 4.6,
@@ -17548,6 +19276,7 @@
    "name": "Gus Johnson",
    "franchise": "WAS",
    "decade": 1960,
+   "team": "BAL",
    "pos": [
     "SF"
    ],
@@ -17571,6 +19300,7 @@
    "name": "Don Ohl",
    "franchise": "WAS",
    "decade": 1960,
+   "team": "BAL",
    "pos": [
     "PG"
    ],
@@ -17593,6 +19323,7 @@
    "name": "Kevin Loughery",
    "franchise": "WAS",
    "decade": 1960,
+   "team": "BAL",
    "pos": [
     "PG"
    ],
@@ -17615,10 +19346,13 @@
    "name": "Elvin Hayes",
    "franchise": "WAS",
    "decade": 1970,
+   "team": "WSB",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 21.5,
    "rpg": 12.6,
    "apg": 1.8,
@@ -17636,10 +19370,13 @@
    "name": "Wes Unseld",
    "franchise": "WAS",
    "decade": 1970,
+   "team": "WSB",
    "pos": [
     "C"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 11.2,
    "rpg": 14.3,
    "apg": 4.2,
@@ -17656,10 +19393,13 @@
    "name": "Phil Chenier",
    "franchise": "WAS",
    "decade": 1970,
+   "team": "WSB",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 18.3,
    "rpg": 3.7,
    "apg": 3.2,
@@ -17677,10 +19417,13 @@
    "name": "Jack Marin",
    "franchise": "WAS",
    "decade": 1970,
+   "team": "BAL",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 20.2,
    "rpg": 6.5,
    "apg": 2.5,
@@ -17697,10 +19440,13 @@
    "name": "Mike Riordan",
    "franchise": "WAS",
    "decade": 1970,
+   "team": "WSB",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 13.3,
    "rpg": 3.5,
    "apg": 3.0,
@@ -17715,6 +19461,7 @@
    "name": "Jeff Ruland",
    "franchise": "WAS",
    "decade": 1980,
+   "team": "WSB",
    "pos": [
     "C"
    ],
@@ -17737,10 +19484,13 @@
    "name": "Greg Ballard",
    "franchise": "WAS",
    "decade": 1980,
+   "team": "WSB",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 15.9,
    "rpg": 7.0,
    "apg": 2.8,
@@ -17755,10 +19505,13 @@
    "name": "John Williams",
    "franchise": "WAS",
    "decade": 1980,
+   "team": "WSB",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 11.9,
    "rpg": 5.7,
    "apg": 3.2,
@@ -17775,10 +19528,13 @@
    "name": "Rick Mahorn",
    "franchise": "WAS",
    "decade": 1980,
+   "team": "WSB",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 9.0,
    "rpg": 8.2,
    "apg": 1.5,
@@ -17793,6 +19549,7 @@
    "name": "Jeff Malone",
    "franchise": "WAS",
    "decade": 1980,
+   "team": "WSB",
    "pos": [
     "SG"
    ],
@@ -17813,6 +19570,7 @@
    "name": "Chris Webber",
    "franchise": "WAS",
    "decade": 1990,
+   "team": "WSB",
    "pos": [
     "PF"
    ],
@@ -17837,6 +19595,7 @@
    "name": "Rod Strickland",
    "franchise": "WAS",
    "decade": 1990,
+   "team": "WAS",
    "pos": [
     "PG"
    ],
@@ -17859,6 +19618,7 @@
    "name": "Pervis Ellison",
    "franchise": "WAS",
    "decade": 1990,
+   "team": "WSB",
    "pos": [
     "C"
    ],
@@ -17879,6 +19639,7 @@
    "name": "Juwan Howard",
    "franchise": "WAS",
    "decade": 1990,
+   "team": "WSB",
    "pos": [
     "PF"
    ],
@@ -17899,6 +19660,7 @@
    "name": "Harvey Grant",
    "franchise": "WAS",
    "decade": 1990,
+   "team": "WSB",
    "pos": [
     "SF"
    ],
@@ -17919,6 +19681,7 @@
    "name": "Gilbert Arenas",
    "franchise": "WAS",
    "decade": 2000,
+   "team": "WAS",
    "pos": [
     "PG"
    ],
@@ -17941,6 +19704,7 @@
    "name": "Caron Butler",
    "franchise": "WAS",
    "decade": 2000,
+   "team": "WAS",
    "pos": [
     "SF"
    ],
@@ -17964,6 +19728,7 @@
    "name": "Larry Hughes",
    "franchise": "WAS",
    "decade": 2000,
+   "team": "WAS",
    "pos": [
     "SG"
    ],
@@ -17987,6 +19752,7 @@
    "name": "Antawn Jamison",
    "franchise": "WAS",
    "decade": 2000,
+   "team": "WAS",
    "pos": [
     "PF"
    ],
@@ -18007,6 +19773,7 @@
    "name": "Brendan Haywood",
    "franchise": "WAS",
    "decade": 2000,
+   "team": "WAS",
    "pos": [
     "C"
    ],
@@ -18025,6 +19792,7 @@
    "name": "John Wall",
    "franchise": "WAS",
    "decade": 2010,
+   "team": "WAS",
    "pos": [
     "PG"
    ],
@@ -18047,10 +19815,13 @@
    "name": "Bradley Beal",
    "franchise": "WAS",
    "decade": 2010,
+   "team": "WAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 19.8,
    "rpg": 3.9,
    "apg": 3.7,
@@ -18067,10 +19838,13 @@
    "name": "Otto Porter Jr.",
    "franchise": "WAS",
    "decade": 2010,
+   "team": "WAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 11.6,
    "rpg": 5.3,
    "apg": 1.6,
@@ -18085,6 +19859,7 @@
    "name": "Marcin Gortat",
    "franchise": "WAS",
    "decade": 2010,
+   "team": "WAS",
    "pos": [
     "C"
    ],
@@ -18105,10 +19880,13 @@
    "name": "Trevor Ariza",
    "franchise": "WAS",
    "decade": 2010,
+   "team": "WAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 12.8,
    "rpg": 5.5,
    "apg": 2.7,
@@ -18123,10 +19901,13 @@
    "name": "Bradley Beal",
    "franchise": "WAS",
    "decade": 2020,
+   "team": "WAS",
    "pos": [
     "SG"
    ],
-   "altPos": [],
+   "altPos": [
+    "PG"
+   ],
    "ppg": 27.6,
    "rpg": 4.4,
    "apg": 5.5,
@@ -18144,6 +19925,7 @@
    "name": "Daniel Gafford",
    "franchise": "WAS",
    "decade": 2020,
+   "team": "WAS",
    "pos": [
     "C"
    ],
@@ -18164,10 +19946,13 @@
    "name": "Kyle Kuzma",
    "franchise": "WAS",
    "decade": 2020,
+   "team": "WAS",
    "pos": [
     "PF"
    ],
-   "altPos": [],
+   "altPos": [
+    "C"
+   ],
    "ppg": 19.5,
    "rpg": 7.2,
    "apg": 3.6,
@@ -18182,10 +19967,13 @@
    "name": "Deni Avdija",
    "franchise": "WAS",
    "decade": 2020,
+   "team": "WAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "PF"
+   ],
    "ppg": 9.9,
    "rpg": 6.0,
    "apg": 2.5,
@@ -18200,10 +19988,13 @@
    "name": "Corey Kispert",
    "franchise": "WAS",
    "decade": 2020,
+   "team": "WAS",
    "pos": [
     "SF"
    ],
-   "altPos": [],
+   "altPos": [
+    "SG"
+   ],
    "ppg": 11.1,
    "rpg": 2.8,
    "apg": 1.5,

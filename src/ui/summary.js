@@ -28,7 +28,7 @@ function finalize() {
     rule: app.rule?.id ?? null, ruleLabel: app.rule?.label ?? null, passed,
     wins: s.wins, losses: s.losses, streak: s.streak, po,
     strength: now.strength, chem: now.chem.name,
-    lineup: now.lineup.map((l) => ({ slot: l.slot, name: l.player.name, rating: Math.round(l.eff), franchise: l.player.franchise, decade: l.player.decade })),
+    lineup: now.lineup.map((l) => ({ slot: l.slot, name: l.player.name, rating: Math.round(l.eff), franchise: l.player.franchise, team: l.player.team, decade: l.player.decade })),
   };
   save(KEYS.runs, addRun(load(KEYS.runs, []), run));
   if (app.mode === 'daily') {
@@ -43,7 +43,7 @@ const challengeLink = (run) =>
 
 function summaryScreen() {
   const run = app.run;
-  const canvas = renderShareCard(run, app.franchises);
+  const canvas = renderShareCard(run, app.franchises, app.teams);
   canvas.className = 'share-card';
   const link = challengeLink(run);
   const flash = (btn, text) => { const old = btn.textContent; btn.textContent = text; setTimeout(() => { btn.textContent = old; }, 1600); };

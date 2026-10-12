@@ -5,6 +5,7 @@ import { buildTeam } from '../core/team.js';
 export const app = {
   data: null, // { players, byId, meta }
   franchises: {},
+  teams: {}, // historical team names and colours by abbreviation
   screen: 'start',
   view: null, // browse pages: { kind: 'franchises' | 'franchise' | 'era', id }
   mode: 'free', // 'free' | 'daily' | 'challenge'
@@ -46,3 +47,4 @@ export function go(screen) {
 
 export const team = () => buildTeam({ slots: app.draft.slots, byId: app.data.byId, coach: app.coach });
 export const fName = (code) => app.franchises[code]?.name ?? code;
+export const tName = (abbr, franchise) => app.teams[abbr]?.name ?? fName(franchise);

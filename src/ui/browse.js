@@ -7,7 +7,7 @@ const back = () => h('button', { class: 'btn ghost', onclick: () => { location.h
 const link = (hash, ...kids) => h('a', { class: 'tile', href: hash }, ...kids);
 
 const playerRow = (p, showTeam) =>
-  h('li', {}, h('b', {}, p.rating), h('span', {}, p.name), h('em', {}, `${p.pos[0]}${p.altPos?.length ? `/${p.altPos.join('/')}` : ''} · ${showTeam ? `${p.franchise} ${p.decade}er · ` : ''}${p.ppg?.toFixed(1)} / ${p.rpg?.toFixed(1)} / ${p.apg?.toFixed(1)}`));
+  h('li', {}, h('b', {}, p.rating), h('span', {}, p.name), h('em', {}, `${p.pos[0]}${p.altPos?.length ? `/${p.altPos.join('/')}` : ''} · ${showTeam ? `${p.team ?? p.franchise} ${p.decade}er · ` : ''}${p.ppg?.toFixed(1)} / ${p.rpg?.toFixed(1)} / ${p.apg?.toFixed(1)}`));
 
 function franchisesScreen() {
   return h('main', { class: 'screen browse' },

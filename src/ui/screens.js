@@ -1,5 +1,6 @@
 import { h, reducedMotion } from './dom.js';
-import { app, go, render, register, team, fName } from './state.js';
+import { app, go, render, register, team, fName, tName } from './state.js';
+import { boardTeam, teamColors } from '../core/teams.js';
 import { playerCard, emptySlot } from './cards.js';
 import { goSummary } from './summary.js';
 import { POSITIONS, DECADES, SIM, CHEM, PLAYOFFS } from '../core/config.js';
@@ -17,7 +18,7 @@ let wheelTimer = null;
 // ---------- draft ----------
 function wheelText() {
   const c = app.draft.current;
-  return { team: fName(c.franchise), era: `${c.decade}er` };
+  return { team: tName(boardTeam(c.players), c.franchise), era: `${c.decade}er` };
 }
 
 // Cycle random teams, slowing down, then land on the real board.
@@ -89,7 +90,7 @@ function draftScreen() {
       h('span', { class: 'chip dim' }, `Seed ${app.seed}`),
       teamRatingChip(),
     ),
-    h('section', { class: `wheel${app.spinning ? ' spin' : ''}${app.deal ? ' landed' : ''}`, style: { '--wc': app.franchises[d.current.franchise]?.primary ?? '#444' }, 'aria-live': 'polite' },
+    h('section', { class: `wheel${app.spinning ? ' spin' : ''}${app.deal ? ' landed' : ''}`, style: { '--wc': teamColors(app.teams, app.franchises, boardTeam(d.current.players), d.current.franchise).primary }, 'aria-live': 'polite' },
       h('div', { class: 'wheel-label' }, 'Team und Ära'),
       h('div', { class: 'wheel-team' }, w.team),
       h('div', { class: 'wheel-era' }, w.era)),

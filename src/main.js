@@ -34,6 +34,7 @@ async function boot() {
   data.byId.set(BENCH.id, BENCH); // replacement player for injuries (never part of draft pools)
   app.data = data;
   app.franchises = franchises;
+  app.teams = await fetch('./data/teams.json').then((r) => r.json()).catch(() => ({}));
   app.name = load(KEYS.name, '');
 
   // Challenge link: #seed=123&era=1990&rule=only90s&by=Noah&rw=63&rp=5

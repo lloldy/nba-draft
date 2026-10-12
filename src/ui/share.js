@@ -17,7 +17,7 @@ export function shareText(run, link) {
 
 const FONT = '"Big Shoulders Display", Impact, "Arial Narrow", system-ui, sans-serif';
 
-export function renderShareCard(run, franchises) {
+export function renderShareCard(run, franchises, teams = {}) {
   const W = 1080, H = 1350;
   const c = document.createElement('canvas');
   c.width = W; c.height = H;
@@ -42,13 +42,13 @@ export function renderShareCard(run, franchises) {
 
   run.lineup.forEach((l, i) => {
     const y = 610 + i * 118;
-    const f = franchises[l.franchise] ?? { primary: '#444', secondary: '#888' };
+    const f = { ...(franchises[l.franchise] ?? { primary: '#444', secondary: '#888' }), ...(teams[l.team]?.primary ? teams[l.team] : {}) };
     g.fillStyle = '#141821'; g.fillRect(70, y, W - 140, 100);
     g.fillStyle = f.primary; g.fillRect(70, y, 18, 100);
     g.fillStyle = f.secondary; g.fillRect(88, y, 6, 100);
     g.fillStyle = '#8b93a7'; g.font = `800 38px ${FONT}`; g.fillText(l.slot, 118, y + 64);
     g.fillStyle = '#eef1f7'; g.font = `800 44px ${FONT}`; g.fillText(l.name, 210, y + 50);
-    g.fillStyle = '#8b93a7'; g.font = `28px system-ui, sans-serif`; g.fillText(`${l.franchise} · ${l.decade}er`, 210, y + 84);
+    g.fillStyle = '#8b93a7'; g.font = `28px system-ui, sans-serif`; g.fillText(`${l.team ?? l.franchise} · ${l.decade}er`, 210, y + 84);
     g.fillStyle = '#ffb020'; g.font = `800 62px ${FONT}`; g.textAlign = 'right'; g.fillText(String(l.rating), W - 100, y + 68); g.textAlign = 'left';
   });
 

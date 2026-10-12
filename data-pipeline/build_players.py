@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from franchises import TEAM_TO_FRANCHISE
+from franchises import TEAM_TO_FRANCHISE, TEAM_NAMES, TEAM_COLORS, ALL_POSITION_PLAYERS
 
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "raw"
@@ -31,6 +31,7 @@ ALIASES = {"tm": "team", "team_abbr": "team", "mp_per_g": "mp_per_game", "pts_pe
            "blk_per_g": "blk_per_game", "ts_pct": "ts_percent", "ws/48": "ws_48"}
 POSITIONS = ["PG", "SG", "SF", "PF", "C"]
 PLAYERS_PER_COMBO = 5  # top N stints per franchise-decade
+SECONDARY_SHARE = 0.65  # about this share of players gets a secondary position
 MIN_SEASON_MINUTES = 500
 
 # Column names we need. If Kaggle renames something, the check below tells you what is missing.
@@ -105,7 +106,9 @@ def main():
         pos_counts = g["pos"].str.split("-").explode().value_counts(normalize=True)
         main = g["pos"].str.split("-").str[0].value_counts().index[0]
         alt = [p for p in pos_counts.index if p != main and p in POSITIONS and pos_counts[p] >= 0.2]
+        team = g.groupby("team")["g"].sum().idxmax()  # historical abbreviation, e.g. SEA for the Sonics years
         return pd.Series({
+            "team": team,
             "ppg": avg("pts_per_game"), "rpg": avg("trb_per_game"), "apg": avg("ast_per_game"),
             "spg": avg("stl_per_game"), "bpg": avg("blk_per_game"),
             "score": (g["score"] * w).sum() / w.sum() * 0.8 + g["score"].max() * 0.2,
@@ -125,6 +128,23 @@ def main():
     fans = (stars.reindex(career.index).fillna(0) * 4 + mvp.reindex(career.index).fillna(0) * 8 + career * 1.5)
     fans = (fans / fans.max() * 99 + 1).round().astype(int)
     stints["fans"] = stints["player"].map(fans).fillna(1).astype(int)
+
+    # 5b. Secondary positions. Data labels ("SG-SF", >=20 % of games) only cover a minority, so we add the
+    # neighbouring position (PG-SG-SF-PF-C) whose typical stat profile the player resembles most.
+    NEIGHBOURS = {"PG": ["SG"], "SG": ["PG", "SF"], "SF": ["SG", "PF"], "PF": ["SF", "C"], "C": ["PF"]}
+    feats = stints[["rpg", "apg", "bpg", "spg"]].fillna(0)
+    z = (feats - feats.mean()) / feats.std()
+    centroid = {m: z[stints["main"] == m].mean() for m in POSITIONS}
+    ratio = {}
+    for i, r in stints.iterrows():
+        d_own = ((z.loc[i] - centroid[r.main]) ** 2).sum() ** 0.5
+        best = min(NEIGHBOURS[r.main], key=lambda nb: ((z.loc[i] - centroid[nb]) ** 2).sum() ** 0.5)
+        ratio[i] = (best, ((z.loc[i] - centroid[best]) ** 2).sum() ** 0.5 / max(d_own, 1e-6))
+    cut = sorted(v[1] for v in ratio.values())[int(len(ratio) * SECONDARY_SHARE)]
+    for i, (nb, rt) in ratio.items():
+        if rt <= cut and nb not in stints.at[i, "alt"]:
+            stints.at[i, "alt"] = list(stints.at[i, "alt"]) + [nb]
+    stints["alt"] = stints["alt"].apply(lambda a: a[:2])
 
     # 6. Archetype tags (used by the chemistry engine in phase 3).
     def tags(r):
@@ -153,11 +173,13 @@ def main():
         players.append({
             "id": f"{r.franchise}-{int(r.decade)}-{r.player.lower().replace(' ', '-').replace('.', '').replace(chr(39), '')}",
             "name": r.player, "franchise": r.franchise, "decade": int(r.decade),
+            "team": r.team,
             "pos": [r.main], "altPos": list(r.alt),
             "ppg": round(r.ppg, 1), "rpg": round(r.rpg, 1), "apg": round(r.apg, 1),
             "spg": None if pd.isna(r.spg) else round(r.spg, 1),
             "bpg": None if pd.isna(r.bpg) else round(r.bpg, 1),
             "fans": int(r.fans), "rating": int(r.rating), "tags": r.tags,
+            **({"allPos": True} if r.player in ALL_POSITION_PLAYERS else {}),
         })
     players.sort(key=lambda p: (p["franchise"], p["decade"], -p["rating"]))
 
@@ -167,7 +189,12 @@ def main():
                  "generated": datetime.now(timezone.utc).isoformat(), "version": 1},
         "players": players}, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    print(f"Wrote {len(players)} players to {OUT}")
+    used = sorted({p["team"] for p in players})
+    teams = {t: {"name": TEAM_NAMES.get(t, t), "franchise": TEAM_TO_FRANCHISE[t],
+                 **({"primary": TEAM_COLORS[t][0], "secondary": TEAM_COLORS[t][1]} if t in TEAM_COLORS else {})} for t in used}
+    OUT.with_name("teams.json").write_text(json.dumps(teams, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    print(f"Wrote {len(players)} players to {OUT} and {len(teams)} team names")
     print("Top 10 by rating (sanity check):")
     for p in sorted(players, key=lambda p: -p["rating"])[:10]:
         print(f"  {p['rating']:>3}  {p['name']} ({p['franchise']} {p['decade']}s, {p['pos'][0]})")
