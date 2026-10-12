@@ -53,7 +53,8 @@ export function recoverPlayer(slots, playerId, standInId = BENCH_ID) {
 
 // Skips for the replacement spin: the ones you still have from the draft. If you have none left,
 // you get ONE random bonus skip (era or team; only team in era mode). Same seed -> same bonus.
-export function replacementSkips(skips, { seed, round, allowEra = true }) {
+export function replacementSkips(skips, { seed, round, allowEra = true, ultraUsed = false }) {
+  if (ultraUsed) return { skips: { team: 0, era: 0 }, bonus: null }; // the ultra spin cost you every skip
   if (skips.team + skips.era > 0) return { skips: { ...skips }, bonus: null };
   const rng = createRng((seed ^ ((round + 1) * 0x2f9be6cf)) >>> 0);
   const bonus = allowEra ? rng.pick(['team', 'era']) : 'team';

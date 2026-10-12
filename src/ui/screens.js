@@ -4,7 +4,7 @@ import { boardTeam, teamColors } from '../core/teams.js';
 import { playerCard, emptySlot } from './cards.js';
 import { goSummary } from './summary.js';
 import { POSITIONS, DECADES, SIM, CHEM, PLAYOFFS } from '../core/config.js';
-import { pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete } from '../core/draft.js';
+import { pick, skipTeam, skipEra, swapSlots, undoLastPick, isComplete, ultraSpin, declineUltra, canUltra } from '../core/draft.js';
 import { effectiveRating } from '../core/positions.js';
 import { simulateSeason } from '../core/sim.js';
 import { COACHES } from '../core/coaches.js';
@@ -55,6 +55,7 @@ function attempt(fn, popSlot = null) {
   try {
     app.draft = fn(app.draft);
     app.selCard = null;
+    app.ultraAsk = false;
     app.msg = '';
     app.pop = popSlot; // slot card pops in on the next render only
     navigator.vibrate?.(15);
@@ -93,10 +94,16 @@ function draftScreen() {
       teamRatingChip(),
     ),
     h('section', { class: `wheel${app.spinning ? ' spin' : ''}${app.deal ? ' landed' : ''}`, style: { '--wc': teamColors(app.teams, app.franchises, boardTeam(d.current.players), d.current.franchise).primary }, 'aria-live': 'polite' },
-      h('div', { class: 'wheel-label' }, 'Team und Ära'),
+      h('div', { class: 'wheel-label' }, d.current.ultra ? 'Ultra-Spin: nimm die Karte oder lass sie' : 'Team und Ära'),
       h('div', { class: 'wheel-team' }, w.team),
       h('div', { class: 'wheel-era' }, w.era)),
     h('div', { class: 'row tools' },
+      d.current.ultra
+        ? h('button', { class: 'btn small', onclick: () => attempt(declineUltra) }, 'Ablehnen (Ultra weg)')
+        : h('button', { class: `btn small ultra${app.ultraAsk ? ' ask' : ''}`, disabled: app.spinning || !canUltra(d) || !!d.ultra,
+            title: 'Eine einzige Star-Karte. Kostet alle Skips.',
+            onclick: () => { if (!app.ultraAsk) { app.ultraAsk = true; return render(); } app.ultraAsk = false; attempt(ultraSpin); } },
+            d.ultra ? 'Ultra benutzt' : app.ultraAsk ? 'Sicher? Alle Skips weg' : 'Ultra-Spin'),
       h('button', { class: 'btn small', disabled: d.skips.team <= 0 || app.spinning, onclick: () => attempt(skipTeam) }, `Team-Skip (${d.skips.team})`),
       h('button', { class: 'btn small', disabled: d.skips.era <= 0 || app.decade || app.spinning, onclick: () => attempt(skipEra) }, `Ära-Skip (${d.skips.era})`),
       h('button', { class: 'btn small', disabled: d.undosLeft <= 0 || !d.picks.length || app.spinning, onclick: () => attempt(undoLastPick) }, `Undo (${d.undosLeft})`),
@@ -283,7 +290,7 @@ function checkInjury() {
 // The replacement spin: one board, your leftover skips (or one random bonus skip), pick one player.
 function startReplacement() {
   const po = app.po;
-  const { skips, bonus } = replacementSkips(app.draft.skips, { seed: app.seed, round: po.round, allowEra: !app.decade });
+  const { skips, bonus } = replacementSkips(app.draft.skips, { seed: app.seed, round: po.round, allowEra: !app.decade, ultraUsed: !!app.draft.ultra });
   const names = new Set([...Object.values(app.draft.slots), po.injured.playerId].filter((id) => id && id !== BENCH_ID).map((id) => app.data.byId.get(id).name));
   const base = constraintsFor(app.rule, app.decade);
   try {

@@ -3,7 +3,7 @@ import { PO_LABELS } from '../core/stats.js';
 
 export function shareText(run, link) {
   const head = run.mode === 'daily' ? `Daily ${run.date}` : run.mode === 'challenge' ? 'Challenge' : 'Freies Spiel';
-  const lines = run.lineup.map((l) => `${l.slot} ${l.name} (${l.rating})`);
+  const lines = run.lineup.map((l) => `${l.slot} ${l.name} (${l.rating})${l.ultra ? ' ★ Ultra' : ''}`);
   return [
     `NBA Draft · ${head}`,
     `${run.wins}–${run.losses} · ${PO_LABELS[run.po]}`,
@@ -48,6 +48,7 @@ export function renderShareCard(run, franchises, teams = {}) {
     g.fillStyle = f.secondary; g.fillRect(88, y, 6, 100);
     g.fillStyle = '#8b93a7'; g.font = `800 38px ${FONT}`; g.fillText(l.slot, 118, y + 64);
     g.fillStyle = '#eef1f7'; g.font = `800 44px ${FONT}`; g.fillText(l.name, 210, y + 50);
+    if (l.ultra) { const x = 210 + g.measureText(l.name).width + 16; g.font = `800 28px ${FONT}`; g.fillStyle = '#ffe08a'; g.fillText('★ ULTRA', x, y + 48); }
     g.fillStyle = '#8b93a7'; g.font = `28px system-ui, sans-serif`; g.fillText(`${l.team ?? l.franchise} · ${l.decade}er`, 210, y + 84);
     g.fillStyle = '#ffb020'; g.font = `800 62px ${FONT}`; g.textAlign = 'right'; g.fillText(String(l.rating), W - 100, y + 68); g.textAlign = 'left';
   });

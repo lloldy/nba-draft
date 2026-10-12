@@ -17,6 +17,7 @@ export const app = {
   dailyDate: null,
   name: '',
   draft: null,
+  ultraAsk: false, // ultra spin button asked for confirmation
   selCard: null, // player id picked from the board
   selSlot: null, // slot picked for swapping
   spinning: false,

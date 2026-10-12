@@ -108,3 +108,54 @@ describe.skipIf(!fs.existsSync(dataPath))('players.json', () => {
     expect(new Set(data.players.map((p) => p.id)).size).toBe(data.players.length);
   });
 });
+
+import { ultraSpin, declineUltra, canUltra } from '../src/core/draft.js';
+import { ULTRA } from '../src/core/config.js';
+
+describe('Ultra-Spin', () => {
+  const stars = [];
+  for (const f of ['AAA', 'BBB', 'CCC', 'DDD']) for (const d of [1980, 1990, 2000]) {
+    stars.push({ id: `${f}${d}s`, name: `Star ${f}${d}`, franchise: f, decade: d, pos: ['C'], altPos: [], rating: d === 1990 ? 98 : 93, fans: 50 });
+  }
+  const mk = (seed = 7) => createDraft({ seed, players: [...players, ...stars] });
+  it('liefert genau eine Star-Karte, nimmt alle Skips und ist deterministisch', () => {
+    const a = ultraSpin(mk()), b = ultraSpin(mk());
+    expect(a.current.players).toHaveLength(1);
+    expect(a.current.players[0].rating).toBeGreaterThanOrEqual(ULTRA.minRating);
+    expect(a.current.players[0].id).toBe(b.current.players[0].id);
+    expect(a.skips).toEqual({ team: 0, era: 0 });
+    expect(canUltra(a)).toBe(false);
+    expect(() => ultraSpin(a)).toThrow();
+  });
+  it('Karte pickbar; danach kein zweiter Ultra-Spin', () => {
+    let s = ultraSpin(mk());
+    const id = s.current.players[0].id;
+    s = pick(s, id, 'C');
+    expect(s.slots.C).toBe(id);
+    expect(s.picks[0].ultra).toBe(true);
+    expect(canUltra(s)).toBe(false);
+  });
+  it('Ablehnen bringt das normale nächste Board, Ultra bleibt verbraucht', () => {
+    const base = mk();
+    const s = declineUltra(ultraSpin(base));
+    expect(s.current.ultra).toBeUndefined();
+    expect(s.cursor).toBe(base.cursor + 1);
+    expect(s.skips).toEqual({ team: 0, era: 0 });
+    expect(canUltra(s)).toBe(false);
+  });
+  it('nicht beim letzten Pick, und nur in der Hälfte der Slots nach 3 Picks', () => {
+    let s = mk();
+    const slots = ['PG', 'SG', 'SF', 'PF'];
+    for (let i = 0; i < 4; i++) {
+      s = pick(s, s.current.players.find((p) => !Object.values(s.slots).some((id) => id && s._byId.get(id).name === p.name)).id, slots[i]);
+    }
+    expect(canUltra(s)).toBe(false);
+  });
+  it('Undo eines Ultra-Picks zeigt die Karte wieder', () => {
+    let s = ultraSpin(mk());
+    const id = s.current.players[0].id;
+    s = undoLastPick(pick(s, id, 'C'));
+    expect(s.current.ultra).toBe(true);
+    expect(s.current.players[0].id).toBe(id);
+  });
+});

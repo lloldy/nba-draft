@@ -11,6 +11,14 @@ export const POSITION_FIT = {
 
 export const DEFAULT_SKIPS = { team: 1, era: 1 };
 export const UNDO_PER_RUN = 1;
+
+// Ultra spin: once per run, instead of a board you get ONE star card. Price: all your skips (team and era).
+export const ULTRA = {
+  minRating: 92, // the wheel only draws from cards at least this good
+  legendRating: 97, // counts as a legend
+  legendShare: 0.3, // chance that the drawn card is a legend
+  maxFilled: 3, // only usable while at most this many slots are filled (never for the last pick)
+};
 export const DECADES = [1960, 1970, 1980, 1990, 2000, 2010, 2020];
 
 // Spin odds: better and more famous boards (franchise + decade) come up more often.
@@ -25,7 +33,7 @@ export const SPIN = {
 // Season simulation. Per game: P(win) = sigmoid((team - opponent) / scale).
 export const SIM = {
   games: 82,
-  oppMean: 88, // average opponent rating
+  oppMean: 90, // average opponent rating
   oppSpread: 6, // opponents range roughly oppMean +/- oppSpread
   scale: 8, // smaller = stronger teams win more reliably (steeper curve)
 };
@@ -52,7 +60,7 @@ export const PLAYOFFS = {
   winsNeeded: 4,
   minWins: 41, // fewer regular-season wins = playoffs missed
   rounds: ['Runde 1', 'Conference Semis', 'Conference Finals', 'Finals'],
-  oppBase: [89, 93, 97, 101], // opponent rating per round
+  oppBase: [90, 94, 98, 102], // opponent rating per round
   oppNoise: 3,
 };
 

@@ -4,7 +4,7 @@
 // The sequence of spins depends only on the seed (not on what you pick), so
 // friends playing the same seed see exactly the same boards.
 
-import { POSITIONS, DEFAULT_SKIPS, UNDO_PER_RUN } from './config.js';
+import { POSITIONS, DEFAULT_SKIPS, UNDO_PER_RUN, ULTRA } from './config.js';
 import { createRng } from './seed.js';
 import { indexPlayers } from './data.js';
 import { effectiveRating } from './positions.js';
@@ -35,6 +35,7 @@ export function createDraft({ seed, players, skips = DEFAULT_SKIPS, constraints 
     seed,
     skips: { ...skips },
     undosLeft: UNDO_PER_RUN,
+    ultra: null, // { playerId } once the ultra spin was used
     slots: Object.fromEntries(POSITIONS.map((s) => [s, null])), // slot -> playerId
     queue,
     cursor: -1,
@@ -100,9 +101,40 @@ export function pick(state, playerId, slot) {
     ...state,
     slots: { ...state.slots, [slot]: playerId },
     // bestId / worstId = best and worst rated player on this board (HoopIQ scoring)
-    picks: [...state.picks, { playerId, slot, cursor: state.cursor, bestId: bestOnBoard(state.current.players).id, worstId: worstOnBoard(state.current.players).id }],
+    picks: [...state.picks, { playerId, slot, cursor: state.cursor, ultra: !!state.current.ultra, bestId: bestOnBoard(state.current.players).id, worstId: worstOnBoard(state.current.players).id }],
   };
   return isComplete(next) ? next : spin(next);
+}
+
+// Ultra spin: the board is replaced by ONE star card (the same for everyone with this seed and pick number).
+// It costs all remaining skips. You can pick it or decline it (then the next normal board comes, the spin is gone).
+export const canUltra = (state) =>
+  !state.ultra && !state.current?.ultra && POSITIONS.filter((s) => state.slots[s]).length <= ULTRA.maxFilled;
+
+export function ultraSpin(state) {
+  if (!canUltra(state)) throw new Error('Ultra-Spin nicht verfügbar');
+  const taken = new Set(Object.values(state.slots).filter(Boolean).map((id) => state._byId.get(id).name));
+  const stars = [...state._pool.values()].flat()
+    .filter((p) => p.rating >= ULTRA.minRating && !taken.has(p.name))
+    .sort((a, b) => a.id.localeCompare(b.id));
+  if (!stars.length) throw new Error('Keine Star-Karte verfügbar');
+  const legends = stars.filter((p) => p.rating >= ULTRA.legendRating);
+  const rng = createRng((state.seed ^ ((state.cursor + 1) * 0x7f4a7c15)) >>> 0);
+  const group = legends.length && (rng.next() < ULTRA.legendShare || legends.length === stars.length)
+    ? legends : stars.filter((p) => p.rating < ULTRA.legendRating).length ? stars.filter((p) => p.rating < ULTRA.legendRating) : stars;
+  const card = rng.pick(group);
+  return ultraBoard({ ...state, skips: { team: 0, era: 0 }, ultra: { playerId: card.id } });
+}
+
+function ultraBoard(state) {
+  const p = state._byId.get(state.ultra.playerId);
+  return { ...state, current: { franchise: p.franchise, decade: p.decade, players: [p], ultra: true } };
+}
+
+// Turn the ultra card down: the next normal board comes (the ultra spin stays used up).
+export function declineUltra(state) {
+  if (!state.current?.ultra) throw new Error('Kein Ultra-Spin aktiv');
+  return spin(state);
 }
 
 export function swapSlots(state, a, b) {
@@ -120,7 +152,7 @@ export function undoLastPick(state) {
     slots: { ...state.slots, [last.slot]: null },
     picks: state.picks.slice(0, -1),
   };
-  return show(s, last.cursor, state.queue[last.cursor]);
+  return last.ultra ? ultraBoard({ ...show(s, last.cursor, state.queue[last.cursor]) }) : show(s, last.cursor, state.queue[last.cursor]);
 }
 
 export function teamRating(state) {

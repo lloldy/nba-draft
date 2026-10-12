@@ -32,6 +32,7 @@ ALIASES = {"tm": "team", "team_abbr": "team", "mp_per_g": "mp_per_game", "pts_pe
 POSITIONS = ["PG", "SG", "SF", "PF", "C"]
 PLAYERS_PER_COMBO = 5  # top N stints per franchise-decade
 FULL_POS_SHARE = 0.2  # a position held in >= 20 % of a player's seasons (and >= 2) counts as a full position
+RATING_CURVE = 1.4  # lower = more good players (was 1.6)
 SECONDARY_SHARE = 0.65  # about this share of players gets a secondary position
 MIN_SEASON_MINUTES = 500
 
@@ -113,8 +114,16 @@ def main():
             "ppg": avg("pts_per_game"), "rpg": avg("trb_per_game"), "apg": avg("ast_per_game"),
             "spg": avg("stl_per_game"), "bpg": avg("blk_per_game"),
             "score": (g["score"] * w).sum() / w.sum() * 0.8 + g["score"].max() * 0.2,
+            "won": bool(g["season"].isin(honour_seasons.get(g.name[0], set())).any()),
+            "early": float((g["season"] < 1974).mean()),
             "minutes": w.sum(), "main": main, "alt": alt, "seasons": len(g),
         })
+
+    # Seasons in which a player won MVP or Defensive Player of the Year (highest award share of that season).
+    win = awards[awards["award"].isin(["nba mvp", "nba dpoy"])]
+    win = win[win["share"] == win.groupby(["award", "season"])["share"].transform("max")]
+    honour_seasons = win.groupby("player")["season"].agg(set).to_dict()
+    honoured = set(honour_seasons)
 
     stints = df.groupby(["player", "franchise", "decade"]).apply(stint, include_groups=False).reset_index()
     stints = stints[stints["main"].isin(POSITIONS)]
@@ -180,7 +189,21 @@ def main():
     # Re-rate within the final pool: the first rating spans ALL stints (role players too), so the
     # selected best-of-franchise players would cluster at 90+. Spreading over the pool keeps 99 rare.
     top = top.copy()
-    top["rating"] = (50 + top["score"].rank(pct=True) ** 1.6 * 49).round().astype(int)
+    top["rating"] = 50 + top["score"].rank(pct=True) ** RATING_CURVE * 49
+
+    # Adjustments the box score misses.
+    # a) Defence: steals, blocks and defensive tags are only partly in the score, so give up to +4.
+    defence = (top["bpg"].fillna(0) / 2.5 + top["spg"].fillna(0) / 2.0).clip(0, 1.6) / 1.6
+    bonus = defence * 4
+    # b) Before 1973-74 steals and blocks were not counted, and rebounding giants (Russell, Wilt) are underrated.
+    bonus += top["early"] * (3 + 3 * (top["rpg"] >= 11))
+    # The nearer the top, the less a bonus counts, so 97-99 stays rare.
+    top["rating"] += bonus * ((99 - top["rating"]) / 40).clip(0, 1)
+    # c) Legends: MVP / DPOY seasons get at least 90, every other stint of such a player at least 82.
+    top["rating"] = top["rating"].clip(upper=99)
+    top.loc[top["player"].isin(honoured), "rating"] = top["rating"].clip(lower=82)
+    top.loc[top["won"], "rating"] = top["rating"].clip(lower=90)
+    top["rating"] = top["rating"].round().astype(int)
 
     players = []
     for r in top.itertuples():

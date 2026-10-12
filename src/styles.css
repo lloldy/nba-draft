@@ -36,6 +36,9 @@ input, select { background: var(--bg); color: var(--text); border: 1px solid var
 .btn.primary { background: var(--accent); color: #1a1200; border-color: var(--accent); font-weight: 700; }
 .btn.ghost { background: transparent; }
 .btn.small { padding: 8px 12px; font-size: .85rem; }
+.btn.ultra { border-color: #ffe08a; color: #ffe08a; }
+.btn.ultra.ask { background: #ffe08a; color: #1a1200; }
+.btn.ultra:disabled { border-color: var(--wood-dim); color: var(--dim); }
 .row { display: flex; gap: 10px; flex-wrap: wrap; }
 .row > .btn { flex: 1; }
 
