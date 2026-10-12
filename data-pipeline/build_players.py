@@ -19,6 +19,16 @@ from franchises import TEAM_TO_FRANCHISE
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "raw"
 OUT = ROOT.parent / "public" / "data" / "players.json"
+# Optional overrides (used for testing):  --raw <dir>  --out <file>
+for flag in ("--raw", "--out"):
+    if flag in sys.argv:
+        value = Path(sys.argv[sys.argv.index(flag) + 1])
+        RAW, OUT = (value, OUT) if flag == "--raw" else (RAW, value)
+
+# The Kaggle files may name columns slightly differently; map them to our names.
+ALIASES = {"tm": "team", "team_abbr": "team", "mp_per_g": "mp_per_game", "pts_per_g": "pts_per_game",
+           "trb_per_g": "trb_per_game", "ast_per_g": "ast_per_game", "stl_per_g": "stl_per_game",
+           "blk_per_g": "blk_per_game", "ts_pct": "ts_percent", "ws/48": "ws_48"}
 POSITIONS = ["PG", "SG", "SF", "PF", "C"]
 PLAYERS_PER_COMBO = 5  # top N stints per franchise-decade
 MIN_SEASON_MINUTES = 500
@@ -38,7 +48,7 @@ def load(name):
     if not path.exists():
         sys.exit(f"Missing file: {path}\nDownload the Kaggle dataset and put the CSVs into data-pipeline/raw/")
     df = pd.read_csv(path)
-    df.columns = [c.strip().lower() for c in df.columns]
+    df.columns = [ALIASES.get(c.strip().lower(), c.strip().lower()) for c in df.columns]
     missing = [c for c in REQUIRED[name] if c not in df.columns]
     if missing:
         sys.exit(f"{name}: missing columns {missing}. Found: {list(df.columns)}")
@@ -88,7 +98,9 @@ def main():
     # 3. Stint = player + franchise + decade. Minutes-weighted average, plus a peak bonus.
     def stint(g):
         w = g["mp"]
-        avg = lambda c: (g[c] * g["g"]).sum() / g["g"].sum()
+        def avg(c):  # games-weighted mean over seasons where the stat exists (steals/blocks start 1973-74)
+            ok = g[c].notna()
+            return (g.loc[ok, c] * g.loc[ok, "g"]).sum() / g.loc[ok, "g"].sum() if ok.any() else float("nan")
         pos_counts = g["pos"].str.split("-").explode().value_counts(normalize=True)
         main = g["pos"].str.split("-").str[0].value_counts().index[0]
         alt = [p for p in pos_counts.index if p != main and p in POSITIONS and pos_counts[p] >= 0.2]
@@ -137,8 +149,8 @@ def main():
             "name": r.player, "franchise": r.franchise, "decade": int(r.decade),
             "pos": [r.main], "altPos": list(r.alt),
             "ppg": round(r.ppg, 1), "rpg": round(r.rpg, 1), "apg": round(r.apg, 1),
-            "spg": round(r.spg, 1) if r.decade >= 1970 else None,
-            "bpg": round(r.bpg, 1) if r.decade >= 1970 else None,
+            "spg": None if pd.isna(r.spg) else round(r.spg, 1),
+            "bpg": None if pd.isna(r.bpg) else round(r.bpg, 1),
             "fans": int(r.fans), "rating": int(r.rating), "tags": r.tags,
         })
     players.sort(key=lambda p: (p["franchise"], p["decade"], -p["rating"]))
