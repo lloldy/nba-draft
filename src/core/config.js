@@ -16,9 +16,9 @@ export const DECADES = [1960, 1970, 1980, 1990, 2000, 2010, 2020];
 // Season simulation. Per game: P(win) = sigmoid((team - opponent) / scale).
 export const SIM = {
   games: 82,
-  oppMean: 76, // average opponent rating
+  oppMean: 84, // average opponent rating
   oppSpread: 6, // opponents range roughly oppMean +/- oppSpread
-  scale: 5, // smaller = stronger teams win more reliably (steeper curve)
+  scale: 8, // smaller = stronger teams win more reliably (steeper curve)
 };
 
 // Chemistry: five roles must each be covered by a DIFFERENT player who plays
@@ -43,7 +43,7 @@ export const PLAYOFFS = {
   winsNeeded: 4,
   minWins: 41, // fewer regular-season wins = playoffs missed
   rounds: ['Runde 1', 'Conference Semis', 'Conference Finals', 'Finals'],
-  oppBase: [74, 78, 82, 86], // opponent rating per round
+  oppBase: [85, 89, 93, 97], // opponent rating per round
   oppNoise: 3,
 };
 

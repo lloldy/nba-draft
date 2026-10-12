@@ -22,9 +22,9 @@ describe('sim', () => {
     expect(w60).toBeLessThan(w75);
     expect(w75).toBeLessThan(w85);
     expect(w85).toBeLessThan(w95);
-    expect(w95).toBeGreaterThan(74);
+    expect(w95).toBeGreaterThan(60);
     expect(w95).toBeLessThanOrEqual(82);
-    expect(w60).toBeLessThan(25);
+    expect(w60).toBeLessThan(15);
   });
 
   it('bonus acts like extra rating', () => {
