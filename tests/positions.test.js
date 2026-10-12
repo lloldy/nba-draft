@@ -17,3 +17,16 @@ describe('positions', () => {
     expect(effectiveRating(p, 'PG')).toBe(82.8);
   });
 });
+
+describe('players known for two positions', () => {
+  const harden = { rating: 96, pos: ['SG', 'PG'], altPos: ['SF'] };
+  it('lose nothing on any of their full positions', () => {
+    expect(fitFactor(harden, 'SG')).toBe(POSITION_FIT.primary);
+    expect(fitFactor(harden, 'PG')).toBe(POSITION_FIT.primary);
+    expect(effectiveRating(harden, 'PG')).toBe(96);
+  });
+  it('still get the secondary and off-position factors elsewhere', () => {
+    expect(fitFactor(harden, 'SF')).toBe(POSITION_FIT.secondary);
+    expect(fitFactor(harden, 'C')).toBe(POSITION_FIT.off);
+  });
+});

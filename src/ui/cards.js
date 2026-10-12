@@ -21,7 +21,7 @@ export function playerCard(p, franchises, { slot, selected, onClick, hint, deal 
   },
     h('div', { class: 'card-top' },
       h('span', { class: 'card-rating' }, hidden ? '?' : Math.round(eff)),
-      h('span', { class: 'card-pos' }, p.allPos ? 'ALLE' : [p.pos[0], ...(p.altPos ?? [])].join('/')),
+      h('span', { class: 'card-pos' }, p.allPos ? 'ALLE' : p.pos.join('/'), !p.allPos && p.altPos?.length ? h('i', {}, `/${p.altPos.join('/')}`) : null),
     ),
     h('div', { class: 'card-initials' }, initials(p.name)),
     h('div', { class: 'card-name' }, p.name),

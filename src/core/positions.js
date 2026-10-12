@@ -2,8 +2,8 @@ import { POSITION_FIT } from './config.js';
 
 export function fitKind(player, slot) {
   if (player.allPos) return 'primary'; // e.g. LeBron: every slot counts as his main position
-  if (player.pos[0] === slot) return 'primary';
-  if (player.pos.includes(slot) || (player.altPos ?? []).includes(slot)) return 'secondary';
+  if (player.pos.includes(slot)) return 'primary'; // main position plus any position he is known for (e.g. Harden: PG and SG)
+  if ((player.altPos ?? []).includes(slot)) return 'secondary';
   return 'off';
 }
 

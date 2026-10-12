@@ -31,6 +31,7 @@ ALIASES = {"tm": "team", "team_abbr": "team", "mp_per_g": "mp_per_game", "pts_pe
            "blk_per_g": "blk_per_game", "ts_pct": "ts_percent", "ws/48": "ws_48"}
 POSITIONS = ["PG", "SG", "SF", "PF", "C"]
 PLAYERS_PER_COMBO = 5  # top N stints per franchise-decade
+FULL_POS_SHARE = 0.2  # a position held in >= 20 % of a player's seasons (and >= 2) counts as a full position
 SECONDARY_SHARE = 0.65  # about this share of players gets a secondary position
 MIN_SEASON_MINUTES = 500
 
@@ -146,6 +147,19 @@ def main():
             stints.at[i, "alt"] = list(stints.at[i, "alt"]) + [nb]
     stints["alt"] = stints["alt"].apply(lambda a: a[:2])
 
+    # 5c. Full positions: what a player is KNOWN for. Basketball-Reference labels every season with one position;
+    # a player who carries a second label often enough (Harden: PG in 14, SG in 9 of 23 seasons) plays both
+    # without the position malus. The first entry of `pos` stays his main position.
+    seasons = df.drop_duplicates(["player", "season", "pos"])
+    n_seasons = df.groupby("player")["season"].nunique()
+    share = seasons.groupby(["player", "pos"]).size().div(n_seasons, level="player")
+    count = seasons.groupby(["player", "pos"]).size()
+    full = {}
+    for (player, pos), sh in share.items():
+        if sh >= FULL_POS_SHARE and count[(player, pos)] >= 2 and pos in POSITIONS:
+            full.setdefault(player, []).append((sh, pos))
+    full = {pl: [p for _, p in sorted(v, reverse=True)] for pl, v in full.items()}
+
     # 6. Archetype tags (used by the chemistry engine in phase 3).
     def tags(r):
         t = []
@@ -174,7 +188,8 @@ def main():
             "id": f"{r.franchise}-{int(r.decade)}-{r.player.lower().replace(' ', '-').replace('.', '').replace(chr(39), '')}",
             "name": r.player, "franchise": r.franchise, "decade": int(r.decade),
             "team": r.team,
-            "pos": [r.main], "altPos": list(r.alt),
+            "pos": [r.main] + [p for p in full.get(r.player, []) if p != r.main],
+            "altPos": [p for p in r.alt if p != r.main and p not in full.get(r.player, [])],
             "ppg": round(r.ppg, 1), "rpg": round(r.rpg, 1), "apg": round(r.apg, 1),
             "spg": None if pd.isna(r.spg) else round(r.spg, 1),
             "bpg": None if pd.isna(r.bpg) else round(r.bpg, 1),

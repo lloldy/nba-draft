@@ -6,10 +6,10 @@ import { createRng } from './seed.js';
 
 export const BENCH_ID = 'bench';
 
-// Generic replacement: plays every position, but only his first one counts as "main".
+// Generic replacement: plays every position, but only PG counts fully (the others are secondary).
 export const BENCH = {
   id: BENCH_ID, name: 'Ersatzspieler', franchise: '—', decade: 0, bench: true,
-  pos: [...POSITIONS], altPos: [], rating: INJURY.benchRating,
+  pos: [POSITIONS[0]], altPos: POSITIONS.slice(1), rating: INJURY.benchRating,
   ppg: 4, rpg: 2, apg: 1, spg: 0, bpg: 0, fans: 0, tags: [],
 };
 

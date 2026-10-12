@@ -66,6 +66,7 @@ input, select { background: var(--bg); color: var(--text); border: 1px solid var
 .card.selected { box-shadow: 0 0 0 3px var(--accent), 0 8px 24px #000a; transform: translateY(-4px); }
 .card-top { display: flex; justify-content: space-between; align-items: baseline; }
 .card-rating { font-family: var(--display); font-weight: 800; font-size: 2.2rem; color: var(--c2); line-height: 1; filter: brightness(1.3); }
+.card-pos i { font-style: normal; opacity: .55; } /* secondary positions (-3 %) are dimmer than full ones */
 .card-pos { font-size: .7rem; font-weight: 700; color: var(--dim); }
 .card-initials { font-family: var(--display); font-weight: 800; font-size: 3rem; text-align: center; opacity: .92; line-height: 1.05; }
 .card-name { font-weight: 700; font-size: .85rem; line-height: 1.15; min-height: 2em; }
