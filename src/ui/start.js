@@ -67,7 +67,7 @@ async function createRoom(era, iq, status) {
     await api.createRoom(room);
     try { await navigator.clipboard.writeText(roomLink(room.code)); } catch { /* the link is also offered after the run */ }
     app.challenge = { seed: room.seed, era: room.era, iq: room.iq, room: room.code, rule: null, by: app.name, record: null };
-    acceptChallenge();
+    go('roomready');
   } catch { status.textContent = 'Raum konnte nicht erstellt werden (offline?).'; }
 }
 
@@ -83,6 +83,25 @@ async function joinRoom(input, status) {
     acceptChallenge();
   } catch { status.textContent = 'Raum nicht erreichbar (offline?).'; }
 }
+
+function roomReadyScreen() {
+  const c = app.challenge;
+  const link = roomLink(c.room);
+  const btn = h('button', { class: 'btn', onclick: async () => {
+    try { await navigator.clipboard.writeText(link); btn.textContent = 'Link kopiert!'; } catch { prompt('Zum Kopieren:', link); }
+  } }, 'Link kopieren');
+  return h('main', { class: 'screen start' },
+    h('h2', {}, 'Raum erstellt'),
+    h('section', { class: 'panel challenge' },
+      h('p', { class: 'hint' }, 'Schick deinen Freunden diesen Code oder den Link:'),
+      h('p', { class: 'room-code' }, c.room),
+      h('p', { class: 'hint' }, link),
+      btn),
+    h('div', { class: 'row' },
+      h('button', { class: 'btn ghost', onclick: () => { app.challenge = null; go('start'); } }, 'Abbrechen'),
+      h('button', { class: 'btn primary', onclick: acceptChallenge }, 'Draft starten')));
+}
+register('roomready', roomReadyScreen);
 
 function roomPanel(era, iqBox) {
   if (!onlineEnabled) return null;

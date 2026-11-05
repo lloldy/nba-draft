@@ -271,3 +271,4 @@ label.check input { width: 20px; height: 20px; accent-color: var(--accent); }
 input.code { text-transform: uppercase; letter-spacing: .15em; flex: 1; min-width: 0; }
 .board-list.online li { grid-template-columns: 2.6em 1fr; }
 .board-list.online li.me { outline: 2px solid var(--accent); }
+.room-code { font-family: var(--display); font-size: 3.4rem; letter-spacing: .2em; color: var(--accent); text-align: center; margin: 0; }
