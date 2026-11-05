@@ -38,7 +38,7 @@ function startDaily() {
 
 function acceptChallenge() {
   const c = app.challenge;
-  Object.assign(app, { room: c.room ?? null, mode: 'challenge', seed: c.seed, decade: c.era, rule: ruleById(c.rule), hoopiq: c.iq });
+  Object.assign(app, { room: c.room ?? null, mode: 'challenge', seed: c.seed || Math.floor(Math.random() * 1e9) + 1, decade: c.era, rule: ruleById(c.rule), hoopiq: c.iq });
   startDraft();
 }
 
@@ -59,10 +59,10 @@ function dailyCard() {
   );
 }
 
-async function createRoom(era, iq, status) {
+async function createRoom(era, iq, own, status) {
   if (!app.name.trim()) { status.textContent = 'Bitte zuerst deinen Namen eintragen.'; return; }
   status.textContent = 'Erstelle Raum…';
-  const room = { code: makeRoomCode(), seed: Math.floor(Math.random() * 1e9) + 1, era: era.value ? Number(era.value) : null, iq: iq.checked, created_by: app.name.slice(0, 20) };
+  const room = { code: makeRoomCode(), seed: own.checked ? 0 : Math.floor(Math.random() * 1e9) + 1, era: era.value ? Number(era.value) : null, iq: iq.checked, created_by: app.name.slice(0, 20) };
   try {
     await api.createRoom(room);
     try { await navigator.clipboard.writeText(roomLink(room.code)); } catch { /* the link is also offered after the run */ }
@@ -94,6 +94,7 @@ function roomReadyScreen() {
     h('h2', {}, 'Raum erstellt'),
     h('section', { class: 'panel challenge' },
       h('p', { class: 'hint' }, 'Schick deinen Freunden diesen Code oder den Link:'),
+      c.seed === 0 && h('p', { class: 'notice' }, 'Eigene Boards: Jeder bekommt andere Spins.'),
       h('p', { class: 'room-code' }, c.room),
       h('p', { class: 'hint' }, link),
       btn),
@@ -104,17 +105,19 @@ function roomReadyScreen() {
 register('roomready', roomReadyScreen);
 
 function roomPanel(era, iqBox) {
+  const own = h('input', { type: 'checkbox', id: 'own' });
   if (!onlineEnabled) return null;
   const code = h('input', { type: 'text', maxlength: 5, placeholder: 'Raumcode, z. B. K7M2Q', class: 'code' });
   const status = h('p', { class: 'hint' });
   return h('section', { class: 'panel challenge' },
     h('h3', {}, 'Mit Freunden spielen'),
-    h('p', { class: 'hint' }, 'Alle im Raum draften dieselben Boards. Dein erster Versuch zählt und landet in der gemeinsamen Bestenliste. Ära und HoopIQ für einen neuen Raum nimmst du aus dem Freien Spiel unten.'),
+    h('p', { class: 'hint' }, 'Standardmäßig draften alle im Raum dieselben Boards, mit dem Haken bekommt jeder eigene. Dein erster Versuch zählt und landet in der gemeinsamen Bestenliste. Ära und HoopIQ für einen neuen Raum nimmst du aus dem Freien Spiel unten.'),
+    h('label', { class: 'check' }, own, 'Neuer Raum: Jeder bekommt andere Boards (eigene Spins)'),
     h('div', { class: 'row' },
       code,
       h('button', { class: 'btn primary', onclick: () => joinRoom(code, status) }, 'Beitreten')),
     h('div', { class: 'row' },
-      h('button', { class: 'btn', onclick: () => createRoom(era, iqBox, status) }, 'Neuen Raum erstellen'),
+      h('button', { class: 'btn', onclick: () => createRoom(era, iqBox, own, status) }, 'Neuen Raum erstellen'),
       h('button', { class: 'btn ghost', onclick: () => go('board') }, 'Bestenliste')),
     status);
 }
@@ -132,7 +135,7 @@ function startScreen() {
     h('p', { class: 'lead' }, 'Dreh das Rad, drafte fünf Spieler und simuliere 82 Spiele.'),
     app.data.meta.source.includes('SYNTHETIC') && h('p', { class: 'notice' }, 'Beispieldaten (erfundene Spieler) – echte Daten siehe DATA_SOURCES.md'),
     ch && h('section', { class: 'panel challenge' },
-      h('h3', {}, ch.room ? `Freunde-Raum ${ch.room}` : `${ch.by ?? 'Ein Freund'} fordert dich heraus`),
+      h('h3', {}, ch.room ? `Freunde-Raum ${ch.room}${ch.seed === 0 ? ' · eigene Boards' : ''}` : `${ch.by ?? 'Ein Freund'} fordert dich heraus`),
       h('p', { class: 'rule-line' }, ch.record ? `Rekord: ${ch.record.wins} Siege · ${PO_LABELS[ch.record.po]}` : 'Gleiche Boards, gleicher Seed.',
         ch.rule && ruleById(ch.rule) ? ` · Regel: ${ruleById(ch.rule).label}` : '', ch.era ? ` · Nur ${ch.era}er` : '', ch.iq ? ' · HoopIQ' : ''),
       h('button', { class: 'btn primary', onclick: acceptChallenge }, 'Challenge annehmen')),
