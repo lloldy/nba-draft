@@ -6,6 +6,8 @@ import { loadPlayers } from './core/data.js';
 import { BENCH } from './core/injuries.js';
 import { parseChallenge } from './core/challenge.js';
 import { app, render } from './ui/state.js';
+import { api } from './ui/online.js';
+import { normalizeCode, ROOM_RE } from './core/online.js';
 import { load, KEYS } from './ui/storage.js';
 import './ui/screens.js';
 import './ui/start.js';
@@ -39,6 +41,11 @@ async function boot() {
 
   // Challenge link: #seed=123&era=1990&rule=only90s&by=Noah&rw=63&rp=5
   app.challenge = parseChallenge(location.hash);
+  const roomCode = normalizeCode(new URLSearchParams(location.hash.replace(/^#/, '')).get('room'));
+  if (api && ROOM_RE.test(roomCode)) {
+    const r = await api.getRoom(roomCode).catch(() => null);
+    if (r) app.challenge = { seed: r.seed, era: r.era, iq: r.iq, room: r.code, rule: null, by: r.created_by, record: null };
+  }
   app.seed = app.challenge?.seed ?? Math.floor(Math.random() * 1e9);
   app.decade = app.challenge?.era ?? null;
   route();

@@ -17,4 +17,4 @@ export function save(key, value) {
   }
 }
 
-export const KEYS = { daily: 'nbd:daily', runs: 'nbd:runs', name: 'nbd:name' };
+export const KEYS = { daily: 'nbd:daily', runs: 'nbd:runs', name: 'nbd:name', pid: 'nbd:pid' };

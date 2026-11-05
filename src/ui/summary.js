@@ -9,6 +9,7 @@ import { checkRule } from '../core/rules.js';
 import { emptyDaily, finishAttempt, currentStreak, utcDate } from '../core/daily.js';
 import { encodeChallenge, compareToRecord } from '../core/challenge.js';
 import { iqScore } from '../core/hoopiq.js';
+import { submitRun, roomBoard, roomLink } from './online.js';
 
 // Called when a run is over (season missed playoffs, or playoffs ended).
 export function goSummary() {
@@ -35,6 +36,7 @@ function finalize() {
     save(KEYS.daily, finishAttempt(load(KEYS.daily, emptyDaily()), app.dailyDate, { wins: run.wins, po, passed }));
   }
   app.run = run;
+  if (app.room) app.submitted = submitRun(run); // the first result per player and room counts
 }
 
 const baseUrl = () => `${location.origin}${location.pathname}`;
@@ -54,6 +56,9 @@ function summaryScreen() {
   const linkBtn = h('button', { class: 'btn', onclick: () => copy(linkBtn, link, 'Link kopiert!') }, 'Challenge-Link kopieren');
   const cmp = app.mode === 'challenge' && app.challenge?.record ? compareToRecord(run, app.challenge.record) : null;
   const daily = load(KEYS.daily, emptyDaily());
+  const roomHolder = h('div', {});
+  const roomBtn = h('button', { class: 'btn ghost', onclick: () => copy(roomBtn, roomLink(app.room), 'Raum-Link kopiert!') }, 'Raum-Link kopieren');
+  if (app.room) Promise.resolve(app.submitted).then(() => roomHolder.replaceChildren(roomBoard(app.room)));
   return h('main', { class: 'screen summary' },
     h('h2', {}, 'Ergebnis'),
     cmp && h('div', { class: cmp === 'win' ? 'perfect' : cmp === 'tie' ? 'notice' : 'out' },
@@ -62,13 +67,15 @@ function summaryScreen() {
     run.ruleLabel && h('div', { class: run.passed ? 'perfect' : 'out' }, `${run.ruleLabel}: ${run.passed ? 'erfüllt ✓' : 'nicht erfüllt ✗'}`),
     run.mode === 'daily' && h('p', { class: 'lead' }, `Daily-Streak: ${currentStreak(daily, utcDate())} Tage (Bestwert ${daily.best})`),
     run.iq && iqPanel(run.iq),
+    app.room && h('div', { class: 'row' }, h('span', { class: 'chip accent' }, `Raum ${app.room}`), roomBtn),
+    app.room && roomHolder,
     canvas,
     h('div', { class: 'row' },
       h('button', { class: 'btn', onclick: () => downloadCanvas(canvas, `nba-draft-${run.wins}-${run.losses}.png`) }, 'Bild speichern'),
       textBtn, linkBtn),
     h('div', { class: 'row' },
       h('button', { class: 'btn ghost', onclick: () => go('stats') }, 'Statistik'),
-      h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); app.challenge = null; go('start'); } }, 'Neuer Run')),
+      h('button', { class: 'btn primary', onclick: () => { app.seed = Math.floor(Math.random() * 1e9); app.challenge = null; app.room = null; app.submitted = null; go('start'); } }, 'Neuer Run')),
   );
 }
 

@@ -8,6 +8,8 @@ import { COACHES } from '../core/coaches.js';
 import { constraintsFor, pickLegend, ruleById } from '../core/rules.js';
 import { dailyInfo, utcDate, emptyDaily, hasPlayed, startAttempt, currentStreak } from '../core/daily.js';
 import { PO_LABELS } from '../core/stats.js';
+import { api, onlineEnabled, roomLink } from './online.js';
+import { makeRoomCode, normalizeCode, ROOM_RE } from '../core/online.js';
 
 export function startDraft() {
   const locked = app.rule?.type === 'legend' ? pickLegend(app.data.players, app.seed) : null;
@@ -30,13 +32,13 @@ function startDaily() {
   const today = utcDate();
   const info = dailyInfo(today);
   save(KEYS.daily, startAttempt(load(KEYS.daily, emptyDaily()), today)); // one attempt per day, used up now
-  Object.assign(app, { mode: 'daily', seed: info.seed, rule: info.rule, decade: null, dailyDate: today, hoopiq: false });
+  Object.assign(app, { room: null, mode: 'daily', seed: info.seed, rule: info.rule, decade: null, dailyDate: today, hoopiq: false });
   startDraft();
 }
 
 function acceptChallenge() {
   const c = app.challenge;
-  Object.assign(app, { mode: 'challenge', seed: c.seed, decade: c.era, rule: ruleById(c.rule), hoopiq: c.iq });
+  Object.assign(app, { room: c.room ?? null, mode: 'challenge', seed: c.seed, decade: c.era, rule: ruleById(c.rule), hoopiq: c.iq });
   startDraft();
 }
 
@@ -57,6 +59,47 @@ function dailyCard() {
   );
 }
 
+async function createRoom(era, iq, status) {
+  if (!app.name.trim()) { status.textContent = 'Bitte zuerst deinen Namen eintragen.'; return; }
+  status.textContent = 'Erstelle Raum…';
+  const room = { code: makeRoomCode(), seed: Math.floor(Math.random() * 1e9) + 1, era: era.value ? Number(era.value) : null, iq: iq.checked, created_by: app.name.slice(0, 20) };
+  try {
+    await api.createRoom(room);
+    try { await navigator.clipboard.writeText(roomLink(room.code)); } catch { /* the link is also offered after the run */ }
+    app.challenge = { seed: room.seed, era: room.era, iq: room.iq, room: room.code, rule: null, by: app.name, record: null };
+    acceptChallenge();
+  } catch { status.textContent = 'Raum konnte nicht erstellt werden (offline?).'; }
+}
+
+async function joinRoom(input, status) {
+  const code = normalizeCode(input.value);
+  if (!ROOM_RE.test(code)) { status.textContent = 'Der Code hat 5 Zeichen.'; return; }
+  if (!app.name.trim()) { status.textContent = 'Bitte zuerst deinen Namen eintragen.'; return; }
+  status.textContent = 'Suche Raum…';
+  try {
+    const r = await api.getRoom(code);
+    if (!r) { status.textContent = 'Diesen Raum gibt es nicht.'; return; }
+    app.challenge = { seed: r.seed, era: r.era, iq: r.iq, room: r.code, rule: null, by: r.created_by, record: null };
+    acceptChallenge();
+  } catch { status.textContent = 'Raum nicht erreichbar (offline?).'; }
+}
+
+function roomPanel(era, iqBox) {
+  if (!onlineEnabled) return null;
+  const code = h('input', { type: 'text', maxlength: 5, placeholder: 'Raumcode, z. B. K7M2Q', class: 'code' });
+  const status = h('p', { class: 'hint' });
+  return h('section', { class: 'panel challenge' },
+    h('h3', {}, 'Mit Freunden spielen'),
+    h('p', { class: 'hint' }, 'Alle im Raum draften dieselben Boards. Dein erster Versuch zählt und landet in der gemeinsamen Bestenliste. Ära und HoopIQ für einen neuen Raum nimmst du aus dem Freien Spiel unten.'),
+    h('div', { class: 'row' },
+      code,
+      h('button', { class: 'btn primary', onclick: () => joinRoom(code, status) }, 'Beitreten')),
+    h('div', { class: 'row' },
+      h('button', { class: 'btn', onclick: () => createRoom(era, iqBox, status) }, 'Neuen Raum erstellen'),
+      h('button', { class: 'btn ghost', onclick: () => go('board') }, 'Bestenliste')),
+    status);
+}
+
 function startScreen() {
   const seedInput = h('input', { type: 'number', value: app.seed, id: 'seed', inputmode: 'numeric' });
   const era = h('select', { id: 'era' },
@@ -70,11 +113,12 @@ function startScreen() {
     h('p', { class: 'lead' }, 'Dreh das Rad, drafte fünf Spieler und simuliere 82 Spiele.'),
     app.data.meta.source.includes('SYNTHETIC') && h('p', { class: 'notice' }, 'Beispieldaten (erfundene Spieler) – echte Daten siehe DATA_SOURCES.md'),
     ch && h('section', { class: 'panel challenge' },
-      h('h3', {}, `${ch.by ?? 'Ein Freund'} fordert dich heraus`),
+      h('h3', {}, ch.room ? `Freunde-Raum ${ch.room}` : `${ch.by ?? 'Ein Freund'} fordert dich heraus`),
       h('p', { class: 'rule-line' }, ch.record ? `Rekord: ${ch.record.wins} Siege · ${PO_LABELS[ch.record.po]}` : 'Gleiche Boards, gleicher Seed.',
         ch.rule && ruleById(ch.rule) ? ` · Regel: ${ruleById(ch.rule).label}` : '', ch.era ? ` · Nur ${ch.era}er` : '', ch.iq ? ' · HoopIQ' : ''),
       h('button', { class: 'btn primary', onclick: acceptChallenge }, 'Challenge annehmen')),
     dailyCard(),
+    roomPanel(era, iqBox),
     h('section', { class: 'panel' },
       h('h3', {}, 'Freies Spiel'),
       h('label', {}, 'Seed (gleicher Seed = gleiche Boards)', seedInput),
@@ -83,7 +127,7 @@ function startScreen() {
       h('div', { class: 'row' },
         h('button', { class: 'btn ghost', onclick: () => { seedInput.value = Math.floor(Math.random() * 1e9); } }, 'Zufälliger Seed'),
         h('button', { class: 'btn primary', onclick: () => {
-          Object.assign(app, { mode: 'free', rule: null, seed: Number(seedInput.value) || 1, decade: era.value ? Number(era.value) : null, hoopiq: iqBox.checked });
+          Object.assign(app, { room: null, mode: 'free', rule: null, seed: Number(seedInput.value) || 1, decade: era.value ? Number(era.value) : null, hoopiq: iqBox.checked });
           startDraft();
         } }, 'Draft starten'))),
     h('label', {}, 'Dein Name', name),

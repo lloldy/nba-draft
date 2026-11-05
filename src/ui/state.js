@@ -15,6 +15,8 @@ export const app = {
   rule: null, // daily / challenge rule
   challenge: null, // parsed friend challenge { seed, era, rule, by, record }
   dailyDate: null,
+  room: null, // friends room code (online leaderboard), null when playing solo
+  submitted: null, // promise of the score upload
   name: '',
   draft: null,
   ultraAsk: false, // ultra spin button asked for confirmation
