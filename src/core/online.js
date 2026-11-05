@@ -29,15 +29,24 @@ export function createApi(cfg, fetchFn = (...a) => fetch(...a)) {
     if (!res.ok) throw new Error(`Online-Fehler ${res.status}`);
     return res.status === 204 ? null : res.json().catch(() => null);
   };
+  const post = (path, row, prefer = 'resolution=ignore-duplicates,return=minimal') =>
+    req(path, { method: 'POST', headers: { Prefer: prefer }, body: JSON.stringify(row) });
+  const q = encodeURIComponent;
   return {
     createRoom: (room) => req('/rooms', { method: 'POST', body: JSON.stringify(room) }),
     async getRoom(code) {
-      const rows = await req(`/rooms?code=eq.${encodeURIComponent(code)}&select=*`);
+      const rows = await req(`/rooms?code=eq.${q(code)}&select=*`);
       return rows?.[0] ?? null;
     },
+    startRoom: (code) => req(`/rooms?code=eq.${q(code)}`, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ started: true }) }),
+    joinRoom: (row) => post('/room_players', row),
+    roomPlayers: (code) => req(`/room_players?room=eq.${q(code)}&select=*&order=joined_at.asc,player_id.asc`),
     // Only the first result per player and room counts (unique constraint -> duplicates are ignored).
-    submitScore: (row) => req('/scores', { method: 'POST', headers: { Prefer: 'resolution=ignore-duplicates,return=minimal' }, body: JSON.stringify(row) }),
-    roomScores: (code) => req(`/scores?room=eq.${encodeURIComponent(code)}&select=*&order=score.desc,created_at.asc&limit=50`),
-    topScores: (n = 25) => req(`/scores?select=name,wins,losses,po,score,room,created_at&order=score.desc,created_at.asc&limit=${n}`),
+    submitScore: (row) => post('/scores', row),
+    roomScores: (code, { day } = {}) => req(`/scores?room=eq.${q(code)}${day ? `&day=eq.${day}` : ''}&select=*&order=score.desc,created_at.asc&limit=50`),
+    topScores: ({ n = 25, day } = {}) => req(`/scores?${day ? `day=eq.${day}&` : ''}select=name,wins,losses,po,score,room,player_id,created_at&order=score.desc,created_at.asc&limit=${n}`),
+    postEntry: (row) => post('/po_entries', row),
+    skipEntry: (room, playerId, round) => req(`/po_entries?room=eq.${q(room)}&player_id=eq.${q(playerId)}&round=eq.${round}`, { method: 'PATCH', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ skip: true }) }),
+    roomEntries: (code) => req(`/po_entries?room=eq.${q(code)}&select=player_id,round,strength,skip&limit=500`),
   };
 }

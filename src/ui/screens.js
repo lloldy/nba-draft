@@ -14,6 +14,10 @@ import { rollInjury, applyInjury, tickInjury, recoverPlayer, standIn, replacemen
 import { createDraft } from '../core/draft.js';
 import { constraintsFor } from '../core/rules.js';
 import { qualifies, opponentFor, opponentBoards, simulateSeries } from '../core/playoffs.js';
+import { resolveRoom, CONF_NAMES } from '../core/mpPlayoffs.js';
+import { hashString } from '../core/seed.js';
+import { api } from './online.js';
+import { sleep } from './dom.js';
 
 let wheelTimer = null;
 
@@ -212,6 +216,7 @@ function lineupScreen() {
 function startSeason() {
   app.season = simulateSeason({ seed: app.seed, rating: team().strength });
   app.seasonTeam = team();
+  if (app.roomCtx) postEntry(-1, app.season.wins); // others need to know whether you made the playoffs
   app.run = null;
   app.shown = 0;
   go('sim');
@@ -391,9 +396,76 @@ const codes = () => Object.keys(app.franchises);
 let boardsCache = null;
 const boards = () => (boardsCache ??= opponentBoards(app.data.players));
 const oppFor = (round) => opponentFor({ seed: app.seed, round, franchiseCodes: codes(), boards: boards() });
-const oppLabel = (o) => `${tName(o.team, o.franchise)}${o.decade ? ` ${o.decade}er` : ''}`;
+const oppLabel = (o) => o.label ?? `${tName(o.team, o.franchise)}${o.decade ? ` ${o.decade}er` : ''}`;
+
+// ---------- multiplayer playoffs (room) ----------
+async function postEntry(round, strength) {
+  const c = app.roomCtx;
+  for (let i = 0; i < 4; i++) {
+    try { await api.postEntry({ room: c.code, player_id: c.myId, round, strength }); return true; } catch { await sleep(700 * (i + 1)); }
+  }
+  return false;
+}
+
+async function mpResolve() {
+  const c = app.roomCtx;
+  const entries = await api.roomEntries(c.code);
+  return resolveRoom({ room: c.code, players: c.players, entries, boards: boards(), franchiseCodes: codes() });
+}
+
+const confBot = (round) => opponentFor({ seed: hashString(`${app.roomCtx.code}:${app.roomCtx.conf}`), round, franchiseCodes: codes(), boards: boards() });
+const otherConf = () => (app.roomCtx.conf === 'A' ? 'B' : 'A');
+
+// Opponent preview shown in the round list before a round was played.
+function oppPreview(i) {
+  const c = app.roomCtx;
+  if (!c) return oppFor(i);
+  if (i < 2) return confBot(i);
+  if (i === 2) {
+    const mate = c.players.find((p) => p.conf === c.conf && p.id !== c.myId);
+    return mate ? { label: `${mate.name} (Mitspieler)`, rating: '–' } : confBot(2);
+  }
+  return { label: `Sieger ${CONF_NAMES[otherConf()]}-Conference`, rating: '–' };
+}
+
+const mpOpp = (o) => (o.opp.kind === 'bot' ? o.opp.opp : { label: `${o.opp.name} (Mitspieler)`, rating: Math.round(o.opp.strength * 10) / 10, player: true });
+
+async function playRoundMp() {
+  const po = app.po, round = po.round;
+  po.waiting = { round, on: null };
+  render();
+  await postEntry(-1, app.season.wins);
+  await postEntry(round, team().strength);
+  pollRound();
+}
+
+async function pollRound() {
+  const po = app.po;
+  if (!po?.waiting || app.screen !== 'playoffs') return;
+  const round = po.waiting.round;
+  try {
+    const rs = await mpResolve();
+    const o = rs.outcome(app.roomCtx.myId, round);
+    if (o.state === 'win' || o.state === 'loss') {
+      po.waiting = null;
+      po.live = { round, opponent: mpOpp(o), series: o.series, shown: 0 };
+      render();
+      return;
+    }
+    po.waiting.on = o.wait?.name ?? null;
+  } catch { /* network hiccup: try again on the next tick */ }
+  if (app.po === po && po.waiting && app.screen === 'playoffs') render();
+}
+
+async function skipWaiting() {
+  const po = app.po;
+  try { await api.skipEntry(app.roomCtx.code, app.roomCtx.myId, po.waiting.round); } catch { /* ignore */ }
+  pollRound();
+}
+
 
 function playRound() {
+  if (app.roomCtx) { playRoundMp(); return; }
   const round = app.po.round;
   const opponent = oppFor(round);
   const series = simulateSeries({ seed: app.seed, round, strength: team().strength, opponent });
@@ -411,10 +483,17 @@ function finishRound() {
   render();
 }
 
+function confInfo() {
+  const c = app.roomCtx;
+  const names = (conf) => c.players.filter((p) => p.conf === conf).map((p) => p.name).join(', ') || '–';
+  return h('p', { class: 'hint' }, `Du spielst in der ${CONF_NAMES[c.conf]}-Conference. Ost: ${names('A')} · West: ${names('B')}. Die Conference Finals gegen deinen Mitspieler, die Finals gegen den anderen Conference-Sieger.`);
+}
+
 function playoffsScreen() {
   const po = app.po, t = team();
   const live = po.live;
   if (po.over === 'champion' && !po.celebrated) { po.celebrated = true; setTimeout(() => confetti({ count: 220 }), 200); }
+  if (po.waiting && !live) app.timer = setTimeout(pollRound, 2000);
   if (live) {
     const total = live.series.games.length;
     if (reducedMotion()) live.shown = total;
@@ -424,10 +503,10 @@ function playoffsScreen() {
   const rounds = PLAYOFFS.rounds.map((name, i) => {
     const res = po.results.find((r) => r.round === i);
     const isLive = live && live.round === i;
-    const opp = res?.opponent ?? (isLive ? live.opponent : oppFor(i));
+    const opp = res?.opponent ?? (isLive ? live.opponent : oppPreview(i));
     const shownGames = isLive ? live.series.games.slice(0, live.shown) : res?.series.games ?? [];
     const score = shownGames.length ? `${shownGames.at(-1).team}–${shownGames.at(-1).opp}` : '';
-    const state = res ? (res.series.won ? 'won' : 'lost') : isLive ? 'live' : i === po.round && !po.over ? 'next' : 'pending';
+    const state = res ? (res.series.won ? 'won' : 'lost') : isLive ? 'live' : i === po.round && !po.over ? (po.waiting ? 'live' : 'next') : 'pending';
     return h('li', { class: `round ${state}` },
       h('div', { class: 'round-name' }, name),
       h('div', { class: 'round-opp' }, `${oppLabel(opp)} · ${opp.rating}`),
@@ -439,13 +518,17 @@ function playoffsScreen() {
     po.over === 'champion' && h('div', { class: 'perfect' }, 'CHAMPION'),
     po.over === 'out' && h('div', { class: 'out' }, `Ausgeschieden: ${PLAYOFFS.rounds[po.results.at(-1).round]}`),
     h('p', { class: 'lead' }, `Dein Team: Stärke ${t.strength.toFixed(1)} (${t.chem.name})`),
+    app.roomCtx && confInfo(),
     h('ol', { class: 'rounds' }, rounds),
-    !po.over && !live && po.notes.map((n) => h('div', { class: `injury-note ${n.kind}` }, n.kind === 'hurt' ? '🚑 ' : '✅ ', n.text)),
-    !po.over && !live && h('p', { class: 'hint' }, po.replace ? 'Spinne zuerst einen Ersatzspieler, dann geht es weiter.' : 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
+    !po.over && !live && !po.waiting && po.notes.map((n) => h('div', { class: `injury-note ${n.kind}` }, n.kind === 'hurt' ? '🚑 ' : '✅ ', n.text)),
+    po.waiting && h('p', { class: 'notice' }, po.waiting.on ? `Warte auf ${po.waiting.on} …` : 'Sende dein Team und warte auf die Mitspieler …'),
+    !po.over && !live && !po.waiting && h('p', { class: 'hint' }, po.replace ? 'Spinne zuerst einen Ersatzspieler, dann geht es weiter.' : 'Zwischen den Runden darfst du dein Lineup umstellen. Chemie und Stärke werden neu berechnet.'),
     h('div', { class: 'row' },
       po.over
         ? [h('button', { class: 'btn ghost', onclick: () => go('result') }, 'Zur Saison'),
            h('button', { class: 'btn primary', onclick: goSummary }, 'Zusammenfassung')]
+        : po.waiting
+          ? (po.waiting.round >= 2 ? h('button', { class: 'btn ghost', onclick: skipWaiting }, 'Nicht warten, gegen Bot spielen') : null)
         : live
           ? h('button', { class: 'btn ghost', onclick: () => { clearTimeout(app.timer); live.shown = live.series.games.length; render(); } }, 'Überspringen')
           : po.replace

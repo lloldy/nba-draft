@@ -272,3 +272,7 @@ input.code { text-transform: uppercase; letter-spacing: .15em; flex: 1; min-widt
 .board-list.online li { grid-template-columns: 2.6em 1fr; }
 .board-list.online li.me { outline: 2px solid var(--accent); }
 .room-code { font-family: var(--display); font-size: 3.4rem; letter-spacing: .2em; color: var(--accent); text-align: center; margin: 0; }
+
+.board-list.lobby li { grid-template-columns: 2em 1fr auto; }
+.board-list.lobby li b { font-size: 1.1rem; grid-row: auto; }
+.board-list.lobby li em { color: var(--accent); }

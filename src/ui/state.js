@@ -16,6 +16,8 @@ export const app = {
   challenge: null, // parsed friend challenge { seed, era, rule, by, record }
   dailyDate: null,
   room: null, // friends room code (online leaderboard), null when playing solo
+  roomCtx: null, // multiplayer room: { code, myId, conf, hostId, players: [{ id, name, conf }] }
+  boardTab: 'today',
   submitted: null, // promise of the score upload
   name: '',
   draft: null,
